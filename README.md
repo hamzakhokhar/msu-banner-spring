@@ -19,3 +19,4 @@ We have chosen to rotate the responsibilities of Scrum Master and Product owner 
 We will be using Scrum on Trello as our management system to assign tasks and to stay on schedule with what our customer is requiring. 
 
 We will be using Slack as our primary form of communication, but we also have Discord and email available as needed. 
+
