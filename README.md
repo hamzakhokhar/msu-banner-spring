@@ -1,13 +1,14 @@
 MSU Banner Project
 
 Team 3:
-Tarin Horne,
+Jesus Guzman,
 Eric Kearney,
 Christian Kendall,
 Hamza Khokhar,
 Matthew Kline,
-ThienNgo Le,
-Jesus Guzman.
+Tarin Horne,
+ThienNgo Le.
+
 
 This project is the MSU Banner assignment for Software Development Methods and Tools course. 
 
@@ -24,3 +25,5 @@ is requiring.
 
 We will be using Slack as our primary form of communication, but we also have Discord and email available as needed. 
 
+Sprint #1 (August 21 - September 3) Product owner: Eric Kearney, Scrum Master: Jesus Guzman
+Sprint #2 (Septmeber 4 - September 17) Product owner: Jesus Guzman, Scrum Master Tarin Horne
