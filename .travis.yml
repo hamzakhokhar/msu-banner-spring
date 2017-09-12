@@ -6,4 +6,7 @@ deploy:
   api_key:
     secure: "9089f899-2b44-4639-9cdf-11dc7ac2714c"
     app: "msu-banner"
+    on:
+      repo: msu-banner-spring
+      branch: develop
 
