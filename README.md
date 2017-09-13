@@ -2,11 +2,11 @@ MSU Banner Project
 
 Team 3:
 Jesus Guzman,
+Tarin Horne,
 Eric Kearney,
 Christian Kendall,
 Hamza Khokhar,
 Matthew Kline,
-Tarin Horne,
 ThienNgo Le.
 
 
