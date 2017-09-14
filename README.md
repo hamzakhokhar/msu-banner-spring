@@ -27,3 +27,5 @@ We will be using Slack as our primary form of communication, but we also have Di
 
 Sprint #1 (August 21 - September 3) Product owner: Eric Kearney, Scrum Master: Jesus Guzman
 Sprint #2 (Septmeber 4 - September 17) Product owner: Jesus Guzman, Scrum Master Tarin Horne
+
+T E S T
