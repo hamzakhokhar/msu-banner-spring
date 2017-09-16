@@ -22,7 +22,6 @@ public class StudentsController {
 
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ModelAndView test() {
-
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("students/students");
         modelAndView.addObject("students", studentRepository.findAll());
@@ -42,22 +41,20 @@ public class StudentsController {
         if (result.hasErrors()) {
             return "error";
         }
-
         studentRepository.save(student);
-
         return "redirect:/students";
     }
 
     //CREATE - GET
     @RequestMapping(value = "/students/{id}", method = RequestMethod.POST)
     public String editStudent(@Valid @ModelAttribute("student")Student student,
-                                BindingResult result, ModelMap model) {
+                                BindingResult result, ModelMap model, @PathVariable("id") long id) {
         if (result.hasErrors()) {
             return "error";
         }
-
-
-
+        // Explicitly set the id of the student from the path.
+        // The id dose not get bounded to the html form view and returned.
+        student.setId(id);
         studentRepository.save(student);
 
         return "redirect:/students";
@@ -66,25 +63,21 @@ public class StudentsController {
     //READ - GET
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ModelAndView redirectToGetStudent(@PathVariable("id") long id){
-
         return new ModelAndView("students/student", "student", studentRepository.findOne(id));
 
     }
 
     //UPDATE - POST
-//     ** possibily a redirect
     @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
     public ModelAndView redirectToUpdateStudent(@PathVariable("id") long id){
         return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
     }
 
     //DELETE - POST
-    // ** possibily a redirect
-//    @RequestMapping(value = "/students/{id}/delete", method = RequestMethod.POST)
-//    public ModelAndView redirectToStudent(){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("students/students");
-//        return modelAndView;
-//    }
+    @RequestMapping(value = "/students/{id}/delete", method = RequestMethod.GET)
+    public String deleteStudent(@PathVariable("id") long id) {
+        studentRepository.delete(id);
+        return "redirect:/students";
+    }
 
 }

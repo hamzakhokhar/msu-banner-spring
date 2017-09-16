@@ -1,28 +1,30 @@
 {{>common/header}}
     <!--<h1>Student Info</h1>-->
-<div class="container">
-    <form action="/students" method="post">
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="firstName">First Name</label>
-            <div class="col-sm-5">
-                <input class="form-control" id="firstName" type="text" name="firstName" required="required" placeholder="John">
+<div class="card">
+    <h3 class="card-header">Student Information</h3>
+    <div class="card-block" style="padding: 1.25rem;">
+        <form action="/students" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="firstName">First Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="firstName" type="text" name="firstName" required="required" placeholder="John">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="lastName">Last Name</label>
-            <div class="col-sm-5">
-                <input class="form-control" id="lastName" type="text" name="lastName" required="required" placeholder="doe">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="lastName" type="text" name="lastName" required="required" placeholder="doe">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-5">
-                <button type="submit" name="submit"  class="btn btn-primary">Submit</button>
-                <button name="cancel" class="btn btn-link"><a href="/students">Cancel</a></button>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <button type="submit" name="submit"  class="btn btn-primary">Submit</button>
+                    <a href="/students" class="btn btn-link">Cancel</a>
+                </div>
             </div>
-        </div>
-
-    </form>
+        </form>
+    </div>
 </div>
 
 {{>common/footer}}
