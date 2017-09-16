@@ -8,18 +8,18 @@
 
 <section class="">
     <h1>Student Info</h1>
-    <form action="/students" method="post">
-
+    <form action="/students/{{student.id}}" method="post">
+        <input hidden id="id" type="text" name="id" value="{{student.id}}">
         <div class="field">
             <label for="firstName">First Name</label>
-            <input id="firstName" type="text" name="firstName" required="required">
+            <input id="firstName" type="text" name="firstName" value="{{student.firstName}}" required="required">
         </div>
         <div class="field">
             <label for="lastName">Last Name</label>
-            <input id="lastName" type="text" name="lastName" required="required">
+            <input id="lastName" type="text" name="lastName" value="{{student.lastName}}" required="required">
         </div>
         <div class="actions">
-            <input type="submit" name="create" value="Create Section" data-disable-with="Create Section">
+            <input type="submit" name="create" value="Update Student" data-disable-with="Update Student">
         </div>
         <a href="/students">Back</a>
     </form>
@@ -27,5 +27,3 @@
 
 </body>
 </html>
-
-

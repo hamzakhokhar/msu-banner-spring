@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,22 +48,35 @@ public class StudentsController {
         return "redirect:/students";
     }
 
+    //CREATE - GET
+    @RequestMapping(value = "/students/{id}", method = RequestMethod.POST)
+    public String editStudent(@Valid @ModelAttribute("student")Student student,
+                                BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+            return "error";
+        }
+
+
+
+        studentRepository.save(student);
+
+        return "redirect:/students";
+    }
+
     //READ - GET
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
-    public ModelAndView redirectToGetStudent(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("students/student");
-        return modelAndView;
+    public ModelAndView redirectToGetStudent(@PathVariable("id") long id){
+
+        return new ModelAndView("students/student", "student", studentRepository.findOne(id));
+
     }
 
     //UPDATE - POST
-    // ** possibily a redirect
-//    @RequestMapping(value = "/students/{id}/update", method = RequestMethod.POST)
-//    public ModelAndView redirectToUpdateStudent(){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("students/students");
-//        return modelAndView;
-//    }
+//     ** possibily a redirect
+    @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
+    public ModelAndView redirectToUpdateStudent(@PathVariable("id") long id){
+        return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
+    }
 
     //DELETE - POST
     // ** possibily a redirect
