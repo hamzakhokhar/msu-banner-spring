@@ -20,32 +20,48 @@ public class StudentsController {
     @Autowired
     private StudentRepository studentRepository;
 
+    // GET Students View
     @RequestMapping(value = "/students", method = RequestMethod.GET)
-    public ModelAndView test() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("students/students");
-        modelAndView.addObject("students", studentRepository.findAll());
-        return modelAndView;
+    public ModelAndView getStudentsView() {
+        // CRUD(read) - studentRepository.findAll(id)
+        return new ModelAndView("students/students", "students", studentRepository.findAll());
     }
 
-    //CREATE - GET
+    // GET Student Info view
+    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
+    public ModelAndView getStudentInfoView(@PathVariable("id") long id){
+        // CRUD(read) - studentRepository.findOne(id)
+        return new ModelAndView("students/student", "student", studentRepository.findOne(id));
+
+    }
+
+    // GET Student Edit view
+    @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
+    public ModelAndView getStudentEditView(@PathVariable("id") long id){
+        // CRUD(read) - studentRepository.findOne(id)
+        return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
+    }
+
+
+    // GET New student view
     @RequestMapping(value = "/students/new", method = RequestMethod.GET)
-    public ModelAndView createStudent(){
+    public ModelAndView getNewStudentView(){
         return new ModelAndView("students/students.create", "student", new Student());
     }
 
-    //CREATE - GET
+    // POST new student view
     @RequestMapping(value = "/students", method = RequestMethod.POST)
     public String submitStudent(@Valid @ModelAttribute("student")Student student,
                          BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             return "error";
         }
+        //CRUD (create) - save student
         studentRepository.save(student);
         return "redirect:/students";
     }
 
-    //CREATE - GET
+    // POST edit student view
     @RequestMapping(value = "/students/{id}", method = RequestMethod.POST)
     public String editStudent(@Valid @ModelAttribute("student")Student student,
                                 BindingResult result, ModelMap model, @PathVariable("id") long id) {
@@ -55,27 +71,16 @@ public class StudentsController {
         // Explicitly set the id of the student from the path.
         // The id dose not get bounded to the html form view and returned.
         student.setId(id);
+        // CRUD(create) - save student
         studentRepository.save(student);
 
         return "redirect:/students";
     }
 
-    //READ - GET
-    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
-    public ModelAndView redirectToGetStudent(@PathVariable("id") long id){
-        return new ModelAndView("students/student", "student", studentRepository.findOne(id));
-
-    }
-
-    //UPDATE - POST
-    @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
-    public ModelAndView redirectToUpdateStudent(@PathVariable("id") long id){
-        return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
-    }
-
-    //DELETE - POST
+    // GET delete student resource
     @RequestMapping(value = "/students/{id}/delete", method = RequestMethod.GET)
     public String deleteStudent(@PathVariable("id") long id) {
+        // CRUD(delete) - delete student
         studentRepository.delete(id);
         return "redirect:/students";
     }
