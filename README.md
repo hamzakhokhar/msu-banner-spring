@@ -17,7 +17,7 @@ This project was completed by team 3 using the Scrum development method.
 For this project we chose not to care which IDE that the members will be using. IntelliJ and Eclipse are the IDE's that
 we have decided to use with an even split between the two.
 
-We have chosen to rotate the responsibilities of Scrum Master and Product owner every sprint and will all be acting as
+We have chosen to rotate the responsibilities of Scrum Master and Product owner every sprint and all members will be acting as
 developers.
 
 We will be using Scrum on Trello as our management system to assign tasks and to stay on schedule with what our customer
