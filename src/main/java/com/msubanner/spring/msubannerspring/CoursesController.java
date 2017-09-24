@@ -1,3 +1,4 @@
+//Copied the student controller and replaced all instances of 'student' with 'course'
 package com.msubanner.spring.msubannerspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
