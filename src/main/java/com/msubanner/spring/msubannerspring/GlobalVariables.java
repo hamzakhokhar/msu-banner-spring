@@ -3,10 +3,13 @@ import javax.persistence.Entity;
 
 @Entity
 public class GlobalVariables {
+    // Name of the school
     public final static String SCHOOLNAME = ("Metropolitan State University of Denver");
-    public final static int[] FRESHMAN = {0,29};
-    public final static int[] SOPHMORE= {30,59};
-    public final static int[] JUNIOR = {60,89};
-    public final static double[] SENIOR = {90.0, Double.POSITIVE_INFINITY};
+
+    // The threshold is the last credit before you move to the next classification.  
+    public final static int FRESHMAN = 29;
+    public final static int SOPH0MORE = 59;
+    public final static int JUNIOR = 89;
+    public final static int SENIOR = 90;
 
 }
