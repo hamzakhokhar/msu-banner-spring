@@ -1,27 +1,12 @@
-<!doctype html>
-<html lang="en">
-<body>
-<h1>
-    Student Information
-</h1>
-
-<p>
-    <strong>Student Id:</strong>
-    {{student.id}}
-</p>
-
-<p>
-    <strong>First Name:</strong>
-    {{student.firstName}}
-</p>
-
-<p>
-    <strong>Last Name:</strong>
-    {{student.lastName}}
-</p>
-
-</body>
-
-<a href="/students/{{student.id}}/edit">Edit</a> | <a href="/students">Back</a>
-</body>
-</html>
+{{>common/header}}
+<div class="card">
+    <h3 class="card-header">Student Information</h3>
+    <div class="card-block">
+        <h4 class="card-title">Student Id: {{student.id}}</h4>
+        <p class="card-text">First Name: {{student.firstName}}</p>
+        <p class="card-text">Last Name: {{student.lastName}}</p>
+        <a href="/students/{{student.id}}/edit" class="btn btn-primary">Edit</a>
+        <a href="/students" class="btn btn-link">Back</a>
+    </div>
+</div>
+{{>common/footer}}
