@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: ${env:spring_profiles_active}
+---
+
+spring:
+  profiles: dev
+
+---
+
+spring:
+  profiles: prod
