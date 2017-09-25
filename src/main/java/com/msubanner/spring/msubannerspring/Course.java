@@ -1,11 +1,18 @@
 //package com.msubanner.spring.msubannerspring;
 //
 //import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 //import java.util.*;
 //
 //@Entity
 //public class Course {
-//    private int courseID;
+//
+//    @Id
+//    @GeneratedValue(strategy= GenerationType.AUTO)
+//    private Long courseId;
+//
 //    private String courseDept;
 //    private String courseName;
 //    private int creditValue;
@@ -26,11 +33,13 @@
 //
 //    protected Course(){};
 //
-//    public Course(int courseID, String courseDept, String courseName, int creditValue, String level,
+//    public Course(long courseId, String courseDept, String courseName, int creditValue, String level,
 //                    String building, String room, String time, int minSize, int maxSize,
 //                    String description, String learningObjectives) {
 //        //TODO add professor to parameters once professor is built
-//        this.courseID = courseID;
+//
+//
+//        this.courseId = courseId;
 //        this.courseDept = courseDept;
 //        this.courseName = courseName;
 //        this.creditValue = creditValue;
@@ -53,8 +62,12 @@
 //        coReqs.add(coReq);
 //    }
 //
-//    public int getCourseID() {
-//        return courseID;
+//    public Long getCourseId() {
+//        return courseId;
+//    }
+//
+//    public void setCourseId(Long id) {
+//        this.courseId = id;
 //    }
 //
 //    public String getCourseDept() {

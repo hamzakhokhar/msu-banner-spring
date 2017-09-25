@@ -1,4 +1,3 @@
-////Copied the student controller and replaced all instances of 'student' with 'course'
 //package com.msubanner.spring.msubannerspring;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -17,70 +16,70 @@
 //public class CoursesController {
 //
 //    @Autowired
-//    private StudentRepository studentRepository;
+//    private CourseRepository courseRepository;
 //
 //    // GET courses View
 //    @RequestMapping(value = "/courses", method = RequestMethod.GET)
-//    public ModelAndView getcoursesView() {
-//        // CRUD(read) - studentRepository.findAll(id)
-//        return new ModelAndView("courses/courses", "courses", studentRepository.findAll());
+//    public ModelAndView getCourseView() {
+//        // CRUD(read) - courseRepository.findAll(id)
+//        return new ModelAndView("courses/courses", "course", courseRepository.findAll());
 //    }
 //
-//    // GET Student Info view
+//    // GET course Info view
 //    @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
-//    public ModelAndView getStudentInfoView(@PathVariable("id") long id){
-//        // CRUD(read) - studentRepository.findOne(id)
-//        return new ModelAndView("courses/student", "student", studentRepository.findOne(id));
+//    public ModelAndView getCourseInfoView(@PathVariable("id") long id){
+//        // CRUD(read) - courseRepository.findOne(id)
+//        return new ModelAndView("courses/course", "course", courseRepository.findOne(id));
 //
 //    }
 //
-//    // GET Student Edit view
+//    // GET Course Edit view
 //    @RequestMapping(value = "/courses/{id}/edit", method = RequestMethod.GET)
-//    public ModelAndView getStudentEditView(@PathVariable("id") long id){
-//        // CRUD(read) - studentRepository.findOne(id)
-//        return new ModelAndView("courses/student.edit", "student", studentRepository.findOne(id));
+//    public ModelAndView getCourseEditView(@PathVariable("id") long id){
+//        // CRUD(read) - courseRepository.findOne(id)
+//        return new ModelAndView("courses/course.edit", "course", courseRepository.findOne(id));
 //    }
 //
 //
-//    // GET New student view
+//    // GET New course view
 //    @RequestMapping(value = "/courses/new", method = RequestMethod.GET)
-//    public ModelAndView getNewStudentView(){
-//        return new ModelAndView("courses/courses.create", "student", new Student());
+//    public ModelAndView getNewCourseView(){
+//        return new ModelAndView("courses/course.create", "course", new Course());
 //    }
 //
-//    // POST new student view
+//    // POST new course view
 //    @RequestMapping(value = "/courses", method = RequestMethod.POST)
-//    public String submitStudent(@Valid @ModelAttribute("student")Student student,
+//    public String submitCourse(@Valid @ModelAttribute("course")Course course,
 //                         BindingResult result, ModelMap model) {
 //        if (result.hasErrors()) {
 //            return "error";
 //        }
-//        //CRUD (create) - save student
-//        studentRepository.save(student);
+//        //CRUD (create) - save course
+//        courseRepository.save(course);
 //        return "redirect:/courses";
 //    }
 //
-//    // POST edit student view
+//    // POST edit course view
 //    @RequestMapping(value = "/courses/{id}", method = RequestMethod.POST)
-//    public String editStudent(@Valid @ModelAttribute("student")Student student,
+//    public String editCourse(@Valid @ModelAttribute("course")Course course,
 //                                BindingResult result, ModelMap model, @PathVariable("id") long id) {
 //        if (result.hasErrors()) {
 //            return "error";
 //        }
-//        // Explicitly set the id of the student from the path.
+//        // Explicitly set the id of the course from the path.
 //        // The id dose not get bounded to the html form view and returned.
-//        student.setId(id);
-//        // CRUD(create) - save student
-//        studentRepository.save(student);
+//        course.setCourseId(id);
+//        // CRUD(create) - save course
+//        courseRepository.save(course);
 //
 //        return "redirect:/courses";
 //    }
 //
-//    // GET delete student resource
+//    // GET delete course resource
 //    @RequestMapping(value = "/courses/{id}/delete", method = RequestMethod.GET)
-//    public String deleteStudent(@PathVariable("id") long id) {
-//        // CRUD(delete) - delete student
-//        studentRepository.delete(id);
+//    public String deleteCourse(@PathVariable("id") long id) {
+//        // CRUD(delete) - delete course
+//        courseRepository.delete(id);
 //        return "redirect:/courses";
 //    }
 //
