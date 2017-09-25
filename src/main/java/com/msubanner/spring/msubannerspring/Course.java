@@ -1,7 +1,9 @@
 package com.msubanner.spring.msubannerspring;
 
+import javax.persistence.Entity;
 import java.util.*;
 
+@Entity
 public class Course {
     private int courseID;
     private String courseDept;
