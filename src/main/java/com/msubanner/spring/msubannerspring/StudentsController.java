@@ -46,7 +46,7 @@ public class StudentsController {
     // GET New student view
     @RequestMapping(value = "/students/new", method = RequestMethod.GET)
     public ModelAndView getNewStudentView(){
-        return new ModelAndView("students/students.create", "student", new Student());
+        return new ModelAndView("students/student.create", "student", new Student());
     }
 
     // POST new student view
