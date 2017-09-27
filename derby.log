@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Sep 25 23:57:30 MDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-bcc3-041f-0000030fa8f0 
-on database directory memory:/Users/hamzakhokhar/Documents/git/msu-banner-spring/testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/Users/hamzakhokhar/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Tue Sep 26 10:07:26 MDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-bef1-6bd5-000005dbed30 
+on database directory memory:C:\Users\thien\Desktop\MSU\7. MSU Fall 2017\SW Dev Methods and Tools CS 3250\MSU banner\testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/thien/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_144-b01
-user.dir=/Users/hamzakhokhar/Documents/git/msu-banner-spring
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.12.6
+java.runtime.version=1.8.0_121-b13
+user.dir=C:\Users\thien\Desktop\MSU\7. MSU Fall 2017\SW Dev Methods and Tools CS 3250\MSU banner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
