@@ -29,7 +29,7 @@ public class StudentsController {
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ModelAndView getStudentInfoView(@PathVariable("id") long id){
         // CRUD(read) - studentRepository.findOne(id)
-        return new ModelAndView("students/student", "student", studentRepository.findOne(id));
+        return new ModelAndView("students/student.show", "student", studentRepository.findOne(id));
 
     }
 
@@ -42,7 +42,7 @@ public class StudentsController {
 
 
     // GET New student view
-    @RequestMapping(value = "/students/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/students/create", method = RequestMethod.GET)
     public ModelAndView getNewStudentView(){
         return new ModelAndView("students/student.create", "student", new Student());
     }
