@@ -28,11 +28,23 @@
             <!--</div>-->
             <!-- Credit value -->
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="creditValue" type="number" name="creditValue" required="required" placeholder="4">
-                </div>
+                <!label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
+
+                <!div class="col-sm-5">
+                    <!input class="form-control" id="creditValue" type="number" name="creditValue" required="required" placeholder="4">
+                <!/div>
+                <select>
+                    <option value="1 Credit">1</option>
+                    <option value="2 Credits">2</option>
+                    <option value="3 Credits">3</option>
+                    <option value="4 Credits">4</option>
+                </select>
+
+
             </div>
+
+
+
             <!--professor does not exist in the course class-->
             <!-- Professor -->
             <!--<div class="form-group row">-->
@@ -43,17 +55,37 @@
             <!--</div>-->
             <!-- Level -->
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="level">Level</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshman">
-                </div>
+                <!label class="col-sm-2 col-form-label text-right" for="level">Level<!/label>
+
+                <!div class="col-sm-5">
+
+                    <!input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshman">
+                <!/div>
+                <select>
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                </select>
+
+
             </div>
+
+
+
             <!-- Building -->
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="building" type="text" name="building" required="required" placeholder="Parking Lot">
-                </div>
+                <!label class="col-sm-2 col-form-label text-right" for="building">Building</label>
+                <!div class="col-sm-5">
+                    <!input class="form-control" id="building" type="text" name="building" required="required" placeholder="Parking Lot">
+                <!/div>
+                <select>
+                    <option value="CS building">CS</option>
+                    <option value="CN building">CN</option>
+                    <option value="KC building">KC</option>
+                    <option value="PL building">PL</option>
+                    <option value="AES building">AES</option>
+                </select>
             </div>
             <!-- Room -->
             <div class="form-group row">
@@ -66,7 +98,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="time">Time</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="time" type="text" name="time" required="required" placeholder="TBD">
+                    <input class="form-control" id="time" type="time" name="time" required="required" placeholder="TBD">
                 </div>
             </div>
             <!-- PreReqs -->
@@ -95,6 +127,7 @@
                 <label class="col-sm-2 col-form-label text-right" for="maxSize">Maximum size</label>
                 <div class="col-sm-5">
                     <input class="form-control" id="maxSize" type="number" name="maxSize" required="required" placeholder="30">
+
                 </div>
             </div>
             <div class="form-group row">
