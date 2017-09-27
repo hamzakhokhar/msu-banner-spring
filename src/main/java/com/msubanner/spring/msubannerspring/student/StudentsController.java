@@ -22,7 +22,7 @@ public class StudentsController {
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ModelAndView getStudentsView() {
         // CRUD(read) - studentRepository.findAll(id)
-        return new ModelAndView("students/students", "students", studentRepository.findAll());
+        return new ModelAndView("students/index", "students", studentRepository.findAll());
     }
 
     // GET Student Info view

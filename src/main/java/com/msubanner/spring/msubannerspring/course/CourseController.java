@@ -24,14 +24,14 @@ public class CourseController {
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public ModelAndView getCourseView() {
         // CRUD(read) - courseRepository.findAll(id)
-        return new ModelAndView("courses/courses", "courses", courseRepository.findAll());
+        return new ModelAndView("courses/index", "courses", courseRepository.findAll());
     }
 
     // GET course Info view
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
     public ModelAndView getCourseInfoView(@PathVariable("id") long id){
         // CRUD(read) - courseRepository.findOne(id)
-        return new ModelAndView("courses/course", "course", courseRepository.findOne(id));
+        return new ModelAndView("courses/course.show", "course", courseRepository.findOne(id));
 
     }
 
@@ -44,7 +44,7 @@ public class CourseController {
 
 
     // GET New course view
-    @RequestMapping(value = "/courses/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/courses/create", method = RequestMethod.GET)
     public ModelAndView getNewCourseView(){
         return new ModelAndView("courses/course.create", "course", new Course());
     }
