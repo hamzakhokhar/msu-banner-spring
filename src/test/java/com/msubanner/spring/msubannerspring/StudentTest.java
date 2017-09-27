@@ -2,6 +2,7 @@ package com.msubanner.spring.msubannerspring;
 
 import static org.junit.Assert.*;
 
+import com.msubanner.spring.msubannerspring.student.Student;
 import org.junit.Test;
 
 public class StudentTest {

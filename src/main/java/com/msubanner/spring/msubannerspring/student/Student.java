@@ -1,11 +1,9 @@
-package com.msubanner.spring.msubannerspring;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+package com.msubanner.spring.msubannerspring.student;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Professor {
+public class Student {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -13,26 +11,32 @@ public class Professor {
     private String firstName;
     private String lastName;
 
-    protected Professor() {};
+    protected Student(){};
 
-    public Professor(String firstName, String lastName) {
+
+    public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+
 
     public String getFirstName() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
+
         this.firstName = firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 

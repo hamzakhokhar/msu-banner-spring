@@ -1,9 +1,6 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.course;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Course {
@@ -27,6 +24,7 @@ public class Course {
     private int maxSize;
     private String description;
     private String learningObjectives;
+
 
     protected Course(){};
 

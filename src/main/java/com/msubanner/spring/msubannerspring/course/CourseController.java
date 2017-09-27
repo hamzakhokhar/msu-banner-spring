@@ -1,5 +1,7 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.course;
 
+import com.msubanner.spring.msubannerspring.course.Course;
+import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 
 @Controller
-public class CoursesController {
+public class CourseController {
 
     @Autowired
     private CourseRepository courseRepository;

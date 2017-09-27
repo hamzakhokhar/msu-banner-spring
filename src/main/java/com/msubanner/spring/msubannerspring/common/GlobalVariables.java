@@ -1,5 +1,5 @@
 //package com.msubanner.spring.msubannerspring;
-//import javax.persistence.Entity;
+//        import javax.persistence.Entity;
 //
 //@Entity
 //public class GlobalVariables {
