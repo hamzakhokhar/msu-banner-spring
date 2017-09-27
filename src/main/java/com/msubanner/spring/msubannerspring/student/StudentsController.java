@@ -1,4 +1,4 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class StudentsController {
@@ -24,14 +22,14 @@ public class StudentsController {
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ModelAndView getStudentsView() {
         // CRUD(read) - studentRepository.findAll(id)
-        return new ModelAndView("students/students", "students", studentRepository.findAll());
+        return new ModelAndView("students/index", "students", studentRepository.findAll());
     }
 
     // GET Student Info view
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ModelAndView getStudentInfoView(@PathVariable("id") long id){
         // CRUD(read) - studentRepository.findOne(id)
-        return new ModelAndView("students/student", "student", studentRepository.findOne(id));
+        return new ModelAndView("students/student.show", "student", studentRepository.findOne(id));
 
     }
 
@@ -44,7 +42,7 @@ public class StudentsController {
 
 
     // GET New student view
-    @RequestMapping(value = "/students/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/students/create", method = RequestMethod.GET)
     public ModelAndView getNewStudentView(){
         return new ModelAndView("students/student.create", "student", new Student());
     }

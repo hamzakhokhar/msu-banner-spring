@@ -1,5 +1,7 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.course;
 
+import com.msubanner.spring.msubannerspring.course.Course;
+import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 
 @Controller
-public class CoursesController {
+public class CourseController {
 
     @Autowired
     private CourseRepository courseRepository;
@@ -22,14 +24,14 @@ public class CoursesController {
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public ModelAndView getCourseView() {
         // CRUD(read) - courseRepository.findAll(id)
-        return new ModelAndView("courses/courses", "courses", courseRepository.findAll());
+        return new ModelAndView("courses/index", "courses", courseRepository.findAll());
     }
 
     // GET course Info view
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
     public ModelAndView getCourseInfoView(@PathVariable("id") long id){
         // CRUD(read) - courseRepository.findOne(id)
-        return new ModelAndView("courses/course", "course", courseRepository.findOne(id));
+        return new ModelAndView("courses/course.show", "course", courseRepository.findOne(id));
 
     }
 
@@ -42,7 +44,7 @@ public class CoursesController {
 
 
     // GET New course view
-    @RequestMapping(value = "/courses/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/courses/create", method = RequestMethod.GET)
     public ModelAndView getNewCourseView(){
         return new ModelAndView("courses/course.create", "course", new Course());
     }

@@ -1,4 +1,4 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
