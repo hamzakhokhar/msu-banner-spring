@@ -42,7 +42,7 @@ public class ProfessorController {
 
 
     // GET New professor view
-    @RequestMapping(value = "/professor/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/professor/create", method = RequestMethod.GET)
     public ModelAndView getNewProfessorView(){
         return new ModelAndView("professor/professor.create", "professor", new Professor());
     }
