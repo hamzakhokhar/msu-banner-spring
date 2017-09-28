@@ -1,0 +1,56 @@
+{{>common/header}}
+<div class="card">
+    <h3 class="card-header">Welcome to Metropolitant State University of Denver!</h3>
+    <h4 class="card-header">Update Student Information</h4>
+    <div class="card-block">
+        <h5 class="card-title">
+
+        </h5>
+        <form action="/courses/{{student.id}}" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="id">Student ID</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="id" type="number" name="id" value="{{student.id}}" disabled placeholder="Id">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="firstName">First Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="firstName" type="text" name="firstName" value="{{student.firstName}}" required="required" placeholder="John">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{student.lastName}}" required="required" placeholder="doe">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <button type="submit" name="submit"  class="btn btn-primary">Submit</button>
+                    <a href="/courses" class="btn btn-link">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--<h1>Student Info</h1>-->
+<!--<form action="/courses/{{student.id}}" method="post">-->
+    <!--<input hidden id="id" type="text" name="id" value="{{student.id}}">-->
+    <!--<div class="field">-->
+        <!--<label for="firstName">First Name</label>-->
+        <!--<input id="firstName" type="text" name="firstName" value="{{student.firstName}}" required="required">-->
+    <!--</div>-->
+    <!--<div class="field">-->
+        <!--<label for="lastName">Last Name</label>-->
+        <!--<input id="lastName" type="text" name="lastName" value="{{student.lastName}}" required="required">-->
+    <!--</div>-->
+    <!--<div class="actions">-->
+        <!--<input type="submit" name="create" value="Update Student" data-disable-with="Update Student">-->
+    <!--</div>-->
+    <!--<a href="/courses">Back</a>-->
+<!--</form>-->
+
+{{>common/footer}}

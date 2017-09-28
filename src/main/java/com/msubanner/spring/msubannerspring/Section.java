@@ -52,8 +52,13 @@ public class Section {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
+        //WIP waiting for Professor and Courses classes
         return super.toString();
     }
 }
