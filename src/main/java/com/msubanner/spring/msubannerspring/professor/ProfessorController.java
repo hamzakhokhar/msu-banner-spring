@@ -22,14 +22,14 @@ public class ProfessorController {
     @RequestMapping(value = "/professor", method = RequestMethod.GET)
     public ModelAndView getProfessorView() {
         // CRUD(read) - professorRepository.findAll(id)
-        return new ModelAndView("professor/professor", "professor", professorRepository.findAll());
+        return new ModelAndView("professor/index", "professor", professorRepository.findAll());
     }
 
     // GET Professor Info view
     @RequestMapping(value = "/professor/{id}", method = RequestMethod.GET)
     public ModelAndView getProfessorInfoView(@PathVariable("id") long id){
         // CRUD(read) - professorRepository.findOne(id)
-        return new ModelAndView("professor/professor", "professor", professorRepository.findOne(id));
+        return new ModelAndView("professor/professor.show", "professor", professorRepository.findOne(id));
 
     }
 
