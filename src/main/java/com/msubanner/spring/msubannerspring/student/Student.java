@@ -2,6 +2,10 @@ package com.msubanner.spring.msubannerspring.student;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * This is the Student class.
+ * @author Team 3
+ */
 @Entity
 public class Student {
 

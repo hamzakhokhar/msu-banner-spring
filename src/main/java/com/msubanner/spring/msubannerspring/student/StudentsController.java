@@ -12,73 +12,85 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
+/**
+ * This is the StudentController class.
+ * @author Team 3
+ */
 @Controller
 public class StudentsController {
 
     @Autowired
     private StudentRepository studentRepository;
 
-    // GET Students View
+    /**
+     * This method will display all of the students in the database
+     * CRUD(read) - studentRepository.findAll(id)
+     */    
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ModelAndView getStudentsView() {
-        // CRUD(read) - studentRepository.findAll(id)
         return new ModelAndView("students/index", "students", studentRepository.findAll());
     }
 
-    // GET Student Info view
+    /**
+     * This method will display the student info
+     * CRUD(read) - studentRepository.findOne(id)
+     */
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ModelAndView getStudentInfoView(@PathVariable("id") long id){
-        // CRUD(read) - studentRepository.findOne(id)
         return new ModelAndView("students/student.show", "student", studentRepository.findOne(id));
-
     }
 
-    // GET Student Edit view
+    /**
+     * This method will edit the student info
+     * CRUD(read) - studentRepository.findOne(id)
+     */
     @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getStudentEditView(@PathVariable("id") long id){
-        // CRUD(read) - studentRepository.findOne(id)
         return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
     }
 
 
-    // GET New student view
+    /**
+     * This method will create the student
+     */
     @RequestMapping(value = "/students/create", method = RequestMethod.GET)
     public ModelAndView getNewStudentView(){
         return new ModelAndView("students/student.create", "student", new Student());
     }
 
-    // POST new student view
+    /**
+     * This method will save the students info and post it to the database
+     * CRUD (create) - save student
+     */
     @RequestMapping(value = "/students", method = RequestMethod.POST)
     public String submitStudent(@Valid @ModelAttribute("student")Student student,
-                         BindingResult result, ModelMap model) {
-        if (result.hasErrors()) {
-            return "error";
-        }
-        //CRUD (create) - save student
+                                BindingResult result, ModelMap model) {
+        if (result.hasErrors()) return "error";
         studentRepository.save(student);
         return "redirect:/students";
     }
 
-    // POST edit student view
+    /**
+     * This method will save the selected student info and post it to the database
+     * CRUD (create) - save student
+     * Explicitly set the id of the student from the path.
+     * The id does not get bounded to the HTML form view and returned.
+     */
     @RequestMapping(value = "/students/{id}", method = RequestMethod.POST)
     public String editStudent(@Valid @ModelAttribute("student")Student student,
-                                BindingResult result, ModelMap model, @PathVariable("id") long id) {
-        if (result.hasErrors()) {
-            return "error";
-        }
-        // Explicitly set the id of the student from the path.
-        // The id dose not get bounded to the html form view and returned.
+                              BindingResult result, ModelMap model, @PathVariable("id") long id) {
+        if (result.hasErrors()) return "error";
         student.setId(id);
-        // CRUD(create) - save student
         studentRepository.save(student);
-
         return "redirect:/students";
     }
 
-    // GET delete student resource
+    /**
+     * This method will delete the selected student from the database
+     * CRUD(delete) - delete student
+     */ 
     @RequestMapping(value = "/students/{id}/delete", method = RequestMethod.GET)
     public String deleteStudent(@PathVariable("id") long id) {
-        // CRUD(delete) - delete student
         studentRepository.delete(id);
         return "redirect:/students";
     }

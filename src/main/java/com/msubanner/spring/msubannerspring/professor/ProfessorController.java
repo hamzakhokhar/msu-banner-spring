@@ -12,75 +12,85 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
+/**
+ * This is the ProfessorController class.
+ * @author Team 3
+ */
 @Controller
 public class ProfessorController {
 
     @Autowired
     private ProfessorRepository professorRepository;
 
-    // GET Professor View
+    /**
+     * This method will display all of the professors in the database
+     * CRUD(read) - professorRepository.findAll(id)
+     */
     @RequestMapping(value = "/professor", method = RequestMethod.GET)
     public ModelAndView getProfessorView() {
-        // CRUD(read) - professorRepository.findAll(id)
         return new ModelAndView("professor/index", "professor", professorRepository.findAll());
     }
 
-    // GET Professor Info view
+    /**
+     * This method will display the professors info
+     * CRUD(read) - professorRepository.findOne(id)
+     */
     @RequestMapping(value = "/professor/{id}", method = RequestMethod.GET)
     public ModelAndView getProfessorInfoView(@PathVariable("id") long id){
-        // CRUD(read) - professorRepository.findOne(id)
         return new ModelAndView("professor/professor.show", "professor", professorRepository.findOne(id));
-
     }
 
-    // GET Professor Edit view
+    /**
+     * This method will edit the professors info
+     * CRUD(read) - professorRepository.findOne(id)
+     */
     @RequestMapping(value = "/professor/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getProfessorEditView(@PathVariable("id") long id){
-        // CRUD(read) - professorRepository.findOne(id)
         return new ModelAndView("professor/professor.edit", "professor", professorRepository.findOne(id));
     }
 
-
-    // GET New professor view
+    /**
+     * This method will create the professor
+     */
     @RequestMapping(value = "/professor/create", method = RequestMethod.GET)
     public ModelAndView getNewProfessorView(){
         return new ModelAndView("professor/professor.create", "professor", new Professor());
     }
 
-    // POST new professor view
+    /**
+     * This method will save the professors info and post it to the database
+     * CRUD (create) - save professor
+     */
     @RequestMapping(value = "/professor", method = RequestMethod.POST)
     public String submitProfessor(@Valid @ModelAttribute("professor")Professor professor,
-                         BindingResult result, ModelMap model) {
-        if (result.hasErrors()) {
-            return "error";
-        }
-        //CRUD (create) - save professor
+                                  BindingResult result, ModelMap model) {
+        if (result.hasErrors()) return "error";
         professorRepository.save(professor);
         return "redirect:/professor";
     }
 
-    // POST edit professor view
+    /**
+     * This method will save the selected professor info and post it to the database
+     * CRUD (create) - save professor
+     * Explicitly set the id of the professor from the path.
+     * The id does not get bounded to the HTML form view and returned.
+     */
     @RequestMapping(value = "/professor/{id}", method = RequestMethod.POST)
     public String editProfessor(@Valid @ModelAttribute("professor")Professor professor,
                                 BindingResult result, ModelMap model, @PathVariable("id") long id) {
-        if (result.hasErrors()) {
-            return "error";
-        }
-        // Explicitly set the id of the professor from the path.
-        // The id dose not get bounded to the html form view and returned.
+        if (result.hasErrors()) return "error";
         professor.setId(id);
-        // CRUD(create) - save student
         professorRepository.save(professor);
-
         return "redirect:/professor";
     }
 
-    // GET delete professor resource
+    /**
+     * This method will delete the selected professor from the database
+     * CRUD(delete) - delete professor
+     */    
     @RequestMapping(value = "/professor/{id}/delete", method = RequestMethod.GET)
     public String deleteProfessor(@PathVariable("id") long id) {
-        // CRUD(delete) - delete professor
     	professorRepository.delete(id);
         return "redirect:/professor";
     }
-
 }
