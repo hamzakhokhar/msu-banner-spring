@@ -1,22 +1,14 @@
 package com.msubanner.spring.msubannerspring;
 
-import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class SectionControllerTest {
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     @Test
-    public void getSectionsView() throws Exception {
+    public void getSectionView() throws Exception {
     }
 
     @Test

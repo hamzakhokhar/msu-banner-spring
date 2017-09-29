@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @SpringBootApplication
 public class MsuBannerSpringApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MsuBannerSpringApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MsuBannerSpringApplication.class, args);
+    }
 }
-
-

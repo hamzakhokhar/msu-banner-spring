@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.msubanner.spring.msubannerspring"},{"l":"com.msubanner.spring.msubannerspring.course"},{"l":"com.msubanner.spring.msubannerspring.professor"},{"l":"com.msubanner.spring.msubannerspring.student"}]

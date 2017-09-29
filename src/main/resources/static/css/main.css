@@ -1,7 +1,8 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}
+
 .card-block {
      padding:1.25rem;
  }
-
-.container{
-    padding-top: 24px;
-}

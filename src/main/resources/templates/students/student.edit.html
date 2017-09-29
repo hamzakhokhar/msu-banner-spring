@@ -1,11 +1,7 @@
 {{>common/header}}
 <div class="card">
-    <h3 class="card-header">Welcome to Metropolitant State University of Denver!</h3>
-    <h4 class="card-header">Update Student Information</h4>
+    <h4 class="card-header">Please fill in your student information</h4>
     <div class="card-block">
-        <h5 class="card-title">
-
-        </h5>
         <form action="/students/{{student.id}}" method="post">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="id">Student ID</label>
@@ -22,7 +18,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{student.lastName}}" required="required" placeholder="doe">
+                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{student.lastName}}" required="required" placeholder="Smith">
                 </div>
             </div>
             <div class="form-group row">

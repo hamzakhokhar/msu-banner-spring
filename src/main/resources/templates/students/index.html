@@ -1,0 +1,32 @@
+{{>common/header}}
+<h2>
+    Students
+</h2>
+
+<table class="table">
+    <thead >
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#students}}
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td><a href="/students/{{id}}">Show</a></td>
+        <td><a href="/students/{{id}}/edit">Edit</a></td>
+        <td><a href="/students/{{id}}/delete">Delete</a></td>
+    </tr>
+    {{/students}}
+    </tbody>
+</table>
+<br>
+<a class="btn btn-primary" href="/students/create">Create</a>
+{{>common/footer}}

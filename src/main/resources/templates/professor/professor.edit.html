@@ -1,0 +1,52 @@
+{{>common/header}}
+<div class="card">
+    <h4 class="card-header">Please fill in your professor information</h4>
+    <div class="card-block">
+        <form action="/professor/{{professor.id}}" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="id">Professor ID</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="id" type="number" name="id" value="{{professor.id}}" disabled placeholder="Id">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="firstName">First Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="firstName" type="text" name="firstName" value="{{professor.firstName}}" required="required" placeholder="John">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{professor.lastName}}" required="required" placeholder="Smith">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <button type="submit" name="submit"  class="btn btn-primary">Submit</button>
+                    <a href="/professor" class="btn btn-link">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--<h1>Professor Info</h1>-->
+<!--<form action="/professor/{{professor.id}}" method="post">-->
+    <!--<input hidden id="id" type="text" name="id" value="{{professor.id}}">-->
+    <!--<div class="field">-->
+        <!--<label for="firstName">First Name</label>-->
+        <!--<input id="firstName" type="text" name="firstName" value="{{professor.firstName}}" required="required">-->
+    <!--</div>-->
+    <!--<div class="field">-->
+        <!--<label for="lastName">Last Name</label>-->
+        <!--<input id="lastName" type="text" name="lastName" value="{{professor.lastName}}" required="required">-->
+    <!--</div>-->
+    <!--<div class="actions">-->
+        <!--<input type="submit" name="create" value="Update Professor" data-disable-with="Update Professor">-->
+    <!--</div>-->
+    <!--<a href="/professor">Back</a>-->
+<!--</form>-->
+
+{{>common/footer}}

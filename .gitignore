@@ -23,3 +23,5 @@ dist/
 nbdist/
 .nb-gradle/
 testdb/
+derby.log
+/derby.log
