@@ -1,4 +1,5 @@
 ----------------------------------------------------------------
+<<<<<<< HEAD
 Thu Sep 28 18:06:55 MDT 2017:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-caf5-1b39-0000041d8158 
 on database directory memory:C:\Users\Matt\Documents\GitHub\msu-banner-spring\testdb with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
@@ -6,6 +7,15 @@ Loaded from file:/C:/Users/Matt/.m2/repository/org/apache/derby/derby/10.13.1.1/
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
 user.dir=C:\Users\Matt\Documents\GitHub\msu-banner-spring
+=======
+Sat Sep 30 08:37:10 MDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-d338-3787-000009625658 
+on database directory memory:E:\IdeaProjects\demoAttempt2\testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/Tarin/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_144-b01
+user.dir=E:\IdeaProjects\demoAttempt2
+>>>>>>> Sections_Branch
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
