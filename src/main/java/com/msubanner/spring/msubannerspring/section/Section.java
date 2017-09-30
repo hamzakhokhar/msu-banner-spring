@@ -2,6 +2,7 @@ package com.msubanner.spring.msubannerspring.section;
 import javax.persistence.*;
 import com.msubanner.spring.msubannerspring.professor.*;
 import com.msubanner.spring.msubannerspring.course.*;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 /**
  * Section Persistence Class
@@ -13,11 +14,16 @@ public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int sectionNumber;
+
+    //Dont need section number if you use id as a unique property across the table
+//    private int sectionNumber;
 
     // THIS IS NOT HOW RELATIONSHIP BETWEEN ENTITIES WORK,
     // THIS CODE IS NOT EVEN COMPILABLE
-//    private Professor professor;
+    @OneToOne
+    @JoinColumn(name= "professor_id")
+//    @RestResource()
+    private Professor professor;
 //    private Course course;
 
 
@@ -27,30 +33,30 @@ public class Section {
      * @param course
      */
     public Section(int sectionNumber, Professor professor, Course course){
-        this.sectionNumber = sectionNumber;
+//        this.sectionNumber = sectionNumber;
 //        this.course = course;
-//        this.professor = professor;
+        this.professor = professor;
     }
 
     protected Section(){
 
     }
 
-    /**
-     * returns class variable sectionNumber
-     * @return int sectionNumber
-     */
-    public int getSectionNumber() {
-        return sectionNumber;
-    }
-
-    /**
-     * Assignes class variable sectionNumber to parameter
-     * @param int sectionNumber
-     */
-    public void setSectionNumber(int sectionNumber) {
-        this.sectionNumber = sectionNumber;
-    }
+//    /**
+//     * returns class variable sectionNumber
+//     * @return int sectionNumber
+//     */
+//    public int getSectionNumber() {
+//        return sectionNumber;
+//    }
+//
+//    /**
+//     * Assignes class variable sectionNumber to parameter
+//     * @param int sectionNumber
+//     */
+//    public void setSectionNumber(int sectionNumber) {
+//        this.sectionNumber = sectionNumber;
+//    }
 
     /**
      * returns class variable course
@@ -72,17 +78,17 @@ public class Section {
      * returns class variable professor
      * @return Professor professor
      */
-//    public Professor getProfessor() {
-//        return professor;
-//    }
+    public Professor getProfessor() {
+        return professor;
+    }
 
     /**
      * Assignes class variable professor to parameter
      * @param Professor professor
      */
-//    public void setProfessor(Professor professor) {
-//        this.professor = professor;
-//    }
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
 
     /**
      * returns class variable id

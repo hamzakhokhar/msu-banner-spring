@@ -1,11 +1,15 @@
 package com.msubanner.spring.msubannerspring.section;
 
+import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import com.msubanner.spring.msubannerspring.professor.Professor;
+import com.msubanner.spring.msubannerspring.professor.ProfessorRepository;
 import com.msubanner.spring.msubannerspring.section.Section;
 import com.msubanner.spring.msubannerspring.course.Course;
 
+import com.msubanner.spring.msubannerspring.student.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class SectionController {
@@ -22,15 +28,21 @@ public class SectionController {
     @Autowired
     private SectionRepository sectionRepository;
 
+    @Autowired
+    private ProfessorRepository professorRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
+
     /**
      * Finds all Sections stored in the section repo data table
      * @return ModelAndView
      */
     // GET Section View
-    @RequestMapping(value = "/section", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections", method = RequestMethod.GET)
     public ModelAndView getSectionView() {
         // CRUD(read) - sectionRepository.findAll(id)
-        return new ModelAndView("section/index", "section", sectionRepository.findAll());
+        return new ModelAndView("sections/index", "section", sectionRepository.findAll());
     }
 
     /**
@@ -39,10 +51,10 @@ public class SectionController {
      * @return ModelAndView
      */
     // GET Section Info view
-    @RequestMapping(value = "/section/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/{id}", method = RequestMethod.GET)
     public ModelAndView getSectionInfoView(@PathVariable("id") long id){
         // CRUD(read) - sectionRepository.findOne(id)
-        return new ModelAndView("section/section.show", "section", sectionRepository.findOne(id));
+        return new ModelAndView("sections/section.show", "section", sectionRepository.findOne(id));
 
     }
 
@@ -52,10 +64,10 @@ public class SectionController {
      * @return ModelAndView
      */
     // GET Section Edit view
-    @RequestMapping(value = "/section/{id}/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getSectionEditView(@PathVariable("id") long id){
         // CRUD(read) - sectionRepository.findOne(id)
-        return new ModelAndView("section/section.edit", "section", sectionRepository.findOne(id));
+        return new ModelAndView("sections/section.edit", "section", sectionRepository.findOne(id));
     }
 
 
@@ -64,9 +76,13 @@ public class SectionController {
      * @return ModelAndView
      */
     // GET New Section view
-    @RequestMapping(value = "/section/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/create", method = RequestMethod.GET)
     public ModelAndView getNewSectionView(){
-        return new ModelAndView("section/section.create", "section", new Section());
+        Map modelMap = new HashMap();
+        modelMap.put("professors", professorRepository.findAll());
+        modelMap.put("courses", courseRepository.findAll());
+        modelMap.put("section", new Section());
+        return new ModelAndView("sections/section.create", modelMap);
     }
 
     /**
@@ -77,7 +93,7 @@ public class SectionController {
      * @return String, redirect for html
      */
     // POST New Section view
-    @RequestMapping(value = "/section", method = RequestMethod.POST)
+    @RequestMapping(value = "/sections", method = RequestMethod.POST)
     public String submitSection(@Valid @ModelAttribute("section")Section section,
                                 BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
@@ -96,7 +112,7 @@ public class SectionController {
      * @return String, redirect for html
      */
     // POST Edit Section view
-    @RequestMapping(value = "/section/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/sections/{id}", method = RequestMethod.POST)
     public String editSection(@Valid @ModelAttribute("section")Section section,
                               BindingResult result, ModelMap model, @PathVariable("id") long id) {
         if (result.hasErrors()) {
@@ -117,7 +133,7 @@ public class SectionController {
      * @return String, redirect for html
      */
     // GET delete section resource
-    @RequestMapping(value = "/section/{id}/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/{id}/delete", method = RequestMethod.GET)
     public String deleteSection(@PathVariable("id") long id) {
         // CRUD(delete) - delete section
         sectionRepository.delete(id);

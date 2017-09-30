@@ -11,30 +11,30 @@ import static org.junit.Assert.*;
 public class SectionTest {
 
 
-    @Test
-    public void getSectionNumber() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                                        "building","room","12:00",5,30,
-                                        "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
-
-        assertTrue(testSection.getSectionNumber()==1);
-
-    }
-
-    @Test
-    public void setSectionNumber() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                                        "building","room","12:00",5,30,
-                                        "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
-
-        testSection.setSectionNumber(3);
-        assertTrue(testSection.getSectionNumber()==3);
-
-    }
+//    @Test
+//    public void getSectionNumber() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                                        "building","room","12:00",5,30,
+//                                        "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        assertTrue(testSection.getSectionNumber()==1);
+//
+//    }
+//
+//    @Test
+//    public void setSectionNumber() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                                        "building","room","12:00",5,30,
+//                                        "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        testSection.setSectionNumber(3);
+//        assertTrue(testSection.getSectionNumber()==3);
+//
+//    }
 
 //    @Test
 //    public void getCourse() throws Exception {

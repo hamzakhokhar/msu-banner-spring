@@ -6,3 +6,7 @@ body {
 .card-block {
      padding:1.25rem;
  }
+
+.custom-select {
+    width: 100%;
+}
