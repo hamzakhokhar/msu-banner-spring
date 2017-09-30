@@ -36,53 +36,53 @@ public class SectionTest {
 
     }
 
-    @Test
-    public void getCourse() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                "building","room","12:00",5,30,
-                "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
+//    @Test
+//    public void getCourse() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                "building","room","12:00",5,30,
+//                "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        assertTrue(testSection.getCourse() == testCourse);
+//
+//    }
 
-        assertTrue(testSection.getCourse() == testCourse);
+//    @Test
+//    public void setCourse() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                "building","room","12:00",5,30,
+//                "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        assertTrue(testSection.getCourse() == testCourse);
+//
+//    }
 
-    }
+//    @Test
+//    public void getProfessor() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                "building","room","12:00",5,30,
+//                "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        assertTrue(testSection.getProfessor() == testProfessor);
+//
+//    }
 
-    @Test
-    public void setCourse() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                "building","room","12:00",5,30,
-                "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
-
-        assertTrue(testSection.getCourse() == testCourse);
-
-    }
-
-    @Test
-    public void getProfessor() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                "building","room","12:00",5,30,
-                "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
-
-        assertTrue(testSection.getProfessor() == testProfessor);
-
-    }
-
-    @Test
-    public void setProfessor() throws Exception {
-        Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
-                "building","room","12:00",5,30,
-                "stuff","things");
-        Section testSection = new Section(1,testProfessor,testCourse);
-
-        assertTrue(testSection.getProfessor() == testProfessor);
-
-    }
+//    @Test
+//    public void setProfessor() throws Exception {
+//        Professor testProfessor = new Professor("North","West");
+//        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+//                "building","room","12:00",5,30,
+//                "stuff","things");
+//        Section testSection = new Section(1,testProfessor,testCourse);
+//
+//        assertTrue(testSection.getProfessor() == testProfessor);
+//
+//    }
 
     @Test
     public void getId() throws Exception {

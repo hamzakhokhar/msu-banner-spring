@@ -14,8 +14,11 @@ public class Section {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int sectionNumber;
-    private Professor professor;
-    private Course course;
+
+    // THIS IS NOT HOW RELATIONSHIP BETWEEN ENTITIES WORK,
+    // THIS CODE IS NOT EVEN COMPILABLE
+//    private Professor professor;
+//    private Course course;
 
 
     /**
@@ -25,8 +28,8 @@ public class Section {
      */
     public Section(int sectionNumber, Professor professor, Course course){
         this.sectionNumber = sectionNumber;
-        this.course = course;
-        this.professor = professor;
+//        this.course = course;
+//        this.professor = professor;
     }
 
     protected Section(){
@@ -53,33 +56,33 @@ public class Section {
      * returns class variable course
      * @return Course course
      */
-    public Course getCourse() {
-        return course;
-    }
+//    public Course getCourse() {
+//        return course;
+//    }
 
     /**
      * Assignes class variable course to parameter
      * @param Course course
      */
-    public void setCourse(Course course) {
-        this.course = course;
-    }
+//    public void setCourse(Course course) {
+//        this.course = course;
+//    }
 
     /**
      * returns class variable professor
      * @return Professor professor
      */
-    public Professor getProfessor() {
-        return professor;
-    }
+//    public Professor getProfessor() {
+//        return professor;
+//    }
 
     /**
      * Assignes class variable professor to parameter
      * @param Professor professor
      */
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
-    }
+//    public void setProfessor(Professor professor) {
+//        this.professor = professor;
+//    }
 
     /**
      * returns class variable id
