@@ -1,5 +1,9 @@
 package com.msubanner.spring.msubannerspring.section;
 
+import com.msubanner.spring.msubannerspring.professor.Professor;
+import com.msubanner.spring.msubannerspring.section.Section;
+import com.msubanner.spring.msubannerspring.course.Course;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,25 +30,25 @@ public class SectionController {
     @RequestMapping(value = "/section", method = RequestMethod.GET)
     public ModelAndView getSectionView() {
         // CRUD(read) - sectionRepository.findAll(id)
-        return new ModelAndView("section/section", "section", sectionRepository.findAll());
+        return new ModelAndView("section/index", "section", sectionRepository.findAll());
     }
 
     /**
      * Finds a specified Section via id hash key in section data table
-     * @param Long id
+     * @param id
      * @return ModelAndView
      */
     // GET Section Info view
     @RequestMapping(value = "/section/{id}", method = RequestMethod.GET)
     public ModelAndView getSectionInfoView(@PathVariable("id") long id){
         // CRUD(read) - sectionRepository.findOne(id)
-        return new ModelAndView("section/section", "section", sectionRepository.findOne(id));
+        return new ModelAndView("section/section.show", "section", sectionRepository.findOne(id));
 
     }
 
     /**
      * Finds a specified Section and will override it in the section data table
-     * @param Long id
+     * @param id
      * @return ModelAndView
      */
     // GET Section Edit view
@@ -67,9 +71,9 @@ public class SectionController {
 
     /**
      * Saves a Section's information to the section data table
-     * @param Section section
-     * @param BindingResult result
-     * @param ModelMap model
+     * @param section
+     * @param result
+     * @param model
      * @return String, redirect for html
      */
     // POST New Section view
@@ -85,10 +89,10 @@ public class SectionController {
     }
 
     /**
-     * @param Section section
-     * @param BindingResult result
-     * @param ModelMap model
-     * @param Long id
+     * @param section
+     * @param result
+     * @param model
+     * @param id
      * @return String, redirect for html
      */
     // POST Edit Section view
@@ -109,7 +113,7 @@ public class SectionController {
 
     /**
      * Finds a Section to remove from the database
-     * @param Long id
+     * @param id
      * @return String, redirect for html
      */
     // GET delete section resource

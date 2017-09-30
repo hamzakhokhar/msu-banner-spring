@@ -4,7 +4,8 @@ import com.msubanner.spring.msubannerspring.professor.*;
 import com.msubanner.spring.msubannerspring.course.*;
 
 /**
- *
+ * Section Persistence Class
+ * @author Tarin / team 3
  */
 @Entity
 public class Section {
