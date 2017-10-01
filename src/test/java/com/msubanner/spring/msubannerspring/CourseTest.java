@@ -151,11 +151,11 @@ public class CourseTest {
         String building = "Plaza";
         String room = "300A";
         String time = "6:00pm - 7:50pm";
-        //TODO time un-fuck
+        //TODO fix time
         int minSize = 5;
         int maxSize = 25;
         String description = "Calculus II is above Calculus I, but below Calculus III";
-        String learningObjectices = "To learn some math bitches";
+        String learningObjectices = "To learn some math";
 
         course.setCourseId(courseId);
         course.setCourseDept(courseDept);
@@ -181,6 +181,6 @@ public class CourseTest {
         Assert.assertEquals(5, course.getMinSize());
         Assert.assertEquals(25, course.getMaxSize());
         Assert.assertEquals("Calculus II is above Calculus I, but below Calculus III", course.getDescription());
-        Assert.assertEquals("To learn some math bitches", course.getLearningObjectives());
+        Assert.assertEquals("To learn some math", course.getLearningObjectives());
     }
 }
