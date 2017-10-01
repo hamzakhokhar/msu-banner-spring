@@ -10,12 +10,18 @@ public class CourseTest {
     Course course = new Course();
 
     @Test
+    /**
+     * Tests the ability of the course object to set and get the department value
+     */
     public void testCourseDept() {
         String Dept = "CS";
         course.setCourseDept(Dept);
         Assert.assertEquals("CS", course.getCourseDept());
     }
 
+    /**
+     * Tests the ability of the course objeect to set and get the Id value
+     */
     @Test
     public void testCourseId() {
         Long Id = Long.valueOf(3250);
@@ -23,11 +29,17 @@ public class CourseTest {
         Assert.assertEquals(Long.valueOf(3250), course.getCourseId());
     }
 
+    /**
+     * Tests what happens if a null is passed into setCourseId
+     */
     @Test(expected = java.lang.NumberFormatException.class)
-    public void testCourseIdNull() {
+    public void testCourseIDNull() {
         Long Id = Long.parseLong(null);
     }
 
+    /**
+     * Tests the ability to set and get the course name value
+     */
     @Test
     public void testCourseName() {
         String name = "Software Dev. Methods & Tools";
@@ -35,6 +47,9 @@ public class CourseTest {
         Assert.assertEquals("Software Dev. Methods & Tools", course.getCourseName());
     }
 
+    /**
+     * Tests the ability to set and get the course credit value
+     */
     @Test
     public void testCreditValue() {
         int creditValue = 2;
@@ -42,6 +57,9 @@ public class CourseTest {
         Assert.assertEquals(2, course.getCreditValue());
     }
 
+    /**
+     * Tests the ability to set and get the course level value
+     */
     @Test
     public void testLevel() {
         String level = "Senior";
@@ -49,6 +67,9 @@ public class CourseTest {
         Assert.assertEquals("Senior", course.getLevel());
     }
 
+    /**
+     * Tests the ability to set and get the course building value
+     */
     @Test
     public void testBuilding() {
         String building = "Science building";
@@ -56,6 +77,9 @@ public class CourseTest {
         Assert.assertEquals("Science building", course.getBuilding());
     }
 
+    /**
+     * Tests the ability to set and get the course room value
+     */
     @Test
     public void testRoom() {
         String room = "190B";
@@ -63,6 +87,9 @@ public class CourseTest {
         Assert.assertEquals("190B", course.getRoom());
     }
 
+    /**
+     * Tests the ability to set and get the course time value
+     */
     @Test
     public void testTime() {
         String time = "10:00am";
@@ -71,6 +98,9 @@ public class CourseTest {
         Assert.assertEquals("10:00am", course.getTime());
     }
 
+    /**
+     * Tests the ability to set and get the course minSize value
+     */
     @Test
     public void testMinSize() {
         int minSize = 1;
@@ -78,6 +108,9 @@ public class CourseTest {
         Assert.assertEquals(1, course.getMinSize());
     }
 
+    /**
+     * Tests the ability to set and get the course maxSize value
+     */
     @Test
     public void testMaxSize() {
         int maxSize = 40;
@@ -85,6 +118,9 @@ public class CourseTest {
         Assert.assertEquals(40, course.getMaxSize());
     }
 
+    /**
+     * Tests the ability to set and get the course description value
+     */
     @Test
     public void testDescription() {
         String description = "Description here:";
@@ -92,6 +128,9 @@ public class CourseTest {
         Assert.assertEquals("Description here:", course.getDescription());
     }
 
+    /**
+     * Tests the ability to set and get the course learningObjectives value
+     */
     @Test
     public void testLearningObjectives() {
         String learningObjectives = "Learning objectives here:";
@@ -99,6 +138,9 @@ public class CourseTest {
         Assert.assertEquals("Learning objectives here:", course.getLearningObjectives());
     }
 
+    /**
+     * Tests the ability to create a new course from scratch, ensuring all the paramters are working correctly
+     */
     @Test
     public void testCourse() {
         Long courseId = Long.valueOf(2400);

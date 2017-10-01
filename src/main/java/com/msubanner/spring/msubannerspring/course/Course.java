@@ -2,6 +2,11 @@ package com.msubanner.spring.msubannerspring.course;
 
 import javax.persistence.*;
 
+import com.msubanner.spring.msubannerspring.student.Student;
+
+//import java.util.ArrayList;
+//import java.util.List;
+
 @Entity
 public class Course {
 
@@ -15,14 +20,15 @@ public class Course {
     //commented until we have professor built
     //private List<Course> preReqs = new ArrayList<Course>();
     //private List<Course> coReqs = new ArrayList<Course>();
-    private String level;
-    //freshman, soophomore, junior, or senior
+    private String level; //freshman, soophomore, junior, or senior
     private String building;
     private String room;
     private String time;
     //TODO change this from string to a real time format
     private int minSize;
     private int maxSize;
+    private int currentSize; //how many students are currently enrolled in the class (curreently has no use)
+    //private List<Long> enrolledStudents = new ArrayList<Long>(); //list of the Student Ids of students enrolled
     private String description;
     private String learningObjectives;
 
@@ -31,6 +37,21 @@ public class Course {
 
     }
 
+    /**
+     * This constructs a new course with all the specified variables
+     * @param courseId The Id number of the course, (e.g.) 3250 in CS 3250
+     * @param courseDept The department of the course, (e.g.) CS in CS 3250
+     * @param courseName The name of the course
+     * @param creditValue How many credits the course is worth
+     * @param level (e.g.) Freshman, sophomore, etc.
+     * @param building The building the course is located in
+     * @param room The room the course is located in
+     * @param time The time the course takes place
+     * @param minSize At least this many students need to enroll in the course
+     * @param maxSize No more than this many students may enroll in the course
+     * @param description Tell perspective students what the course is about
+     * @param learningObjectives What students should learn by the end of the course
+     */
     public Course(
             Long courseId,
             String courseDept,
@@ -58,10 +79,25 @@ public class Course {
         this.time = time;
         this.minSize = minSize;
         this.maxSize = maxSize;
+        this.currentSize = 0; //for use later
         this.description = description;
         this.learningObjectives = learningObjectives;
-        //this.professor = professor
+        //this.courseProfessor = professor
     }
+
+    /*
+    Use these for dealing with students later
+    public void enrollStudent(Student student) {
+    }
+
+    public void withdrawStudent(Student student) {
+
+    }
+
+    public void findStudent(Student student) {
+
+    }
+    */
 
     public String getCourseDept() {
         return courseDept;
