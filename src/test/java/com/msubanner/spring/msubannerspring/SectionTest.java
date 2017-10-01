@@ -87,7 +87,7 @@ public class SectionTest {
     @Test
     public void getId() throws Exception {
         Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+        Course testCourse = new Course( Long.valueOf(20),"CS", "Class",4,"Freshman",
                 "building","room","12:00",5,30,
                 "stuff","things");
         Section testSection = new Section(1,testProfessor,testCourse);
@@ -99,7 +99,7 @@ public class SectionTest {
     @Test
     public void setId() throws Exception {
         Professor testProfessor = new Professor("North","West");
-        Course testCourse = new Course( 20,"CS", "Class",4,"Freshman",
+        Course testCourse = new Course( Long.valueOf(20),"CS", "Class",4,"Freshman",
                 "building","room","12:00",5,30,
                 "stuff","things");
         Section testSection = new Section(1,testProfessor,testCourse);
