@@ -2,13 +2,31 @@
 <h2>
     Sections
 </h2>
-
-<div> Professor info placeholder </div>
+<table class="table">
+    <thead >
+    <tr>
+        <th>ID</th>
+        <th>Course Id</th>
+        <th>Professor Id</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#sections}}
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{courseId}}</td>
+        <td>{{professorId}}</td>
+        <td><a href="/sections/{{id}}">Show</a></td>
+        <td><a href="/sections/{{id}}/edit">Edit</a></td>
+        <td><a href="/sections/{{id}}/delete">Delete</a></td>
+    </tr>
+    {{/sections}}
+    </tbody>
+</table>
 <br>
-<div> Course Info placeholder </div>
-
-<br>
-
 <a class="btn btn-primary" href="/sections/create">Create</a>
 
 {{>common/footer}}
