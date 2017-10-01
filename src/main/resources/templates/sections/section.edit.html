@@ -2,14 +2,14 @@
 <div class="card">
     <h4 class="card-header">Please fill in your section information</h4>
     <div class="card-block">
-        <form action="/courses" method="post">
+        <form action="/sections/{{section.id}}" method="post">
 
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="professor">Professor</label>
                 <div class="col-sm-5">
                     <select name="professor" class="custom-select" id="professor" required>
                         {{#professors}}
-                        <option value="{{id}}" value="{{id}}">{{firstName}} {{lastName}}</option>
+                        <option value="{{id}}">{{firstName}} {{lastName}}</option>
                         {{/professors}}
                     </select>
                 </div>
@@ -19,7 +19,7 @@
                 <div class="col-sm-5">
                     <select name="course" class="custom-select" id="course" required>
                         {{#courses}}
-                        <option value="{{courseId}}" value="{{id}}">{{courseName}}</option>
+                        <option value="{{courseId}}">{{courseName}}</option>
                         {{/courses}}
                     </select>
                 </div>

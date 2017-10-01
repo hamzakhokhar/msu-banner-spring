@@ -21,10 +21,13 @@ public class Section {
     // THIS IS NOT HOW RELATIONSHIP BETWEEN ENTITIES WORK,
     // THIS CODE IS NOT EVEN COMPILABLE
     @OneToOne
-    @JoinColumn(name= "professor_id")
+    @JoinColumn(name="professor_id")
 //    @RestResource()
     private Professor professor;
-//    private Course course;
+
+    @OneToOne
+    @JoinColumn(name="course_courseId")
+    private Course course;
 
 
     /**
@@ -62,17 +65,17 @@ public class Section {
      * returns class variable course
      * @return Course course
      */
-//    public Course getCourse() {
-//        return course;
-//    }
+    public Course getCourse() {
+        return course;
+    }
 
     /**
      * Assignes class variable course to parameter
      * @param Course course
      */
-//    public void setCourse(Course course) {
-//        this.course = course;
-//    }
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 
     /**
      * returns class variable professor

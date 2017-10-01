@@ -6,8 +6,8 @@
     <thead >
     <tr>
         <th>ID</th>
-        <th>Course Id</th>
-        <th>Professor Id</th>
+        <th>Course Name</th>
+        <th>Professor Name</th>
         <th></th>
         <th></th>
         <th></th>
@@ -17,8 +17,8 @@
     {{#sections}}
     <tr>
         <th scope="row">{{id}}</th>
-        <td>{{courseId}}</td>
-        <td>{{professorId}}</td>
+        <td>{{course.courseName}}</td>
+        <td>{{professor.lastName}}</td>
         <td><a href="/sections/{{id}}">Show</a></td>
         <td><a href="/sections/{{id}}/edit">Edit</a></td>
         <td><a href="/sections/{{id}}/delete">Delete</a></td>

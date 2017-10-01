@@ -42,7 +42,7 @@ public class SectionController {
     @RequestMapping(value = "/sections", method = RequestMethod.GET)
     public ModelAndView getSectionView() {
         // CRUD(read) - sectionRepository.findAll(id)
-        return new ModelAndView("sections/index", "section", sectionRepository.findAll());
+        return new ModelAndView("sections/index", "sections", sectionRepository.findAll());
     }
 
     /**
@@ -67,7 +67,11 @@ public class SectionController {
     @RequestMapping(value = "/sections/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getSectionEditView(@PathVariable("id") long id){
         // CRUD(read) - sectionRepository.findOne(id)
-        return new ModelAndView("sections/section.edit", "section", sectionRepository.findOne(id));
+        Map modelMap = new HashMap();
+        modelMap.put("professors", professorRepository.findAll());
+        modelMap.put("courses", courseRepository.findAll());
+        modelMap.put("section", sectionRepository.findOne(id));
+        return new ModelAndView("sections/section.edit", modelMap);
     }
 
 
@@ -101,7 +105,7 @@ public class SectionController {
         }
         //CRUD (create) - save section
         sectionRepository.save(section);
-        return "redirect:/section";
+        return "redirect:/sections";
     }
 
     /**
@@ -124,7 +128,7 @@ public class SectionController {
         // CRUD(create) - save section
         sectionRepository.save(section);
 
-        return "redirect:/section";
+        return "redirect:/sections";
     }
 
     /**
@@ -137,6 +141,6 @@ public class SectionController {
     public String deleteSection(@PathVariable("id") long id) {
         // CRUD(delete) - delete section
         sectionRepository.delete(id);
-        return "redirect:/section";
+        return "redirect:/sections";
     }
 }
