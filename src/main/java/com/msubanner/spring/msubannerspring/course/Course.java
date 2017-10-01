@@ -27,7 +27,7 @@ public class Course {
     //TODO change this from string to a real time format
     private int minSize;
     private int maxSize;
-    private int currentSize; //how many students are currently enrolled in the class (curreently has no use)
+//    private int currentSize; //how many students are currently enrolled in the class (curreently has no use)
     //private List<Long> enrolledStudents = new ArrayList<Long>(); //list of the Student Ids of students enrolled
     private String description;
     private String learningObjectives;
@@ -78,7 +78,7 @@ public class Course {
         this.time = time;
         this.minSize = minSize;
         this.maxSize = maxSize;
-        this.currentSize = 0; //for use later
+//        this.currentSize = 0; //for use later
         this.description = description;
         this.learningObjectives = learningObjectives;
         //this.courseProfessor = professor
