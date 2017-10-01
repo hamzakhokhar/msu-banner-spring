@@ -64,10 +64,9 @@ public class Course {
             int minSize,
             int maxSize,
             String description,
-            String learningObjectives
-    ) {
+            String learningObjectives)
+    {
         //TODO add professor to parameters once professor is built
-
 
         this.courseId = courseId;
         this.courseDept = courseDept;
@@ -89,13 +88,9 @@ public class Course {
     Use these for dealing with students later
     public void enrollStudent(Student student) {
     }
-
     public void withdrawStudent(Student student) {
-
     }
-
     public void findStudent(Student student) {
-
     }
     */
 
@@ -114,7 +109,8 @@ public class Course {
     public void setCourseId(Long courseId) {
         try {
             this.courseId = courseId;
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             System.out.println("User tried to make an invalid entry to courseID");
         }
     }
