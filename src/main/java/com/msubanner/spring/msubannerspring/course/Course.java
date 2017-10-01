@@ -13,23 +13,26 @@ public class Course {
     private int creditValue;
     //private professor courseInstructor;
     //commented until we have professor built
-//    private List<Course> preReqs = new ArrayList<Course>();
-//    private List<Course> coReqs = new ArrayList<Course>();
-    //freshman, soophomore, junior, or senior
+    //private List<Course> preReqs = new ArrayList<Course>();
+    //private List<Course> coReqs = new ArrayList<Course>();
     private String level;
+    //freshman, soophomore, junior, or senior
     private String building;
     private String room;
     private String time;
+    //TODO change this from string to a real time format
     private int minSize;
     private int maxSize;
     private String description;
     private String learningObjectives;
 
 
-    protected Course(){};
+    public Course(){
+
+    }
 
     public Course(
-            long courseId,
+            Long courseId,
             String courseDept,
             String courseName,
             int creditValue,
@@ -73,7 +76,11 @@ public class Course {
     }
 
     public void setCourseId(Long courseId) {
-        this.courseId = courseId;
+        try {
+            this.courseId = courseId;
+        } catch (NumberFormatException e) {
+            System.out.println("User tried to make an invalid entry to courseID");
+        }
     }
 
     public String getCourseName() {
