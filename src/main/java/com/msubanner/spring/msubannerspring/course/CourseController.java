@@ -32,7 +32,6 @@ public class CourseController {
     public ModelAndView getCourseInfoView(@PathVariable("id") long id){
         // CRUD(read) - courseRepository.findOne(id)
         return new ModelAndView("courses/course.show", "course", courseRepository.findOne(id));
-
     }
 
     // GET Course Edit view
