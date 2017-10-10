@@ -1,0 +1,12 @@
+{{>common/header}}
+<div class="card">
+    <h3 class="card-header">Building Information</h3>
+    <div class="card-block">
+        <h4 class="card-title">Building Id: {{building.id}}</h4>
+        <p class="card-text">First Name: {{building.firstName}}</p>
+        <p class="card-text">Last Name: {{building.lastName}}</p>
+        <a href="/building/{{building.id}}/edit" class="btn btn-primary">Edit</a>
+        <a href="/building" class="btn btn-link">Back</a>
+    </div>
+</div>
+{{>common/footer}}
