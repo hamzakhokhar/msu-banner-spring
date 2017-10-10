@@ -15,7 +15,7 @@ public class Building {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private String buildingName;
     private int numberOfRooms;
-    private int roomNumber;
+    private long roomNumber;
     private int roomSize;
 
     protected Building() {};
@@ -66,15 +66,15 @@ public class Building {
      * Will return the room number listed in the building object
      * @return the room number of the building
      */
-    public int getRoomNumber() {
+    public long getRoomNumber() {
         return roomNumber;
     }
 
     /**
-     * Will set the id in the building object
-     * @param id the new id of the building
+     * Will set the room number in the building object
+     * @param id the new room number of the building
      */
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(long roomNumber) {
         this.roomNumber = roomNumber;
     }
     
