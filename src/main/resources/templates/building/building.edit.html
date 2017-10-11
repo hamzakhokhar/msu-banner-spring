@@ -2,23 +2,23 @@
 <div class="card">
     <h4 class="card-header">Please fill in your building information</h4>
     <div class="card-block">
-        <form action="/building/{{building.id}}" method="post">
+        <form action="/building/{{building.buildingNumber}}" method="post">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="id">Building ID</label>
+                <label class="col-sm-2 col-form-label text-right" for="buildingNumber">Building Number</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="id" type="number" name="id" value="{{building.id}}" disabled placeholder="Id">
+                    <input class="form-control" id="buildingNumber" type="number" name="buildingNumber" value="{{building.buildingNumber}}" disabled placeholder="Building Number">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="firstName">First Name</label>
+                <label class="col-sm-2 col-form-label text-right" for="buildingName">Building Name</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="firstName" type="text" name="firstName" value="{{building.firstName}}" required="required" placeholder="John">
+                    <input class="form-control" id="buildingName" type="text" name="buildingName" value="{{building.buildingName}}" required="required" placeholder="Science">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
+                <label class="col-sm-2 col-form-label text-right" for="numberOfRooms">Number of Rooms</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{building.lastName}}" required="required" placeholder="Smith">
+                    <input class="form-control" id="numberOfRooms" type="text" name="numberOfRooms" value="{{building.numberOfRooms}}" required="required" placeholder="50">
                 </div>
             </div>
             <div class="form-group row">
@@ -33,15 +33,15 @@
 </div>
 
 <!--<h1>Building Info</h1>-->
-<!--<form action="/building/{{building.id}}" method="post">-->
-    <!--<input hidden id="id" type="text" name="id" value="{{building.id}}">-->
+<!--<form action="/building/{{building.buildingNumber}}" method="post">-->
+    <!--<input hidden id="buildingNumber" type="text" name="buildingNumber" value="{{building.buildingNumber}}">-->
     <!--<div class="field">-->
-        <!--<label for="firstName">First Name</label>-->
-        <!--<input id="firstName" type="text" name="firstName" value="{{building.firstName}}" required="required">-->
+        <!--<label for="buildingName">Building Name</label>-->
+        <!--<input id="buildingName" type="text" name="buildingName" value="{{building.buildingName}}" required="required">-->
     <!--</div>-->
     <!--<div class="field">-->
-        <!--<label for="lastName">Last Name</label>-->
-        <!--<input id="lastName" type="text" name="lastName" value="{{building.lastName}}" required="required">-->
+        <!--<label for="numberOfRooms">Number of Rooms</label>-->
+        <!--<input id="numberOfRooms" type="text" name="numberOfRooms" value="{{building.numberOfRooms}}" required="required">-->
     <!--</div>-->
     <!--<div class="actions">-->
         <!--<input type="submit" name="create" value="Update Building" data-disable-with="Update Building">-->

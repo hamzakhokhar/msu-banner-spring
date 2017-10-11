@@ -24,7 +24,7 @@ public class BuildingController {
 
     /**
      * This method will display all of the buildings in the database
-     * CRUD(read) - buildingRepository.findAll(roomNumber)
+     * CRUD(read) - buildingRepository.findAll(buildingNumber)
      */
     @RequestMapping(value = "/building", method = RequestMethod.GET)
     public ModelAndView getBuildingView() {
@@ -33,19 +33,19 @@ public class BuildingController {
 
     /**
      * This method will display the buildings info
-     * CRUD(read) - buildingRepository.findOne(roomNumber)
+     * CRUD(read) - buildingRepository.findOne(buildingNumber)
      */
-    @RequestMapping(value = "/building/{roomNumber}", method = RequestMethod.GET)
-    public ModelAndView getBuildingInfoView(@PathVariable("roomNumber") long roomNumber){
+    @RequestMapping(value = "/building/{buildingNumber}", method = RequestMethod.GET)
+    public ModelAndView getBuildingInfoView(@PathVariable("buildingNumber") long roomNumber){
         return new ModelAndView("building/building.show", "building", buildingRepository.findOne(roomNumber));
     }
 
     /**
      * This method will edit the buildings info
-     * CRUD(read) - buildingRepository.findOne(roomNumber)
+     * CRUD(read) - buildingRepository.findOne(buildingNumber)
      */
-    @RequestMapping(value = "/building/{roomNumber}/edit", method = RequestMethod.GET)
-    public ModelAndView getBuildingEditView(@PathVariable("roomNumber") long roomNumber){
+    @RequestMapping(value = "/building/{buildingNumber}/edit", method = RequestMethod.GET)
+    public ModelAndView getBuildingEditView(@PathVariable("buildingNumber") long roomNumber){
         return new ModelAndView("building/building.edit", "building", buildingRepository.findOne(roomNumber));
     }
 
@@ -75,11 +75,11 @@ public class BuildingController {
      * Explicitly set the roomNumber of the building from the path.
      * The roomNumber does not get bounded to the HTML form view and returned.
      */
-    @RequestMapping(value = "/building/{roomNumber}", method = RequestMethod.POST)
+    @RequestMapping(value = "/building/{buildingNumber}", method = RequestMethod.POST)
     public String editBuilding(@Valid @ModelAttribute("building")Building building,
-                                BindingResult result, ModelMap model, @PathVariable("roomNumber") long roomNumber) {
+                                BindingResult result, ModelMap model, @PathVariable("buildingNumber") long buildingNumber) {
         if (result.hasErrors()) return "error";
-        building.setRoomNumber(roomNumber);
+        building.setBuildingNumber(buildingNumber);
         buildingRepository.save(building);
         return "redirect:/building";
     }
@@ -88,9 +88,9 @@ public class BuildingController {
      * This method will delete the selected building from the database
      * CRUD(delete) - delete building
      */    
-    @RequestMapping(value = "/building/{roomNumber}/delete", method = RequestMethod.GET)
-    public String deleteBuilding(@PathVariable("roomNumber") long roomNumber) {
-    	buildingRepository.delete(roomNumber);
+    @RequestMapping(value = "/building/{buildingNumber}/delete", method = RequestMethod.GET)
+    public String deleteBuilding(@PathVariable("buildingNumber") long buildingNumber) {
+    	buildingRepository.delete(buildingNumber);
         return "redirect:/building";
     }
 }

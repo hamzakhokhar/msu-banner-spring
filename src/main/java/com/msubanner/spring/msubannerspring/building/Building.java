@@ -15,8 +15,7 @@ public class Building {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private String buildingName;
     private int numberOfRooms;
-    private long roomNumber;
-    private int roomSize;
+    private long buildingNumber;
 
     protected Building() {};
 
@@ -63,34 +62,18 @@ public class Building {
     }
 
     /**
-     * Will return the room number listed in the building object
-     * @return the room number of the building
+     * Will return the building number listed in the building object
+     * @return the building number of the building
      */
-    public long getRoomNumber() {
-        return roomNumber;
+    public long getBuildingNumber() {
+        return buildingNumber;
     }
 
     /**
-     * Will set the room number in the building object
-     * @param id the new room number of the building
+     * Will set the building number in the building object
+     * @param id the new building number of the building
      */
-    public void setRoomNumber(long roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-    
-    /**
-     * Will return the room size listed in the building object
-     * @return the room number of the building
-     */
-    public int getRoomSize() {
-        return roomSize;
-    }
-
-    /**
-     * Will set the room size in the building object
-     * @param id the new id of the building
-     */
-    public void setRoomSize(int roomSize) {
-        this.roomSize = roomSize;
+    public void setBuildingNumber(long buildingNumber) {
+        this.buildingNumber = buildingNumber;
     }
 }

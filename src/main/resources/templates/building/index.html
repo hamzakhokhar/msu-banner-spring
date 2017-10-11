@@ -6,9 +6,9 @@
 <table class="table">
     <thead >
     <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Building Name</th>
+        <th>Number of Rooms</th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -18,11 +18,11 @@
     {{#building}}
     <tr>
         <th scope="row">{{id}}</th>
-        <td>{{firstName}}</td>
-        <td>{{lastName}}</td>
-        <td><a href="/building/{{id}}">Show</a></td>
-        <td><a href="/building/{{id}}/edit">Edit</a></td>
-        <td><a href="/building/{{id}}/delete">Delete</a></td>
+        <td>{{buildingName}}</td>
+        <td>{{numberOfRooms}}</td>
+        <td><a href="/building/{{buildingNumber}}">Show</a></td>
+        <td><a href="/building/{{buildingNumber}}/edit">Edit</a></td>
+        <td><a href="/building/{{buildingNumber}}/delete">Delete</a></td>
     </tr>
     {{/building}}
     </tbody>
