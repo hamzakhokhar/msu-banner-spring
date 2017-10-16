@@ -1,3 +1,4 @@
+//Course class, written by Eric Kearney and Thiengo Le
 package com.msubanner.spring.msubannerspring.course;
 
 import javax.persistence.*;
