@@ -15,7 +15,7 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    protected Student(){};
+    //protected Student(){};
 
     /**
      * Default constructor for creating the student object
@@ -23,7 +23,7 @@ public class Student {
     public Student() {
         this.firstName = "first";
         this.lastName = "last";
-        this.id = 0;
+        this.id = (long)0;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Student {
     public Student(String firstName, String lastName) {
         setFirstName(firstName);
         setLastName(lastName);
-        this.id = 0;
+        this.id = (long)0;
     }
 
     /**

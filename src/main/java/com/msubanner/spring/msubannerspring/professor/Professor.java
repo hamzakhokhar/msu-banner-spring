@@ -18,7 +18,7 @@ public class Professor {
     private String firstName;
     private String lastName;
 
-    protected Professor() {};
+    //protected Professor() {};
 
     /**
      * Default constructor for creating the professor object
@@ -26,7 +26,7 @@ public class Professor {
     public Professor() {
         this.firstName = "first";
         this.lastName = "last";
-        this.id = 0;
+        this.id = (long)0;
     }
 
     /**
@@ -38,7 +38,7 @@ public class Professor {
     public Professor(String firstName, String lastName) {
         setFirstName(firstName);
         setLastName(lastName);
-        this.id = 0;
+        this.id = (long)0;
     }
 
     /**
