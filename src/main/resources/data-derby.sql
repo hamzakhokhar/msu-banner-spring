@@ -29,3 +29,11 @@ insert into course (course_id, building, course_dept, course_name, credit_value,
 
 -- Fixtures for Sections
 
+
+-- Fixtures for Buildings
+
+insert into building (building_number, building_name, number_of_rooms) values (default, 'Science', '80')
+insert into building (building_number, building_name, number_of_rooms) values (default, 'King Center', '60')
+insert into building (building_number, building_name, number_of_rooms) values (default, 'Student Success', '40')
+insert into building (building_number, building_name, number_of_rooms) values (default, 'Aviation', '50')
+

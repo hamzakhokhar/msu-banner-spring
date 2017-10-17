@@ -31,4 +31,6 @@ Sprint #2 (Septmeber 4 - September 17) Product owner: Jesus Guzman, Scrum Master
 
 Sprint #3 (Septmeber 19 - October 3) Product owner: Tarin Horne, Scrum Master: Christian Kendall
 
+Sprint #4 (October 5 - October 17) Product owner: Christian Kendall, Scrum Master: Matthew Kline 
+
 T E S T

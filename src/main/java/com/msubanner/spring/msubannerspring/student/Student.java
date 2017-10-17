@@ -15,16 +15,40 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    protected Student(){};
+    //protected Student(){};
 
     /**
      * Default constructor for creating the student object
-     * @param firstName the first name of the professor
-     * @param lastName the last name of the professor
+     */
+    public Student() {
+        this.firstName = "first";
+        this.lastName = "last";
+        this.id = (long)0;
+    }
+
+    /**
+     * Constructor for creating the student object with a 
+     * specific first and last name.
+     * @param firstName the first name of the student
+     * @param lastName the last name of the student
      */
     public Student(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        setFirstName(firstName);
+        setLastName(lastName);
+        this.id = (long)0;
+    }
+
+    /**
+     * Constructor for creating the student object with a 
+     * specific first and last name with a set id.
+     * @param firstName the first name of the student
+     * @param lastName the last name of the student
+     * @param id the id of the student
+     */
+    public Student(String firstName, String lastName, Long id) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setId(id);
     }
 
     /**
