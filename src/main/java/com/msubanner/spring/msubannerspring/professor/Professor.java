@@ -1,3 +1,4 @@
+//Written by Matt Kline and Hamza Khokhar
 package com.msubanner.spring.msubannerspring.professor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,12 +22,36 @@ public class Professor {
 
     /**
      * Default constructor for creating the professor object
+     */
+    public Professor() {
+        this.firstName = "first";
+        this.lastName = "last";
+        this.id = 0;
+    }
+
+    /**
+     * Constructor for creating the professor object with a 
+     * specific first and last name.
      * @param firstName the first name of the professor
      * @param lastName the last name of the professor
      */
     public Professor(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        setFirstName(firstName);
+        setLastName(lastName);
+        this.id = 0;
+    }
+
+    /**
+     * Constructor for creating the professor object with a 
+     * specific first and last name with a set id.
+     * @param firstName the first name of the professor
+     * @param lastName the last name of the professor
+     * @param id the id for the professor
+     */
+    public Professor(String firstName, String lastName, Long id) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setId(id);
     }
 
     /**
