@@ -2,11 +2,11 @@
 <div class="card">
     <h4 class="card-header">Please fill in your building information</h4>
     <div class="card-block">
-        <form action="/building/{{building.buildingNumber}}" method="post">
+        <form action="/building/{{building.id}}" method="post">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="buildingNumber">Building Number</label>
+                <label class="col-sm-2 col-form-label text-right" for="id">Building Number</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="buildingNumber" type="number" name="buildingNumber" value="{{building.buildingNumber}}" disabled placeholder="Building Number">
+                    <input class="form-control" id="id" type="number" name="id" value="{{building.id}}" disabled placeholder="Building Number">
                 </div>
             </div>
             <div class="form-group row">

@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Wed Oct 18 21:13:53 MDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-329f-7c5d-000004d6c298 
-on database directory memory:/Users/hassan/Documents/git/msu-banner-spring/testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/Users/hassan/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Wed Oct 18 21:58:10 MDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-32c8-04cd-000004e8b030 
+on database directory memory:/Users/hassanhome/Documents/git/msu-banner-spring/testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/Users/hassanhome/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_111-b14
-user.dir=/Users/hassan/Documents/git/msu-banner-spring
+user.dir=/Users/hassanhome/Documents/git/msu-banner-spring
 os.name=Mac OS X
 os.arch=x86_64
 os.version=10.12.6
