@@ -1,11 +1,14 @@
 package com.msubanner.spring.msubannerspring.section;
+
 import javax.persistence.*;
+
 import com.msubanner.spring.msubannerspring.professor.*;
 import com.msubanner.spring.msubannerspring.course.*;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 /**
  * Section Persistence Class
+ *
  * @author Tarin / team 3
  */
 @Entity
@@ -15,18 +18,12 @@ public class Section {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //Dont need section number if you use id as a unique property across the table
-//    private int sectionNumber;
-
-    // THIS IS NOT HOW RELATIONSHIP BETWEEN ENTITIES WORK,
-    // THIS CODE IS NOT EVEN COMPILABLE
     @OneToOne
-    @JoinColumn(name="professor_id")
-//    @RestResource()
+    @JoinColumn(name = "professor_id")
     private Professor professor;
 
     @OneToOne
-    @JoinColumn(name="course_courseId")
+    @JoinColumn(name = "course_courseId")
     private Course course;
 
 
@@ -35,34 +32,17 @@ public class Section {
      * @param professor
      * @param course
      */
-    public Section(int sectionNumber, Professor professor, Course course){
-//        this.sectionNumber = sectionNumber;
-//        this.course = course;
+    public Section(int sectionNumber, Professor professor, Course course) {
+        this.course = course;
         this.professor = professor;
     }
 
-    protected Section(){
+    protected Section() {}
 
-    }
-
-//    /**
-//     * returns class variable sectionNumber
-//     * @return int sectionNumber
-//     */
-//    public int getSectionNumber() {
-//        return sectionNumber;
-//    }
-//
-//    /**
-//     * Assignes class variable sectionNumber to parameter
-//     * @param int sectionNumber
-//     */
-//    public void setSectionNumber(int sectionNumber) {
-//        this.sectionNumber = sectionNumber;
-//    }
 
     /**
      * returns class variable course
+     *
      * @return Course course
      */
     public Course getCourse() {
@@ -71,7 +51,8 @@ public class Section {
 
     /**
      * Assignes class variable course to parameter
-     * @param Course course
+     *
+     * @param course
      */
     public void setCourse(Course course) {
         this.course = course;
@@ -79,6 +60,7 @@ public class Section {
 
     /**
      * returns class variable professor
+     *
      * @return Professor professor
      */
     public Professor getProfessor() {
@@ -87,7 +69,8 @@ public class Section {
 
     /**
      * Assignes class variable professor to parameter
-     * @param Professor professor
+     *
+     * @param professor
      */
     public void setProfessor(Professor professor) {
         this.professor = professor;
@@ -95,6 +78,7 @@ public class Section {
 
     /**
      * returns class variable id
+     *
      * @return long id
      */
     public Long getId() {
@@ -103,7 +87,8 @@ public class Section {
 
     /**
      * Assignes class variable id to parameter
-     * @param long id
+     *
+     * @param id
      */
     public void setId(Long id) {
         this.id = id;
@@ -111,7 +96,6 @@ public class Section {
 
     @Override
     public String toString() {
-        //WIP waiting for Professor and Courses classes
         return super.toString();
     }
 }
