@@ -17,6 +17,7 @@ public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private int numberOfSeats;
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -50,7 +51,7 @@ public class Section {
     }
 
     /**
-     * Assignes class variable course to parameter
+     * Assigns class variable course to parameter
      *
      * @param course
      */
@@ -68,7 +69,7 @@ public class Section {
     }
 
     /**
-     * Assignes class variable professor to parameter
+     * Assigns class variable professor to parameter
      *
      * @param professor
      */
@@ -86,13 +87,23 @@ public class Section {
     }
 
     /**
-     * Assignes class variable id to parameter
+     * Assigns class variable id to parameter
      *
      * @param id
      */
     public void setId(Long id) {
         this.id = id;
     }
+
+    public int getNumberOfSeats() { return numberOfSeats; }
+
+    /**
+     * Assigns class variable Number of Seats to parameter
+     *
+     * @param numberOfSeats
+     */
+    public void setNumberOfSeats(int numberOfSeats) { this.numberOfSeats = numberOfSeats; }
+
 
     @Override
     public String toString() {
