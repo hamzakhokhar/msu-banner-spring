@@ -9,7 +9,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseName">Course Name</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="courseName" type="text" name="courseName" required="required" placeholder="Memeology">
+                    <input class="form-control" id="courseName" type="text" name="courseName" value="{{course.courseName}}" required="required" placeholder="">
                 </div>
             </div>
 
@@ -17,15 +17,15 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="department">Department</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="department" type="text" name="department" required="required" placeholder="CS (Cat Studies)">
-                </div>
+                    <input class="form-control" id="department" type="text" name="department" value="{{course.courseDept}}" required="required" placeholder="">
+                   </div>
             </div>
 
             <!-- Course ID -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseID">CourseID</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="courseID" type="text" name="courseID" required="required" placeholder="1337">
+                    <input class="form-control" id="courseID" type="text" name="courseID" value="{{course.courseId}}" required="required" placeholder="1337">
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="creditValue" type="text" name="creditValue" required="required" placeholder="4">
+                    <input class="form-control" id="creditValue" type="text" name="creditValue" value="{{course.creditValue}}" required="required" placeholder="4">
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="level">Level</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshman">
+                    <input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshmen">
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="building" type="text" name="building" required="required" placeholder="Parking Lot">
+                    <input class="form-control" id="building" type="text" name="building" value="{{course.building}}" required="required" placeholder="Parking Lot">
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="room" type="text" name="room" required="required" placeholder="TBD">
+                    <input class="form-control" id="room" type="text" name="room" value="{{course.room}}" required="required" placeholder="TBD">
                 </div>
             </div>
 
@@ -73,19 +73,21 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="time">Time</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="time" type="time" name="time" required="required" placeholder="TBD">
+                    <input class="form-control" id="time" type="time" name="time" value="{{course.time}}" required="required" placeholder="TBD">
                 </div>
             </div>
 
             <!-- PreReqs -->
+            <!-- Add: value="course.preReqs" but with squiggly brackets around variable name :after 'name="prereqs"' -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="preReqs">Prerequisites</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="preReqs" type="text" name="preReqs" required="required" placeholder="None">
+                    <input class="form-control" id="preReqs" type="text" name="preReqs"  required="required" placeholder="None">
                 </div>
             </div>
 
             <!-- CoReqs -->
+            <!-- Add: value="course.coReqs" but with squiggly brackets around variable name :after 'name="coreqs"' -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="coReqs">Corequisites</label>
                 <div class="col-sm-5">
@@ -97,7 +99,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="minSize">Minimum size</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="minSize" type="text" name="minSize" required="required" placeholder="1">
+                    <input class="form-control" id="minSize" type="text" name="minSize" value="{{course.minSize}}" required="required" placeholder="1">
                 </div>
             </div>
 
@@ -105,7 +107,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="maxSize">Maximum size</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="maxSize" type="text" name="maxSize" required="required" placeholder="30">
+                    <input class="form-control" id="maxSize" type="text" name="maxSize" value="{{course.maxSize}}" required="required" placeholder="30">
                 </div>
             </div>
 

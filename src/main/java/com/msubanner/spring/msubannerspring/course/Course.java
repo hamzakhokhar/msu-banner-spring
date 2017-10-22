@@ -14,14 +14,14 @@ public class Course {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long courseId;
-    private String courseDept;
+    private String courseDept = "Default"; //HardCoded because Whitelabel
     private String courseName;
     private int creditValue;
     //private professor courseInstructor;
     //commented until we have professor built
     //private List<Course> preReqs = new ArrayList<Course>();
     //private List<Course> coReqs = new ArrayList<Course>();
-    private String level; //freshman, soophomore, junior, or senior
+    private String level; //freshman, sophomore, junior, or senior
     private String building;
     private String room;
     private String time;
@@ -50,7 +50,7 @@ public class Course {
      * @param time The time the course takes place
      * @param minSize At least this many students need to enroll in the course
      * @param maxSize No more than this many students may enroll in the course
-     * @param description Tell perspective students what the course is about
+     * @param description Tell prospects (students) what the course is about
      * @param learningObjectives What students should learn by the end of the course
      */
     public Course(

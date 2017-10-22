@@ -2,11 +2,12 @@
 <div class="card">
     <h3 class="card-header">Course Information</h3>
     <div class="card-block">
-        <h4 class="card-title">Student Id: {{student.id}}</h4>
-        <p class="card-text">First Name: {{student.firstName}}</p>
-        <p class="card-text">Last Name: {{student.lastName}}</p>
+        <h4 class="card-title">Course ID: {{course.courseId}}</h4>
+        <p class="card-text">Course Name: {{course.courseName}}</p>
+        <p class="card-text">Course Building: {{course.building}}</p>
+        <p class="card-text">Credit Value: {{course.creditValue}}</p>
         <a href="/courses/{{course.courseId}}/edit" class="btn btn-primary">Edit</a>
         <a href="/courses" class="btn btn-link">Back</a>
     </div>
 </div>
-{{>common/footer}}F
+{{>common/footer}}
