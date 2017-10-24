@@ -1,14 +1,19 @@
 package com.msubanner.spring.msubannerspring.building;
+
+import com.msubanner.spring.msubannerspring.room.Room;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * This is the Building class.
  * @author Team 3
  */
 @Entity
+// @Table(name="building")
 public class Building {
 
     @Id
@@ -18,8 +23,12 @@ public class Building {
     private String buildingName;
     private int numberOfRooms;
 
+    @OneToMany
+    @JoinColumn(name = "room")
+    private Room room;
 
-    protected Building() {};
+    protected Building() {}
+
 
     /**
      * Default constructor for creating the building object

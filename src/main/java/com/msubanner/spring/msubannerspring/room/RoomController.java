@@ -15,6 +15,7 @@ import javax.validation.Valid;
 /**
  * This is the RoomController class.
  * @author Christian Kendall & ThienNgo
+ * Based on Building Controller
  */
 @Controller
 public class RoomController {
