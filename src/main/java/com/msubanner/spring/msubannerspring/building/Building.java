@@ -23,9 +23,12 @@ public class Building {
     private String buildingName;
     private int numberOfRooms;
 
+    /*
     @OneToMany
-    @JoinColumn(name = "room")
+    @JoinColumn(name = "room_id")
     private Room room;
+    */
+
 
     protected Building() {}
 
