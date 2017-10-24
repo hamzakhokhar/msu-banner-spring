@@ -14,8 +14,8 @@ public class Course {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long courseId;
-    private String courseDept = "Default"; //HardCoded because Whitelabel
-    private String courseName;
+    private String courseDept = "TBD"; //HardCoded initial because Whitelabel
+    private String courseName ;
     private int creditValue;
     //private professor courseInstructor;
     //commented until we have professor built
@@ -28,7 +28,7 @@ public class Course {
     //TODO change this from string to a real time format
     private int minSize;
     private int maxSize;
-//    private int currentSize; //how many students are currently enrolled in the class (curreently has no use)
+//    private int currentSize; //how many students are currently enrolled in the class (currently has no use)
     //private List<Long> enrolledStudents = new ArrayList<Long>(); //list of the Student Ids of students enrolled
     private String description;
     private String learningObjectives;
