@@ -1,4 +1,4 @@
-package com.msubanner.spring.msubannerspring;
+package com.msubanner.spring.msubannerspring.course;
 
 import com.msubanner.spring.msubannerspring.course.Course;
 import org.junit.Assert;
@@ -157,30 +157,19 @@ public class CourseTest {
         String description = "Calculus II is above Calculus I, but below Calculus III";
         String learningObjectices = "To learn some math";
 
-        course.setCourseId(courseId);
-        course.setCourseDept(courseDept);
-        course.setCourseName(courseName);
-        course.setCreditValue(creditValue);
-        course.setLevel(level);
-        course.setBuilding(building);
-        course.setRoom(room);
-        course.setTime(time);
-        course.setMinSize(minSize);
-        course.setMaxSize(maxSize);
-        course.setDescription(description);
-        course.setLearningObjectives(learningObjectices);
+        Course testCourse = new Course(courseId, courseDept, courseName, creditValue, level, building, room, time, minSize, maxSize, description, learningObjectices);
 
-        Assert.assertEquals(Long.valueOf(2400), course.getCourseId());
-        Assert.assertEquals("MTH", course.getCourseDept());
-        Assert.assertEquals("Calculus II", course.getCourseName());
-        Assert.assertEquals(4, course.getCreditValue());
-        Assert.assertEquals("Junior", course.getLevel());
-        Assert.assertEquals("Plaza", course.getBuilding());
-        Assert.assertEquals("300A", course.getRoom());
-        Assert.assertEquals("6:00pm - 7:50pm", course.getTime());
-        Assert.assertEquals(5, course.getMinSize());
-        Assert.assertEquals(25, course.getMaxSize());
-        Assert.assertEquals("Calculus II is above Calculus I, but below Calculus III", course.getDescription());
-        Assert.assertEquals("To learn some math", course.getLearningObjectives());
+        Assert.assertEquals(Long.valueOf(2400), testCourse.getCourseId());
+        Assert.assertEquals("MTH", testCourse.getCourseDept());
+        Assert.assertEquals("Calculus II", testCourse.getCourseName());
+        Assert.assertEquals(4, testCourse.getCreditValue());
+        Assert.assertEquals("Junior", testCourse.getLevel());
+        Assert.assertEquals("Plaza", testCourse.getBuilding());
+        Assert.assertEquals("300A", testCourse.getRoom());
+        Assert.assertEquals("6:00pm - 7:50pm", testCourse.getTime());
+        Assert.assertEquals(5, testCourse.getMinSize());
+        Assert.assertEquals(25, testCourse.getMaxSize());
+        Assert.assertEquals("Calculus II is above Calculus I, but below Calculus III", testCourse.getDescription());
+        Assert.assertEquals("To learn some math", testCourse.getLearningObjectives());
     }
 }

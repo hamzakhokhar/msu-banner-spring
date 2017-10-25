@@ -18,10 +18,10 @@ public class Building {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private long id = 123456789;
 
-    private String buildingName;
-    private int numberOfRooms;
+    private String buildingName = "DEFAULT";
+    private int numberOfRooms = 1;
 
     /*
     @OneToMany
@@ -32,6 +32,13 @@ public class Building {
 
     protected Building() {}
 
+    /**
+     * Constructor for building passing only one variable, the building name
+     * @param buildingName The name of the building
+     */
+    public Building(String buildingName){
+        setBuildingName(buildingName);
+    }
 
     /**
      * Default constructor for creating the building object
@@ -41,6 +48,18 @@ public class Building {
     public Building(String buildingName, int numberOfRooms) {
         this.buildingName = buildingName;
         this.numberOfRooms = numberOfRooms;
+    }
+
+    /**
+     * Default constructor for the building passing all three variables
+     * @param buildingName The name of the building
+     * @param numberOfRooms The number of rooms in the building
+     * @param buildingId The building's unique ID number
+     */
+    public Building(String buildingName, int numberOfRooms, long buildingId){
+        setBuildingName(buildingName);
+        setNumberOfRooms(numberOfRooms);
+        setId(buildingId);
     }
 
     /**
