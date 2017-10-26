@@ -7,9 +7,10 @@
     <tr>
         <th>ID</th>
         <th>Course Name</th>
+        <th>Section</th>
         <th>Professor Name</th>
+        <th>Room Number</th>
         <th>Class Size</th>
-        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -20,6 +21,7 @@
         <th scope="row">{{id}}</th>
         <td>{{course.courseName}}</td>
         <td>{{professor.firstName}} {{professor.lastName}}</td>
+        <td>{{room.roomNumber}}</td>
         <td>{{numberOfSeats}}</td>
         <td><a href="/sections/{{id}}">Show</a></td>
         <td><a href="/sections/{{id}}/edit">Edit</a></td>

@@ -18,6 +18,7 @@ public class Section {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int numberOfSeats;
+    private int sectionNumber;
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -104,6 +105,9 @@ public class Section {
      */
     public void setNumberOfSeats(int numberOfSeats) { this.numberOfSeats = numberOfSeats; }
 
+    public int getSectionNumber() { return sectionNumber;  }
+
+    public void setSectionNumber(int sectionNumber) { this.sectionNumber = sectionNumber; }
 
     @Override
     public String toString() {
