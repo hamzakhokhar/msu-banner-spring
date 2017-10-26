@@ -13,11 +13,20 @@ public class Room {
     private long id;
 
 
-    private int roomNumber;
+    private int roomNumber = 1011;
     private int seatsInRoom;
 
 
-    protected Room () {}
+    public Room (int roomNumber, int seatsInRoom, long roomId) {
+        this.roomNumber = roomNumber;
+        this.seatsInRoom = seatsInRoom;
+        this.id = roomId;
+        setRoomNumber(roomNumber);
+        setSeatsInRoom(seatsInRoom);
+        setId(roomId);
+    }
+
+    protected Room() {}
 
 
     public int getRoomNumber() { return roomNumber; }
