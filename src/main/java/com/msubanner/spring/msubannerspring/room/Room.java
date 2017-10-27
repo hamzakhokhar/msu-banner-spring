@@ -19,6 +19,10 @@ public class Room {
 
     protected Room () {}
 
+    Room(int roomNumber, int seatsInRoom){
+        setRoomNumber(roomNumber);
+        setSeatsInRoom(seatsInRoom);
+    }
 
     public int getRoomNumber() { return roomNumber; }
     public void setRoomNumber(int roomNumber) { this.roomNumber = roomNumber; }
@@ -27,7 +31,7 @@ public class Room {
     public int getSeatsInRoom() { return seatsInRoom; }
     public void setSeatsInRoom(int seatsInRoom) { this.seatsInRoom = seatsInRoom; }
 
-
+    //Why do rooms need an ID?
     public long getId() {
         return id;
     }

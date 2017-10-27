@@ -17,7 +17,13 @@ public class Professor {
     private String firstName;
     private String lastName;
 
-    protected Professor() {};
+    //protected Professor() {};
+
+    public Professor(){
+        this.firstName = "DEFAULT";
+        this.lastName = "DEFAULT";
+        this.id = Long.valueOf(0);
+    }
 
     /**
      * Default constructor for creating the professor object
@@ -27,6 +33,20 @@ public class Professor {
     public Professor(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    /**
+     * Default constructor for creating the professor with all three parameters,
+     * which are, in order, first name, last name, and the professor's unique
+     * ID number
+     * @param firstName the first name of the professor
+     * @param lastName the last name of the professor
+     * @param Id the professor's unique ID number
+     */
+    public Professor(String firstName, String lastName, long Id) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setId(Id);
     }
 
     /**
