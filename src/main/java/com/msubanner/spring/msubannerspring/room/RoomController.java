@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 /**
  * This is the RoomController class.
+ *
  * @author Christian Kendall & ThienNgo
  * Based on Building Controller
  */
@@ -29,6 +30,7 @@ public class RoomController {
      */
     @RequestMapping(value = "/room", method = RequestMethod.GET)
     public ModelAndView getRoomView() {
+
         return new ModelAndView("room/index", "room", roomRepository.findAll());
     }
 
@@ -37,7 +39,8 @@ public class RoomController {
      * CRUD(read) - roomRepository.findOne(id)
      */
     @RequestMapping(value = "/room/{id}", method = RequestMethod.GET)
-    public ModelAndView getRoomInfoView(@PathVariable("id") long roomNumber){
+    public ModelAndView getRoomInfoView(@PathVariable("id") long roomNumber) {
+
         return new ModelAndView("room/room.show", "room", roomRepository.findOne(roomNumber));
     }
 
@@ -46,7 +49,8 @@ public class RoomController {
      * CRUD(read) - roomRepository.findOne(id)
      */
     @RequestMapping(value = "/room/{id}/edit", method = RequestMethod.GET)
-    public ModelAndView getRoomEditView(@PathVariable("id") long roomNumber){
+    public ModelAndView getRoomEditView(@PathVariable("id") long roomNumber) {
+
         return new ModelAndView("room/room.edit", "room", roomRepository.findOne(roomNumber));
     }
 
@@ -54,7 +58,8 @@ public class RoomController {
      * This method will create the room
      */
     @RequestMapping(value = "/room/create", method = RequestMethod.GET)
-    public ModelAndView getNewRoomView(){
+    public ModelAndView getNewRoomView() {
+
         return new ModelAndView("room/room.create", "room", new Room());
     }
 
@@ -63,8 +68,9 @@ public class RoomController {
      * CRUD (create) - save room
      */
     @RequestMapping(value = "/room", method = RequestMethod.POST)
-    public String submitRoom(@Valid @ModelAttribute("room")Room room,
-                                 BindingResult result, ModelMap model) {
+    public String submitRoom(@Valid @ModelAttribute("room") Room room,
+                             BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) return "error";
         roomRepository.save(room);
         return "redirect:/room";
@@ -77,8 +83,9 @@ public class RoomController {
      * The roomNumber does not get bounded to the HTML form view and returned.
      */
     @RequestMapping(value = "/room/{id}", method = RequestMethod.POST)
-    public String editRoom(@Valid @ModelAttribute("room")Room room,
-                               BindingResult result, ModelMap model, @PathVariable("id") long id) {
+    public String editRoom(@Valid @ModelAttribute("room") Room room,
+                           BindingResult result, ModelMap model, @PathVariable("id") long id) {
+
         if (result.hasErrors()) return "error";
         room.setId(id);
         roomRepository.save(room);
@@ -91,6 +98,7 @@ public class RoomController {
      */
     @RequestMapping(value = "/room/{id}/delete", method = RequestMethod.GET)
     public String deleteRoom(@PathVariable("id") long id) {
+
         roomRepository.delete(id);
         return "redirect:/room";
     }

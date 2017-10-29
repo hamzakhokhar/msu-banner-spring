@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Room {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
 
@@ -17,7 +17,8 @@ public class Room {
     private int seatsInRoom;
 
 
-    public Room (int roomNumber, int seatsInRoom, long roomId) {
+    public Room(int roomNumber, int seatsInRoom, long roomId) {
+
         this.roomNumber = roomNumber;
         this.seatsInRoom = seatsInRoom;
         this.id = roomId;
@@ -26,25 +27,46 @@ public class Room {
         setId(roomId);
     }
 
-    protected Room() {}
+    protected Room() {
 
-    Room(int roomNumber, int seatsInRoom){
+    }
+
+    Room(int roomNumber, int seatsInRoom) {
         setRoomNumber(roomNumber);
         setSeatsInRoom(seatsInRoom);
     }
 
-    public int getRoomNumber() { return roomNumber; }
-    public void setRoomNumber(int roomNumber) { this.roomNumber = roomNumber; }
+    public int getRoomNumber() {
+
+        return roomNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+
+        this.roomNumber = roomNumber;
+    }
 
 
-    public int getSeatsInRoom() { return seatsInRoom; }
-    public void setSeatsInRoom(int seatsInRoom) { this.seatsInRoom = seatsInRoom; }
+    public int getSeatsInRoom() {
+
+        return seatsInRoom;
+    }
+
+    public void setSeatsInRoom(int seatsInRoom) {
+
+        this.seatsInRoom = seatsInRoom;
+    }
 
     //Why do rooms need an ID?
+    //This is wierd to me too. Room's # are their ID already.
+    //I guess everytime we enter a room the ID # will increase automaticlly so it won't repeat.
     public long getId() {
+
         return id;
     }
+
     public void setId(long id) {
+
         this.id = id;
     }
 
