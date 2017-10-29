@@ -216,7 +216,7 @@ public class Course {
     }
 
     public void setLearningObjectives(String learningObjectives) {
-        
+
         this.learningObjectives = learningObjectives;
     }
 }
