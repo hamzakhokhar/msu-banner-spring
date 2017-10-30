@@ -23,11 +23,11 @@ public class Building {
     private String buildingName = "DEFAULT";
     private int numberOfRooms = 1;
 
-    /*
-    @OneToMany
+
+    @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
-    */
+
 
 
     protected Building() {}
@@ -36,9 +36,7 @@ public class Building {
      * Constructor for building passing only one variable, the building name
      * @param buildingName The name of the building
      */
-    public Building(String buildingName){
-        setBuildingName(buildingName);
-    }
+    public Building(String buildingName){ setBuildingName(buildingName); }
 
     /**
      * Default constructor for creating the building object
@@ -109,4 +107,8 @@ public class Building {
     public void setId(long id) {
         this.id = id;
     }
+
+    public Room getRoom() { return room; }
+
+    public void setRoom(int roomNumber, int numberOfSeats) { }
 }
