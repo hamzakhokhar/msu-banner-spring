@@ -37,3 +37,4 @@ insert into building (id, building_name, number_of_rooms) values (default, 'King
 insert into building (id, building_name, number_of_rooms) values (default, 'Student Success', 40)
 insert into building (id, building_name, number_of_rooms) values (default, 'Aviation', 50)
 
+-- Fixtures for Semesters

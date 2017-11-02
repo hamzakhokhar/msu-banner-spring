@@ -24,7 +24,6 @@ public class Semester {
     	this.endDate = Long.valueOf(0);   	
     }
     
-    
     /**
      * Default constructor for creating the semester object
      * @param startDate the first day of the semester
