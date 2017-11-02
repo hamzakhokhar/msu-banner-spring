@@ -22,57 +22,46 @@ public class GlobalVariable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public String getSCHOOLNAME() {
-
         return SCHOOLNAME;
     }
 
     public void setSCHOOLNAME(String school) {
-
         school = SCHOOLNAME;
     }
 
     public int getFRESHMAN() {
-
         return FRESHMAN;
     }
 
     public void setFRESHMAN(int freshman) {
-
         freshman = FRESHMAN;
     }
 
     public int getSOPHOMORE() {
-
         return SOPHOMORE;
     }
 
     public void setSOPHOMORE(int sophomore) {
-
         sophomore = SOPHOMORE;
     }
 
     public int getJUNIOR() {
-
         return JUNIOR;
     }
 
     public void setJUNIOR(int junior) {
-
         junior = JUNIOR;
     }
 
     public int getSENIOR() {
-
         return SENIOR;
     }
-
 
     public void setSENIOR(int senior) {
         senior = SENIOR;
     }
 
     public String findSchoolYear(int studentCredits) {
-
         if (studentCredits <= FRESHMAN) {
             return "Freshmen";
         } else if (studentCredits <= SOPHOMORE) {
@@ -85,5 +74,4 @@ public class GlobalVariable {
             return "Graduate";
         }
     }
-
 }
