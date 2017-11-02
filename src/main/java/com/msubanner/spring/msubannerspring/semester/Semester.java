@@ -1,61 +1,98 @@
 package com.msubanner.spring.msubannerspring.semester;
 import javax.persistence.*;
+
 /**
  * Semester Persistence Class
- *
  * @author Jesus & Matt / team 3
  */
-
 public class Semester {
 
-    // testing commit real quick
-	//@id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String semester;
-    private Long startTime;
-    private Long endTime;
+    private Long startDate;
+    private Long endDate;
 
-    protected Semester(){};
+    //protected Semester(){};
 
-
-    public Semester(Long startTime, Long endTime) {
-
-        this.startTime = startTime;
-        this.endTime = endTime;
+    /**
+     * Default constructor for semester object
+     */
+    public Semester() {
+    	this.semester = "TBD";
+    	this.startDate = Long.valueOf(0);
+    	this.endDate = Long.valueOf(0);   	
+    }
+    
+    
+    /**
+     * Default constructor for creating the semester object
+     * @param startDate the first day of the semester
+     * @param endDate the last day of the professor
+     */
+    public Semester(Long startDate, Long endDate) {
+        this.semester = "TBD";
+    	this.startDate = startDate;
+        this.endDate = endDate;
+    }
+    
+    /**
+     * Default constructor for creating the semester object
+     * @param semester the name of the semester
+     * @param startDate the first day of the semester
+     * @param endDate the last day of the professor
+     */
+    public Semester(String semester, Long startDate, Long endDate) {
+        this.semester = semester;
+    	this.startDate = startDate;
+        this.endDate = endDate;
     }
 
-
+    /**
+     * Get command for the semester
+     * @return the current semester
+     */
     public String getSemester() {
         return semester;
     }
 
-
+    /**
+     * Set command for the semester
+     * @param semester current semester object
+     */
     public void setSemester( String semester) {
-
         this.semester = semester;
     }
 
-
-    public Long getStartTime() {
-
-        return startTime;
+    /**
+     * Get command for the start date
+     * @return start date of the semester
+     */
+    public Long getStartDate() {
+        return startDate;
     }
 
-
-    public void setStartTime(Long startTime)
-    {
-        this.startTime = startTime;
+    /**
+     * Set command for the start date
+     * @param startDate of the semester
+     */
+    public void setStartDate(Long startDate) {
+        this.startDate = startDate;
     }
 
-
-    public Long getEndTime() {
-        return endTime;
+    /**
+     * Get command for the end date
+     * @return end date of the semester
+     */
+    public Long getEndDate() {
+        return endDate;
     }
 
-
-    public void setEndTime(Long endTime) {
-        this.endTime = endTime;
+    /**
+     * Set command for the end date
+     * @param endDate of the semester
+     */
+    public void setEndDate(Long endDate) {
+        this.endDate = endDate;
     }
 }
-
-

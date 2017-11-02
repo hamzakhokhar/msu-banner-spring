@@ -19,6 +19,9 @@ public class Professor {
 
     //protected Professor() {};
 
+    /**
+     * Default constructor for creating the professor object
+     */
     public Professor(){
         this.firstName = "DEFAULT";
         this.lastName = "DEFAULT";
