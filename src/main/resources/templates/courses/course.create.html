@@ -73,11 +73,10 @@
                 <div class="col-sm-5">
                     <!--<input class="form-control" id="building" type="text" name="building" required="required" placeholder="Parking Lot">-->
                     <select name="building" class="custom-select" id="building">
-                        <option value="CS building">CS</option>
-                        <option value="CN building">CN</option>
-                        <option value="KC building">KC</option>
-                        <option value="PL building">PL</option>
-                        <option value="AES building">AES</option>
+                        <option value="TBD">TBD</option>
+                        {{#building}}
+                        <option value="{{buildingId}}">{{buildingName}}</option>
+                        {{/building}}
                     </select>
                 </div>
             </div>

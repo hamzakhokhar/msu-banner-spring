@@ -1,37 +1,40 @@
 {{>common/header}}
 <h2>
-    Sections
+    Semester
 </h2>
 <table class="table">
     <thead >
     <tr>
         <th>ID</th>
-        <th>Course Name</th>
-        <th>Section</th>
-        <th>Professor Name</th>
+        <th>Semester</th>
+        <th>Course</th>
+        <th>Section Number</th>
+        <th>Professor</th>
+        <th>Building</th>
         <th>Room Number</th>
         <th>Class Size</th>
-        <th></th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    {{#sections}}
+    {{#semester}}
     <tr>
         <th scope="row">{{id}}</th>
+        <td>{{semester}}</td>
         <td>{{course.courseName}}</td>
         <td>{{section.sectionNumber}}</td>
         <td>{{professor.firstName}} {{professor.lastName}}</td>
+        <td>{{building.buildingName}}</td>
         <td>{{room.roomNumber}}</td>
         <td>{{room.seatsInRoom}}</td>
-        <td><a href="/sections/{{id}}">Show</a></td>
-        <td><a href="/sections/{{id}}/edit">Edit</a></td>
-        <td><a href="/sections/{{id}}/delete">Delete</a></td>
+        <td><a href="/semester/{{id}}">Show</a></td>
+        <td><a href="/semester/{{id}}/edit">Edit</a></td>
+        <td><a href="/semester/{{id}}/delete">Delete</a></td>
     </tr>
-    {{/sections}}
+    {{/semester}}
     </tbody>
 </table>
 <br>
-<a class="btn btn-primary" href="/sections/create">Create</a>
+<a class="btn btn-primary" href="/semester/create">Create</a>
 
 {{>common/footer}}
