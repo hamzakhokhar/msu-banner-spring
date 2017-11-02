@@ -5,37 +5,37 @@ import javax.persistence.*;
 
 import com.msubanner.spring.msubannerspring.student.Student;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
 @Entity
 public class Course {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long courseId;
-    private String courseDept = "TBD"; //HardCoded initial because Whitelabel
+    private String courseDept = "TBD";
     private String courseName ;
     private int creditValue;
-    //private professor courseInstructor;
-    //commented until we have professor built
-    //private List<Course> preReqs = new ArrayList<Course>();
-    //private List<Course> coReqs = new ArrayList<Course>();
-    private String level; //freshman, sophomore, junior, or senior
+    private String level;
     private String building;
     private String room;
     private String time;
-    //TODO change this from string to a real time format
-    private int minSize;
-    private int maxSize;
-//    private int currentSize; //how many students are currently enrolled in the class (currently has no use)
-    //private List<Long> enrolledStudents = new ArrayList<Long>(); //list of the Student Ids of students enrolled
     private String description;
     private String learningObjectives;
 
-
+    /**
+     * This is the default constructor for the courses class that will
+     * take no inputed values and create a course.
+     */
     public Course(){
-
+    	this.courseId = Long.valueOf(0);
+        this.courseDept = "TBD";
+        this.courseName = "TBD";
+        this.creditValue = 0;
+        this.level = "Freshman";
+        this.building = "TBD";
+        this.room = "TBD";
+        this.time = "TBD";
+        this.description = "TBD";
+        this.learningObjectives = "TBD";
     }
 
     /**
@@ -48,8 +48,6 @@ public class Course {
      * @param building The building the course is located in
      * @param room The room the course is located in
      * @param time The time the course takes place
-     * @param minSize At least this many students need to enroll in the course
-     * @param maxSize No more than this many students may enroll in the course
      * @param description Tell prospects (students) what the course is about
      * @param learningObjectives What students should learn by the end of the course
      */
@@ -62,13 +60,9 @@ public class Course {
             String building,
             String room,
             String time,
-            int minSize,
-            int maxSize,
             String description,
             String learningObjectives)
     {
-        //TODO add professor to parameters once professor is built
-
         this.courseId = courseId;
         this.courseDept = courseDept;
         this.courseName = courseName;
@@ -77,146 +71,170 @@ public class Course {
         this.building = building;
         this.room = room;
         this.time = time;
-        this.minSize = minSize;
-        this.maxSize = maxSize;
-//        this.currentSize = 0; //for use later
         this.description = description;
         this.learningObjectives = learningObjectives;
-        //this.courseProfessor = professor
     }
 
-    /*
-    Use these for dealing with students later
-    public void enrollStudent(Student student) {
-    }
-    public void withdrawStudent(Student student) {
-    }
-    public void findStudent(Student student) {
-    }
-    */
-
+    /**
+     * getCourseDept will return the department that the course is for
+     * @return courseDept a string of the department name
+     */
     public String getCourseDept() {
-
         return courseDept;
     }
 
+    /**
+     * setCourseDept will set the department that the course is for
+     * @param courseDept a string of the department name
+     */
     public void setCourseDept(String courseDept) {
-
         this.courseDept = courseDept;
     }
 
+    /**
+     * getCourseId will return the unique id assigned to the course
+     * @return couseId unique long value for the course
+     */
     public Long getCourseId() {
-
         return courseId;
     }
 
+    /**
+     * setCourseId will set the unique id assigned to the course
+     * @param courseId unique long value for the course
+     */
     public void setCourseId(Long courseId) {
-
-        try {
-            this.courseId = courseId;
-        }
-        catch (NumberFormatException e) {
-            System.out.println("User tried to make an invalid entry to courseID");
-        }
+        this.courseId = courseId;
     }
 
+    /**
+     * getCourseName will return the name assigned to the course
+     * @return the name of the selected course
+     */
     public String getCourseName() {
-
         return courseName;
     }
 
+    /**
+     * setCourseName will change the name assigned to the course
+     * @param courseName a string with the new name of the course
+     */
     public void setCourseName(String courseName) {
-
         this.courseName = courseName;
     }
 
+    /**
+     * getCreditValue will return the credit weight of the course
+     * @return an integer with the credit hour weight of the course
+     */
     public int getCreditValue() {
-
         return creditValue;
     }
 
+    /**
+     * setCreditValue will change the credit hour weighting of the course
+     * @param creditValue is an integer with the new credit hour weight of the course
+     */
     public void setCreditValue(int creditValue) {
-
         this.creditValue = creditValue;
     }
 
+    /**
+     * getLevel will return the name of the year that the course is made for
+     * example freshman, sophmore, junior, senior
+     * @return a string with the name of the student year the course is for
+     */
     public String getLevel() {
-
         return level;
     }
 
+    /**
+     * setLevel will change the course to a different year
+     * example freshman, sophmore, junior, senior
+     * @param level is a string of the new year level
+     */
     public void setLevel(String level) {
-
         this.level = level;
     }
 
+    /**
+     * getBuilding will return the building that the course is taught in
+     * @return the building that the course is taught
+     */
     public String getBuilding() {
-
         return building;
     }
 
+    /**
+     * setBuilding will change the course location to another builidng
+     * @param building a string listing the new building name
+     */
     public void setBuilding(String building) {
-
         this.building = building;
     }
 
+    /**
+     * get room will return the room that the course is taught in
+     * @return room a string of the room number that the course is taught
+     */
     public String getRoom() {
-
         return room;
     }
 
+    /**
+     * setRoom will change the room location of the course
+     * @param room a string listing the room number
+     */
     public void setRoom(String room) {
-
         this.room = room;
     }
 
+    /**
+     * getTime will return the time that the course is taught at
+     * @return the time that the course is taught
+     */
     public String getTime() {
-
         return time;
     }
 
+    /**
+     * setTime will change the time that the course is taught
+     * @param time as a string of the time the course is taught
+     */
     public void setTime(String time) {
-
         this.time = time;
     }
 
-    public int getMinSize() {
-
-        return minSize;
-    }
-
-
-    public void setMinSize(int minSize) {
-        this.minSize = minSize;
-    }
-
-    public int getMaxSize() {
-
-        return maxSize;
-    }
-
-    public void setMaxSize(int maxSize) {
-
-        this.maxSize = maxSize;
-    }
-
+    /**
+     * getDescription will return a brief description of the course purpose
+     * @return a string listing the course purpose
+     */
     public String getDescription() {
-
         return description;
     }
 
+    /**
+     * setDescription will change the description of a course
+     * @param description is a string with the new course description
+     */
     public void setDescription(String description) {
-
         this.description = description;
     }
 
+    /**
+     * getLearningObjectives will return the objectives that the course will meet
+     * throughout the semester
+     * @return a string listing the objectives of the course
+     */
     public String getLearningObjectives() {
-
         return learningObjectives;
     }
 
+    /**
+     * setLearningObjectives will change the objectives of the course
+     * @param learningObjectives is a string listing the new learning objectives
+     */
     public void setLearningObjectives(String learningObjectives) {
-
         this.learningObjectives = learningObjectives;
     }
 }
