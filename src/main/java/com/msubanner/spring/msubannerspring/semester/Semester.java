@@ -5,6 +5,7 @@ import javax.persistence.*;
  * Semester Persistence Class
  * @author Jesus & Matt / team 3
  */
+@Entity
 public class Semester {
 
 	@Id
