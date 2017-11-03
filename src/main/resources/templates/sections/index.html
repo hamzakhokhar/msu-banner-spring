@@ -11,9 +11,6 @@
         <th>Professor</th>
         <th>Building</th>
         <th>Room</th>
-        <th>Class Size</th>
-        <th></th>
-        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -24,8 +21,7 @@
         <td>{{section.sectionNumber}}</td>
         <td>{{professor.firstName}} {{professor.lastName}}</td>
         <td>{{building.buildingName}}</td>
-        <td>{{room.roomNumber}}</td>
-        <td>{{room.seatsInRoom}}</td>
+        <td>{{section.roomNumber}}</td>
         <td><a href="/sections/{{id}}">Show</a></td>
         <td><a href="/sections/{{id}}/edit">Edit</a></td>
         <td><a href="/sections/{{id}}/delete">Delete</a></td>

@@ -68,57 +68,6 @@ public class CourseTest {
     }
 
     /**
-     * Tests the ability to set and get the course building value
-     */
-    @Test
-    public void testBuilding() {
-        String building = "Science building";
-        course.setBuilding(building);
-        Assert.assertEquals("Science building", course.getBuilding());
-    }
-
-    /**
-     * Tests the ability to set and get the course room value
-     */
-    @Test
-    public void testRoom() {
-        String room = "190B";
-        course.setRoom(room);
-        Assert.assertEquals("190B", course.getRoom());
-    }
-
-    /**
-     * Tests the ability to set and get the course time value
-     */
-    @Test
-    public void testTime() {
-        String time = "10:00am";
-        //TODO change from string to a real time format
-        course.setTime(time);
-        Assert.assertEquals("10:00am", course.getTime());
-    }
-
-    /**
-     * Tests the ability to set and get the course minSize value
-     */
-    @Test
-    public void testMinSize() {
-        int minSize = 1;
-        course.setMinSize(minSize);
-        Assert.assertEquals(1, course.getMinSize());
-    }
-
-    /**
-     * Tests the ability to set and get the course maxSize value
-     */
-    @Test
-    public void testMaxSize() {
-        int maxSize = 40;
-        course.setMaxSize(maxSize);
-        Assert.assertEquals(40, course.getMaxSize());
-    }
-
-    /**
      * Tests the ability to set and get the course description value
      */
     @Test
@@ -146,29 +95,20 @@ public class CourseTest {
         Long courseId = Long.valueOf(2400);
         String courseDept = "MTH";
         String courseName = "Calculus II";
+        String courseNumber = "MTH-2410";
         int creditValue = 4;
         String level = "Junior";
-        String building = "Plaza";
-        String room = "300A";
-        String time = "6:00pm - 7:50pm";
-        //TODO fix time
-        int minSize = 5;
-        int maxSize = 25;
         String description = "Calculus II is above Calculus I, but below Calculus III";
         String learningObjectices = "To learn some math";
 
-        Course testCourse = new Course(courseId, courseDept, courseName, creditValue, level, building, room, time, minSize, maxSize, description, learningObjectices);
+        Course testCourse = new Course(courseId, courseDept, courseName, courseNumber, creditValue, level, description, learningObjectices);
 
         Assert.assertEquals(Long.valueOf(2400), testCourse.getCourseId());
         Assert.assertEquals("MTH", testCourse.getCourseDept());
         Assert.assertEquals("Calculus II", testCourse.getCourseName());
+        Assert.assertEquals("MTH-2410", testCourse.getCourseNumber());
         Assert.assertEquals(4, testCourse.getCreditValue());
         Assert.assertEquals("Junior", testCourse.getLevel());
-        Assert.assertEquals("Plaza", testCourse.getBuilding());
-        Assert.assertEquals("300A", testCourse.getRoom());
-        Assert.assertEquals("6:00pm - 7:50pm", testCourse.getTime());
-        Assert.assertEquals(5, testCourse.getMinSize());
-        Assert.assertEquals(25, testCourse.getMaxSize());
         Assert.assertEquals("Calculus II is above Calculus I, but below Calculus III", testCourse.getDescription());
         Assert.assertEquals("To learn some math", testCourse.getLearningObjectives());
     }

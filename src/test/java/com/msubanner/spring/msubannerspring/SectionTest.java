@@ -5,35 +5,30 @@ import com.msubanner.spring.msubannerspring.student.Student;
 import org.junit.Test;
 import com.msubanner.spring.msubannerspring.section.Section;
 import com.msubanner.spring.msubannerspring.professor.Professor;
+import com.msubanner.spring.msubannerspring.building.Building;
 import com.msubanner.spring.msubannerspring.course.Course;
 import static org.junit.Assert.*;
 
 public class SectionTest {
     Professor testProfessor = new Professor("FirstName","LastName");
+    Building testBuilding = new Building("Sample", 20);
     Course testCourse = new Course( Long.valueOf(20),
                 "CS",
                 "Class",
+                "CS3250",
                 4,
                 "Freshman",
-                "building",
-                "room",
-                "12:00",
-                5,
-                30,
                 "stuff",
                 "things");
-    Room testRoom = new Room(1011,3,101L);
     Student testStudent1 = new Student("FirstName1","LastName1");
     Student testStudent2 = new Student("FirstName2","LastName2");
     Student testStudent3 = new Student("FirstName3","LastName3");
-    Section testSection = new Section(1,
+    Section testSection = new Section(testCourse,
+    		    1,
                 testProfessor,
-                testCourse,
-                testRoom,
-                0,
-                0,
-                23,
-                59);
+                testBuilding,
+                1010,
+                "9:00 am");
 
     @Test
     public void Section() throws Exception {
@@ -44,16 +39,8 @@ public class SectionTest {
     @Test
     public void getRoom() throws Exception {
         Section testGetRoom = testSection;
-        assertTrue(testGetRoom.getRoom() == testRoom);
+        assertTrue(testGetRoom.getRoomNumber() == 1010);
 
-    }
-
-    @Test
-    public void setRoom() throws Exception {
-        Section testSetRoom = testSection;
-        testSetRoom.setRoom(testRoom);
-        assertTrue(testSetRoom.getRoom() == testRoom);
-        assertTrue(testSetRoom.getNumberOfSeats() == testRoom.getSeatsInRoom());
     }
 
     @Test
@@ -94,74 +81,6 @@ public class SectionTest {
         testSetID.setId(12345L);
         assertTrue(testSetID.getId() == 12345L);
     }
-
-    @Test
-    public void getStartTimeHour() throws Exception {
-        Section startTimeHour = testSection;
-        assertTrue(startTimeHour.getStartTimeHour() == 0);
-    }
-
-    @Test
-    public void setStartTimeHour() throws Exception {
-        Section startTimeHour = testSection;
-        assertTrue(startTimeHour.getStartTimeHour() == 0);
-
-        startTimeHour.setStartTimeHour(99);
-        assertTrue(startTimeHour.getStartTimeHour() == 99%24);
-    }
-
-    @Test
-    public void getStartTimeMinute() throws Exception {
-        Section startTimeMinute = testSection;
-        assertTrue(startTimeMinute.getStartTimeMinute() == 0);
-    }
-
-    @Test
-    public void setStartTimeMinute() throws Exception {
-        Section startTimeMinute = testSection;
-        assertTrue(startTimeMinute.getStartTimeMinute() == 0);
-
-        startTimeMinute.setStartTimeMinute(99);
-        assertTrue(startTimeMinute.getStartTimeMinute() == 99%60);
-    }
-
-    @Test
-    public void getEndTimeHour() throws Exception {
-        Section endTimeHour = testSection;
-        assertTrue(endTimeHour.getEndTimeHour() == 23);
-    }
-
-    @Test
-    public void setEndTimeHour() throws Exception {
-        Section endTimeHour = testSection;
-        assertTrue(endTimeHour.getEndTimeHour() == 23);
-
-        endTimeHour.setEndTimeHour(99);
-        assertTrue(endTimeHour.getEndTimeHour() == 99%24);
-    }
-
-    @Test
-    public void getEndTimeMinute() throws Exception {
-        Section endTimeMinute = testSection;
-        assertTrue(endTimeMinute.getEndTimeMinute() == 59);
-    }
-
-    @Test
-    public void setEndTimeMinute() throws Exception {
-        Section endTimeMinute = testSection;
-        assertTrue(endTimeMinute.getEndTimeMinute() == 59);
-
-        endTimeMinute.setEndTimeMinute(99);
-        assertTrue(endTimeMinute.getEndTimeMinute() == 99%60);
-    }
-
-    @Test
-    public void getNumberOfSeats() throws Exception {
-        Section testGetRoom = testSection;
-        assertTrue(testGetRoom.getRoom() == testRoom);
-        assertTrue(testGetRoom.getNumberOfSeats() == 3);
-    }
-
 
     @Test
     public void getSectionNumber() throws Exception {

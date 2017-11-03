@@ -22,6 +22,7 @@ public class Section {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int sectionNumber = 0;
+    private int roomNumber;
     private String time;
 
     @OneToOne
@@ -36,10 +37,6 @@ public class Section {
     @JoinColumn(name = "building_id")
     private Building building;
     
-    @OneToOne
-    @JoinColumn(name = "room_id")
-    private Room room;
-    
     //@OneToMany(fetch = FetchType.EAGER)
     //@JoinColumn(name = "student_id")
     //private Student students;
@@ -53,13 +50,13 @@ public class Section {
     		       int sectionNumber,
     		       Professor professor,
     		       Building building,
-                   Room room,
+                   int roomNumber,
                    String time) {
         this.course = course;
         this.sectionNumber = sectionNumber;
         this.professor = professor;
         this.building = building;
-        this.room = room;
+        this.roomNumber = roomNumber;
     }
     
     protected Section() {}
@@ -84,16 +81,16 @@ public class Section {
      * get room will return the room that the course is taught in
      * @return room a string of the room number that the course is taught
      */
-    public Room getRoom() {
-        return room;
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
     /**
      * setRoom will change the room location of the course
      * @param room a string listing the room number
      */
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     /**

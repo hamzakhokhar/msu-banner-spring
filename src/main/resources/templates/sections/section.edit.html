@@ -37,30 +37,20 @@
                 <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
                 <div class="col-sm-5">
                     <select name="building" class="custom-select" id="building" required>
-                        {{#building}}
-                        <option value="{{buildingId}}">{{buildingName}}</option>
-                        {{/building}}
+                        <option value="Science">Science</option>
+                        <option value="Central">Central</option>
+                        <option value="King Center">King Center</option>
+                        <option value="Plaza">Plaza</option>
+                        <option value="Aviation">Aviation</option>
                     </select>
-                    </div>
+                </div>
             </div>
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
                 <div class="col-sm-5">
-                    <select name="room" class="custom-select" id="room" required>
-                        {{#room}}
-                        <option value="{{roomId}}">{{roomNumber}}</option>
-                        {{/room}}
-                    </select>
-                    </div>
-            </div>
-            
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="seatsInRoom">Class Size</label>
-                <div class="col-sm-5">
-                     <input class="form-control" id="seatsInRoom" type="number" name="seatsInRoom" required="required" placeholder="35">
+                    <input class="form-control" id="roomNumber" type="number" name="roomNumber" required="required" placeholder="1010">
                 </div>
-
             </div>
 
             <div class="form-group row">
