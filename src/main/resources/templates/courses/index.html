@@ -7,14 +7,10 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Number</th>
         <th>Department</th>
         <th>Credits</th>
         <th>Level</th>
-        <th>Building</th>
-        <th>Room</th>
-        <th>Time</th>
-        <th>Min</th>
-        <th>Max</th>
     </tr>
     </thead>
 
@@ -23,14 +19,10 @@
     <tr>
         <th scope="row">{{courseId}}</th>
         <td>{{courseName}}</td>
+        <td>{{courseNumber}}</td>
         <td>{{courseDept}}</td>
         <td>{{creditValue}}</td>
         <td>{{level}}</td>
-        <td>{{building}}</td>
-        <td>{{room}}</td>
-        <td>{{time}}</td>
-        <td>{{minSize}}</td>
-        <td>{{maxSize}}</td>
         <td><a href="/courses/{{courseId}}">Show</a></td>
         <td><a href="/courses/{{courseId}}/edit">Edit</a></td>
         <td><a href="/courses/{{courseId}}/delete">Delete</a></td>

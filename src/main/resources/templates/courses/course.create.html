@@ -3,16 +3,20 @@
     <h4 class="card-header">Please fill in the course information</h4>
     <div class="card-block">
         <form action="/courses" method="post">
-
-            <!-- Course name -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseName">Course Name</label>
                 <div class="col-sm-5">
                     <input class="form-control" id="courseName" type="text" name="courseName" required="required" placeholder="Calculus">
                 </div>
             </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="courseNumber">Course Number</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="courseNumber" type="text" name="courseNumber" required="required" placeholder="MTH-1410">
+                </div>
+            </div>
 
-            <!-- Department -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseDept">Department</label>
                 <div class="col-sm-5">
@@ -20,7 +24,6 @@
                 </div>
             </div>
 
-            <!-- Credit value -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
                 <div class="col-sm-5">
@@ -33,7 +36,6 @@
                 </div>
             </div>
 
-            <!-- Level -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="level">Level</label>
                 <div class="col-sm-5">
@@ -43,52 +45,6 @@
                         <option value="Junior">Junior</option>
                         <option value="Senior">Senior</option>
                     </select>
-                </div>
-            </div>
-
-            <!-- Building -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
-                <div class="col-sm-5">
-                    <select name="building" class="custom-select" id="building" required>
-                        <option value="Science">Science</option>
-                        <option value="Central">Central</option>
-                        <option value="King Center">King Center</option>
-                        <option value="Plaza">Plaza</option>
-                        <option value="Aviation">Aviation</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Room -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="room" type="number" name="room" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- Time -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="time">Time</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="time" type="time" name="time" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- MinSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="minSize">Minimum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="minSize" type="number" name="minSize" required="required" placeholder="1">
-                </div>
-            </div>
-
-            <!-- MaxSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="maxSize">Maximum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="maxSize" type="number" name="maxSize" required="required" placeholder="30">
                 </div>
             </div>
 

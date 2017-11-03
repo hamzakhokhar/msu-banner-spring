@@ -3,7 +3,24 @@
     <h4 class="card-header">Please fill in your section information</h4>
     <div class="card-block">
         <form action="/sections" method="post">
-
+           <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="course">Course</label>
+                <div class="col-sm-5">
+                    <select name="course" class="custom-select" id="course" required>
+                        {{#courses}}
+                        <option value="{{courseId}}">{{courseName}}</option>
+                        {{/courses}}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="sectionNumber">Section Number</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="sectionNumber" type="number" name="sectionNumber" required="required" placeholder="001">
+                </div>
+            </div>
+            
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="professor">Professor</label>
                 <div class="col-sm-5">
@@ -14,30 +31,32 @@
                     </select>
                 </div>
             </div>
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="course">Course</label>
+                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
                 <div class="col-sm-5">
-                    <select name="course" class="custom-select" id="course" required>
-                        {{#courses}}
-                        <option value="{{courseId}}">{{courseName}}</option>
-                        {{/courses}}
+                    <select name="building" class="custom-select" id="building" required>
+                        <option value="Science">Science</option>
+                        <option value="Central">Central</option>
+                        <option value="King Center">King Center</option>
+                        <option value="Plaza">Plaza</option>
+                        <option value="Aviation">Aviation</option>
                     </select>
-                    </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="numberOfSeats">Max Size</label>
-                <div class="col-sm-5">
-                     <input class="form-control" id="numberOfSeats" type="number" name="numberOfSeats" required="required" placeholder="35">
                 </div>
-
             </div>
-
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="sectionNumber">Section Number</label>
+                <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="sectionNumber" type="number" name="sectionNumber" required="required" placeholder="001">
+                    <input class="form-control" id="roomNumber" type="number" name="roomNumber" required="required" placeholder="1010">
                 </div>
-
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="seatsInRoom">Class Size</label>
+                <div class="col-sm-5">
+                     <input class="form-control" id="seatsInRoom" type="number" name="seatsInRoom" required="required" placeholder="35">
+                </div>
             </div>
 
             <div class="form-group row">

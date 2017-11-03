@@ -3,6 +3,7 @@ package com.msubanner.spring.msubannerspring.course;
 
 import javax.persistence.*;
 
+import com.msubanner.spring.msubannerspring.building.Building;
 import com.msubanner.spring.msubannerspring.student.Student;
 
 @Entity
@@ -12,15 +13,17 @@ public class Course {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long courseId;
     private String courseDept = "TBD";
-    private String courseName ;
+    private String courseName;
+    private String courseNumber;
     private int creditValue;
     private String level;
-    private String building;
-    private String room;
-    private String time;
     private String description;
     private String learningObjectives;
 
+    @OneToOne
+    @JoinColumn(name = "building_buildingName")
+    private Building buildingObject;
+    
     /**
      * This is the default constructor for the courses class that will
      * take no inputed values and create a course.
@@ -29,11 +32,9 @@ public class Course {
     	this.courseId = Long.valueOf(0);
         this.courseDept = "TBD";
         this.courseName = "TBD";
+        this.courseNumber = "TBD";
         this.creditValue = 0;
         this.level = "Freshman";
-        this.building = "TBD";
-        this.room = "TBD";
-        this.time = "TBD";
         this.description = "TBD";
         this.learningObjectives = "TBD";
     }
@@ -43,11 +44,9 @@ public class Course {
      * @param courseId The Id number of the course, (e.g.) 3250 in CS 3250
      * @param courseDept The department of the course, (e.g.) CS in CS 3250
      * @param courseName The name of the course
+     * @param courseNumber The number of the course
      * @param creditValue How many credits the course is worth
      * @param level (e.g.) Freshman, sophomore, etc.
-     * @param building The building the course is located in
-     * @param room The room the course is located in
-     * @param time The time the course takes place
      * @param description Tell prospects (students) what the course is about
      * @param learningObjectives What students should learn by the end of the course
      */
@@ -55,22 +54,18 @@ public class Course {
             Long courseId,
             String courseDept,
             String courseName,
+            String courseNumber,
             int creditValue,
             String level,
-            String building,
-            String room,
-            String time,
             String description,
             String learningObjectives)
     {
         this.courseId = courseId;
         this.courseDept = courseDept;
         this.courseName = courseName;
+        this.courseNumber = courseNumber;
         this.creditValue = creditValue;
         this.level = level;
-        this.building = building;
-        this.room = room;
-        this.time = time;
         this.description = description;
         this.learningObjectives = learningObjectives;
     }
@@ -122,6 +117,22 @@ public class Course {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+    
+    /**
+     * getCourseNumber will return the number assigned to the course
+     * @return the number of the selected course
+     */
+    public String getCourseNumber() {
+        return courseNumber;
+    }
+
+    /**
+     * setCourseNumber will change the number assigned to the course
+     * @param courseNumber a string with the new number of the course
+     */
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
+    }
 
     /**
      * getCreditValue will return the credit weight of the course
@@ -155,54 +166,6 @@ public class Course {
      */
     public void setLevel(String level) {
         this.level = level;
-    }
-
-    /**
-     * getBuilding will return the building that the course is taught in
-     * @return the building that the course is taught
-     */
-    public String getBuilding() {
-        return building;
-    }
-
-    /**
-     * setBuilding will change the course location to another builidng
-     * @param building a string listing the new building name
-     */
-    public void setBuilding(String building) {
-        this.building = building;
-    }
-
-    /**
-     * get room will return the room that the course is taught in
-     * @return room a string of the room number that the course is taught
-     */
-    public String getRoom() {
-        return room;
-    }
-
-    /**
-     * setRoom will change the room location of the course
-     * @param room a string listing the room number
-     */
-    public void setRoom(String room) {
-        this.room = room;
-    }
-
-    /**
-     * getTime will return the time that the course is taught at
-     * @return the time that the course is taught
-     */
-    public String getTime() {
-        return time;
-    }
-
-    /**
-     * setTime will change the time that the course is taught
-     * @param time as a string of the time the course is taught
-     */
-    public void setTime(String time) {
-        this.time = time;
     }
 
     /**

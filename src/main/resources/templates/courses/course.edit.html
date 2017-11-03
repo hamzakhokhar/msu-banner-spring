@@ -1,113 +1,50 @@
 {{>common/header}}
 <div class="card">
-    <h4 class="card-header">Update Student Information</h4>
+    <h4 class="card-header">Update Course Information</h4>
     <div class="card-block">
-        <h5 class="card-title"></h5>
         <form action="/courses/{{course.courseId}}" method="post">
-
-            <!-- Course name -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseName">Course Name</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="courseName" type="text" name="courseName" value="{{course.courseName}}" required="required" placeholder="">
+                    <input class="form-control" id="courseName" type="text" name="courseName" placeholder="Calculus">
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="courseNumber">Course Number</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="courseNumber" type="text" name="courseNumber" placeholder="MTH-1410">
                 </div>
             </div>
 
-            <!-- Department -->
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="department">Department</label>
+                <label class="col-sm-2 col-form-label text-right" for="courseDept">Department</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="department" type="text" name="department" value="{{course.courseDept}}" required="required" placeholder="">
-                   </div>
-            </div>
-
-            <!-- Course ID -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="courseID">CourseID</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="courseID" type="text" name="courseID" value="{{course.courseId}}" required="required" placeholder="1337">
+                    <input class="form-control" id="courseDept" type="text" name="courseDept" placeholder="Mathematics">
                 </div>
             </div>
 
-            <!-- Credit value -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="creditValue" type="text" name="creditValue" value="{{course.creditValue}}" required="required" placeholder="4">
+                    <select name="creditValue" class="custom-select" id="creditValue">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- Professor -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="instructor">Instructor</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="instructor" type="text" name="instructor" required="required" placeholder="Stack Overflow">
-                </div>
-            </div>
-
-            <!-- Level -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="level">Level</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshmen">
-                </div>
-            </div>
-
-            <!-- Building -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="building" type="text" name="building" value="{{course.building}}" required="required" placeholder="Parking Lot">
-                </div>
-            </div>
-
-            <!-- Room -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="room" type="text" name="room" value="{{course.room}}" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- Time -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="time">Time</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="time" type="time" name="time" value="{{course.time}}" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- PreReqs -->
-            <!-- Add: value="course.preReqs" but with squiggly brackets around variable name :after 'name="prereqs"' -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="preReqs">Prerequisites</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="preReqs" type="text" name="preReqs"  required="required" placeholder="None">
-                </div>
-            </div>
-
-            <!-- CoReqs -->
-            <!-- Add: value="course.coReqs" but with squiggly brackets around variable name :after 'name="coreqs"' -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="coReqs">Corequisites</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="coReqs" type="text" name="coReqs" required="required" placeholder="None">
-                </div>
-            </div>
-
-            <!-- MinSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="minSize">Minimum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="minSize" type="text" name="minSize" value="{{course.minSize}}" required="required" placeholder="1">
-                </div>
-            </div>
-
-            <!-- MaxSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="maxSize">Maximum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="maxSize" type="text" name="maxSize" value="{{course.maxSize}}" required="required" placeholder="30">
+                    <select name="level" class="custom-select" id="level">
+                        <option value="Freshman">Freshman</option>
+                        <option value="Sophomore">Sophomore</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
                 </div>
             </div>
 
