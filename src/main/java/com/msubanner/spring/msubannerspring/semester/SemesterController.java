@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.msubanner.spring.msubannerspring.section.Section;
+import com.msubanner.spring.msubannerspring.section.SectionRepository;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.validation.Valid;
 
 /**
@@ -21,6 +27,9 @@ public class SemesterController {
 
     @Autowired
     private SemesterRepository semesterRepository;
+    
+    @Autowired
+    private SectionRepository sectionRepository;
 
     /**
      * This method will display all of the semesters in the database
@@ -46,7 +55,10 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getSemesterEditView(@PathVariable("id") long id){
-        return new ModelAndView("semester/semester.edit", "semester", semesterRepository.findOne(id));
+    	Map modelMap = new HashMap();
+        modelMap.put("section", sectionRepository.findAll());
+        modelMap.put("semester", semesterRepository.findOne(id));
+        return new ModelAndView("semester/semester.edit", modelMap);
     }
 
     /**
@@ -54,7 +66,10 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester/create", method = RequestMethod.GET)
     public ModelAndView getNewSemesterView(){
-        return new ModelAndView("semester/semester.create", "semester", new Semester());
+    	Map modelMap = new HashMap();
+        modelMap.put("section", sectionRepository.findAll());
+        modelMap.put("semester", new Semester());
+        return new ModelAndView("semester/semester.create", modelMap);
     }
 
     /**

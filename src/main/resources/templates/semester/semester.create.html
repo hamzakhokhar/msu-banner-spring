@@ -14,11 +14,25 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="section">Section</label>
                 <div class="col-sm-5">
-                    <select name="course" class="custom-select" id="section" required>
-                        {{#sections}}
-                        <option value="{{sectionId}}">{{sectionNumber}}</option>
-                        {{/sections}}
+                    <select name="sections" class="custom-select" id="sections" required>
+                        {{#section}}
+                        <option value="{{id}}">{{sectionNumber}}</option>
+                        {{/section}}
                     </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="startDate">Start Date</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="startDate" type="text" name="startDate" required="required" placeholder="082217">
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="endDate">End Date</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="endDate" type="text" name="endDate" required="required" placeholder="121217">
                 </div>
             </div>
             

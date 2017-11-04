@@ -12,15 +12,18 @@ public class Semester {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private String section;
 	private Long id;
     private String semester;
     private Long startDate;
     private Long endDate;
+//    private String startMonth;
+//    private int startDay;
+//    private String endMonth;
+//    private int endDay;
 
-    //@OneToMany
-    //@JoinColumn(name = "section_id")
-    //private Section section;
+    @OneToOne
+    @JoinColumn(name = "section_id")
+    private Section section;
     
     //protected Semester(){};
 
@@ -40,7 +43,7 @@ public class Semester {
      * @param section the section to be added to the semester
      */
     public Semester(Section section) {
-    	//this.section = section;
+    	this.section = section;
     	this.id = Long.valueOf(0);
         this.semester = "TBD";
     	this.startDate = Long.valueOf(0);

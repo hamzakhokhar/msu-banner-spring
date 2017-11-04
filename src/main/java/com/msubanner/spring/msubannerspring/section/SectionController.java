@@ -76,6 +76,7 @@ public class SectionController {
         modelMap.put("professors", professorRepository.findAll());
         modelMap.put("courses", courseRepository.findAll());
         modelMap.put("section", sectionRepository.findOne(id));
+        modelMap.put("building", buildingRepository.findOne(id));
         return new ModelAndView("sections/section.edit", modelMap);
     }
 
@@ -91,6 +92,7 @@ public class SectionController {
         modelMap.put("professors", professorRepository.findAll());
         modelMap.put("courses", courseRepository.findAll());
         modelMap.put("section", new Section());
+        modelMap.put("building", buildingRepository.findAll());
         return new ModelAndView("sections/section.create", modelMap);
     }
 
