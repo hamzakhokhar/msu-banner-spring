@@ -7,12 +7,10 @@
     <tr>
         <th>ID</th>
         <th>Semester</th>
-        <th>Course</th>
-        <th>Course Number</th>
+        <th>Course Name</th>
         <th>Section Number</th>
         <th>Start Date</th>
         <th>End Date</th>
-        <!--<th>Class Size</th>-->
         <th></th>
     </tr>
     </thead>
@@ -20,13 +18,11 @@
     {{#semester}}
     <tr>
         <th scope="row">{{id}}</th>
-        <td>{{semester}}</td>
-        <td>{{course.courseName}}</td>
-        <td>{{course.courseNumber}}</td>
+        <td>{{semesterName}}</td>
+        <td>{{section.course.courseName}}</td>
         <td>{{section.sectionNumber}}</td>
-        <td>{{startDate}}</td>
-        <td>{{endDate}}</td>
-        <!--<td>{{room.seatsInRoom}}</td>-->
+        <td>{{startMonth}} {{startDay}}</td>
+        <td>{{endMonth}} {{endDay}}</td>
         <td><a href="/semester/{{id}}">Show</a></td>
         <td><a href="/semester/{{id}}/edit">Edit</a></td>
         <td><a href="/semester/{{id}}/delete">Delete</a></td>

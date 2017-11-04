@@ -24,3 +24,6 @@ insert into sections (ID, course_name, section_number, professor, building_name,
 insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Computer Science', '001', 'Edison', 'King Center', '3200')
 
 -- Fixtures for Semesters
+insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 12, 'December', default, 'Fall', 12, 'August')
+insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 25, 'May', default, 'Spring', 25, 'January')
+insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 1, 'May', default, 'Spring', 18, 'January)

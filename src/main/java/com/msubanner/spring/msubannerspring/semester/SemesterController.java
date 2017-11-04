@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import com.msubanner.spring.msubannerspring.section.Section;
 import com.msubanner.spring.msubannerspring.section.SectionRepository;
 
@@ -30,7 +31,7 @@ public class SemesterController {
     
     @Autowired
     private SectionRepository sectionRepository;
-
+    
     /**
      * This method will display all of the semesters in the database
      * CRUD(read) - semesterRepository.findAll(id)
