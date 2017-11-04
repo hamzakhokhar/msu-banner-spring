@@ -1,6 +1,8 @@
 package com.msubanner.spring.msubannerspring.semester;
 import javax.persistence.*;
 
+import com.msubanner.spring.msubannerspring.section.Section;
+
 /**
  * Semester Persistence Class
  * @author Jesus & Matt / team 3
@@ -15,12 +17,17 @@ public class Semester {
     private Long startDate;
     private Long endDate;
 
+    @OneToMany
+    @JoinColumn(name = "section_id")
+    private Section section;
+    
     //protected Semester(){};
 
     /**
      * Default constructor for semester object
      */
     public Semester() {
+    	this.section = null;
     	this.id = Long.valueOf(0);
     	this.semester = "TBD";
     	this.startDate = Long.valueOf(0);
@@ -29,23 +36,25 @@ public class Semester {
     
     /**
      * Default constructor for creating the semester object
-     * @param startDate the first day of the semester
-     * @param endDate the last day of the professor
+     * @param section the section to be added to the semester
      */
-    public Semester(Long startDate, Long endDate) {
+    public Semester(Section section) {
+    	this.section = section;
     	this.id = Long.valueOf(0);
         this.semester = "TBD";
-    	this.startDate = startDate;
-        this.endDate = endDate;
+    	this.startDate = Long.valueOf(0);
+        this.endDate = Long.valueOf(0);
     }
     
     /**
      * Default constructor for creating the semester object
+     * @param section the section to be added to the semester
      * @param semester the name of the semester
      * @param startDate the first day of the semester
      * @param endDate the last day of the professor
      */
-    public Semester(String semester, Long startDate, Long endDate) {
+    public Semester(Section section, String semester, Long startDate, Long endDate) {
+    	this.section = section;
     	this.id = Long.valueOf(0);
         this.semester = semester;
     	this.startDate = startDate;
@@ -54,12 +63,14 @@ public class Semester {
 
     /**
      * Default constructor for creating the semester object
+     * @param section the section number of the new semester
      * @param id the id of the semester
      * @param semester the name of the semester
      * @param startDate the first day of the semester
      * @param endDate the last day of the professor
      */
-    public Semester(Long id, String semester, Long startDate, Long endDate) {
+    public Semester(Section section, Long id, String semester, Long startDate, Long endDate) {
+    	this.section = section;
     	this.id = Long.valueOf(0);
         this.semester = semester;
     	this.startDate = startDate;

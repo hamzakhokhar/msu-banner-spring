@@ -42,9 +42,13 @@ public class Section {
     //private Student students;
 
     /**
-     * @param sectionNumber
-     * @param professor
-     * @param course
+     * Default constructor for the section class
+     * @param course is an existing course that the user is creating a section of
+     * @param sectionNumber is the unique address of the new section
+     * @param professor is the professor assigned to the course
+     * @param building is the building that the course is being taught
+     * @param room is the room that the course is being taught
+     * @param time is the time that the course is being taught
      */
     public Section(Course course,
     		       int sectionNumber,
