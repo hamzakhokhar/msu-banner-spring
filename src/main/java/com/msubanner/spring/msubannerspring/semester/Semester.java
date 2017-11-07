@@ -55,7 +55,7 @@ public class Semester {
     /**
      * Default constructor for creating the semester object
      * @param section the section to be added to the semester
-     * @param semester the name of the semester
+     * @param semesterName the name of the semester
      * @param startMonth the month starting the semester
      * @param startDay the day of the month starting the semester
      * @param endMonth the month ending the semester
@@ -75,9 +75,9 @@ public class Semester {
      * Default constructor for creating the semester object
      * @param section the section number of the new semester
      * @param id the id of the semester
-     * @param semester the name of the semester
-     * @param startDate the first day of the semester
-     * @param endDate the last day of the professor
+     * @param semesterName the name of the semester
+     * @param startDay the first day of the semester
+     * @param endDay the last day of the professor
      */
     public Semester(Section section, Long id, String semesterName, String startMonth, int startDay, String endMonth, int endDay) {
     	this.section = section;
@@ -115,7 +115,7 @@ public class Semester {
 
     /**
      * Set command for the semester
-     * @param semester current semester object
+     * @param semesterName current semester object
      */
     public void setSemesterName(String semesterName) {
         this.semesterName = semesterName;
