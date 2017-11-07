@@ -14,10 +14,8 @@ public class Semester {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
     private String semesterName;
-    private String startMonth;
-    private int startDay;
-    private String endMonth;
-    private int endDay;
+    private String startDate;
+    private String endDate;
 
     @OneToOne
     @JoinColumn(name = "section_id")
@@ -32,10 +30,8 @@ public class Semester {
     	this.section = null;
     	this.id = Long.valueOf(0);
     	this.semesterName = "TBD";
-    	this.startMonth = "TBD";
-    	this.startDay = 0;
-    	this.endMonth = "TBD";
-    	this.endDay = 0;
+    	this.startDate = "TBD";
+    	this.endDate = "TBD";
     }
     
     /**
@@ -46,29 +42,23 @@ public class Semester {
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = "TBD";
-        this.startMonth = "TBD";
-    	this.startDay = 0;
-    	this.endMonth = "TBD";
-    	this.endDay = 0;
+    	this.startDate = "TBD";
+    	this.endDate = "TBD";
     }
     
     /**
      * Default constructor for creating the semester object
      * @param section the section to be added to the semester
      * @param semesterName the name of the semester
-     * @param startMonth the month starting the semester
-     * @param startDay the day of the month starting the semester
-     * @param endMonth the month ending the semester
-     * @param endDay the day of the month ending the semester
+     * @param startDate the date starting the semester
+     * @param endDate the date ending the semester
      */
-    public Semester(Section section, String semesterName, String startMonth, int startDay, String endMonth, int endDay) {
+    public Semester(Section section, String semesterName, String startDate, String endDate) {
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = semesterName;
-        this.startMonth = startMonth;
-    	this.startDay = startDay;
-    	this.endMonth = endMonth;
-    	this.endDay = endDay;
+    	this.startDate = startDate;
+    	this.endDate = endDate;
     }
 
     /**
@@ -76,17 +66,15 @@ public class Semester {
      * @param section the section number of the new semester
      * @param id the id of the semester
      * @param semesterName the name of the semester
-     * @param startDay the first day of the semester
-     * @param endDay the last day of the professor
+     * @param startDate the date starting the semester
+     * @param endDate the date ending the semester
      */
-    public Semester(Section section, Long id, String semesterName, String startMonth, int startDay, String endMonth, int endDay) {
+    public Semester(Section section, Long id, String semesterName, String startDate, String endDate) {
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = semesterName;
-        this.startMonth = startMonth;
-    	this.startDay = startDay;
-    	this.endMonth = endMonth;
-    	this.endDay = endDay;
+    	this.startDate = startDate;
+    	this.endDate = endDate;
     }
     
     /**
@@ -120,68 +108,36 @@ public class Semester {
     public void setSemesterName(String semesterName) {
         this.semesterName = semesterName;
     }
-
+    
     /**
      * Get command for the start date
-     * @return start month of the semester
+     * @return start date of the semester
      */
-    public String getStartMonth() {
-        return startMonth;
+    public String getStartDate() {
+        return startDate;
     }
 
     /**
      * Set command for the start date
-     * @param startMonth of the semester
+     * @param startDate of the semester
      */
-    public void setStartMonth(String startMonth) {
-        this.startMonth = startMonth;
-    }
-      
-    /**
-     * Get command for the start date
-     * @return start month of the semester
-     */
-    public int getStartDay() {
-        return startDay;
-    }
-
-    /**
-     * Set command for the start date
-     * @param startDay of the semester
-     */
-    public void setStartDay(int startDay) {
-        this.startDay = startDay;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
     
     /**
      * Get command for the end date
-     * @return end month of the semester
-     */
-    public String getEndMonth() {
-        return endMonth;
-    }
-
-    /**
-     * Set command for the end date
-     * @param endMonth of the semester
-     */
-    public void setEndMonth(String endMonth) {
-        this.endMonth = endMonth;
-    }
-      
-    /**
-     * Get command for the end date
      * @return end day of the semester
      */
-    public int getEndDay() {
-        return endDay;
+    public String getEndDate() {
+        return endDate;
     }
 
     /**
      * Set command for the end date
-     * @param endDay of the semester
+     * @param endDate of the semester
      */
-    public void setEndDay(int endDay) {
-        this.endDay = endDay;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }

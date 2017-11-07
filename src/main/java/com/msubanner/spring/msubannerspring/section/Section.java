@@ -24,6 +24,7 @@ public class Section {
     private int sectionNumber = 0;
     private int roomNumber;
     private String time;
+    private String weekday;
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -49,18 +50,21 @@ public class Section {
      * @param building is the building that the course is being taught
      * @param room is the room that the course is being taught
      * @param time is the time that the course is being taught
+     * @param weekday is the days of the week the course is being taught
      */
     public Section(Course course,
     		       int sectionNumber,
     		       Professor professor,
     		       Building building,
                    int roomNumber,
-                   String time) {
+                   String time,
+                   String weekday) {
         this.course = course;
         this.sectionNumber = sectionNumber;
         this.professor = professor;
         this.building = building;
         this.roomNumber = roomNumber;
+        this.weekday = weekday;
     }
     
     protected Section() {}
@@ -113,6 +117,22 @@ public class Section {
         this.time = time;
     }
 
+    /**
+     * getWeekday will return the time that the course is taught at
+     * @return the weekday that the course is taught
+     */
+    public String getWeekday() {
+        return weekday;
+    }
+
+    /**
+     * setWeekday will change the time that the course is taught
+     * @param weekday as a string of the week days the course is taught
+     */
+    public void setWeekday(String weekday) {
+        this.weekday = weekday;
+    }
+    
     /**
      * returns class variable course
      * @return Course course
