@@ -1,5 +1,6 @@
 package com.msubanner.spring.msubannerspring.course;
 
+import com.msubanner.spring.msubannerspring.building.BuildingRepository;
 import com.msubanner.spring.msubannerspring.course.Course;
 import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class CourseController {
     @Autowired
     private CourseRepository courseRepository;
 
+    @Autowired
+    private BuildingRepository buildingRepository;
+    
     // GET courses View
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public ModelAndView getCourseView() {

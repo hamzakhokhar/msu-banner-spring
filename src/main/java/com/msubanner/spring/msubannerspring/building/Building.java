@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
  * @author Team 3
  */
 @Entity
-// @Table(name="building")
 public class Building {
 
     @Id

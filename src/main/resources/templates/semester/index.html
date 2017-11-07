@@ -1,0 +1,36 @@
+{{>common/header}}
+<h2>
+    Semester
+</h2>
+<table class="table">
+    <thead >
+    <tr>
+        <th>ID</th>
+        <th>Semester</th>
+        <th>Course Name</th>
+        <th>Section Number</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#semester}}
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{semesterName}}</td>
+        <td>{{course.courseName}}</td>
+        <td>{{section.sectionNumber}}</td>
+        <td>{{startMonth}} {{startDay}}</td>
+        <td>{{endMonth}} {{endDay}}</td>
+        <td><a href="/semester/{{id}}">Show</a></td>
+        <td><a href="/semester/{{id}}/edit">Edit</a></td>
+        <td><a href="/semester/{{id}}/delete">Delete</a></td>
+    </tr>
+    {{/semester}}
+    </tbody>
+</table>
+<br>
+<a class="btn btn-primary" href="/semester/create">Create</a>
+
+{{>common/footer}}

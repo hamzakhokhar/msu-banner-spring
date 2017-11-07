@@ -1,40 +1,32 @@
 {{>common/header}}
-    <!--<h1>Student Info</h1>-->
 <div class="card">
     <h4 class="card-header">Please fill in the course information</h4>
     <div class="card-block">
         <form action="/courses" method="post">
-
-            <!-- Course name -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseName">Course Name</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="courseName" type="text" name="courseName" required="required" placeholder="Memeology">
+                    <input class="form-control" id="courseName" type="text" name="courseName" required="required" placeholder="Calculus">
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="courseNumber">Course Number</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="courseNumber" type="text" name="courseNumber" required="required" placeholder="MTH-1410">
                 </div>
             </div>
 
-            <!-- Department -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="courseDept">Department</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="courseDept" type="text" name="courseDept" required="required" placeholder="CS (Cat Studies)">
+                    <input class="form-control" id="courseDept" type="text" name="courseDept" required="required" placeholder="Mathematics">
                 </div>
             </div>
 
-            <!-- Course ID -->
-            <!-- this have to be auto generated -->
-            <!--<div class="form-group row">-->
-                <!--<label class="col-sm-2 col-form-label text-right" for="courseId">CourseId</label>-->
-                <!--<div class="col-sm-5">-->
-                    <!--<input class="form-control" id="courseId" type="text" name="courseId" required="required" placeholder="1337">-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!-- Credit value -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="creditValue">Credit Value</label>
                 <div class="col-sm-5">
-                    <!--<input class="form-control" id="creditValue" type="number" name="creditValue" required="required" placeholder="4">-->
                     <select name="creditValue" class="custom-select" id="creditValue">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -44,16 +36,6 @@
                 </div>
             </div>
 
-            <!--professor does not exist in the course class-->
-            <!-- Professor -->
-            <!--<div class="form-group row">-->
-                <!--<label class="col-sm-2 col-form-label text-right" for="instructor">Instructor</label>-->
-                <!--<div class="col-sm-5">-->
-                    <!--<input class="form-control" id="instructor" type="text" name="instructor" required="required" placeholder="Stack Overflow">-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!-- Level -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="level">Level</label>
                 <div class="col-sm-5">
@@ -63,69 +45,6 @@
                         <option value="Junior">Junior</option>
                         <option value="Senior">Senior</option>
                     </select>
-                    <!--<input class="form-control" id="level" type="text" name="level" required="required" placeholder="Freshman">-->
-                </div>
-            </div>
-
-            <!-- Building -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
-                <div class="col-sm-5">
-                    <!--<input class="form-control" id="building" type="text" name="building" required="required" placeholder="Parking Lot">-->
-                    <select name="building" class="custom-select" id="building">
-                        <option value="CS building">CS</option>
-                        <option value="CN building">CN</option>
-                        <option value="KC building">KC</option>
-                        <option value="PL building">PL</option>
-                        <option value="AES building">AES</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Room -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="room" type="number" name="room" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- Time -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="time">Time</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="time" type="time" name="time" required="required" placeholder="TBD">
-                </div>
-            </div>
-
-            <!-- PreReqs -->
-            <!--<div class="form-group row">-->
-                <!--<label class="col-sm-2 col-form-label text-right" for="preReqs">Prerequisites</label>-->
-                <!--<div class="col-sm-5">-->
-                    <!--<input class="form-control" id="preReqs" type="text" name="preReqs" required="required" placeholder="None">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; CoReqs &ndash;&gt;-->
-            <!--<div class="form-group row">-->
-                <!--<label class="col-sm-2 col-form-label text-right" for="coReqs">Corequisites</label>-->
-                <!--<div class="col-sm-5">-->
-                    <!--<input class="form-control" id="coReqs" type="text" name="coReqs" required="required" placeholder="None">-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!-- MinSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="minSize">Minimum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="minSize" type="number" name="minSize" required="required" placeholder="1">
-                </div>
-            </div>
-
-            <!-- MaxSize -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="maxSize">Maximum size</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="maxSize" type="number" name="maxSize" required="required" placeholder="30">
                 </div>
             </div>
 

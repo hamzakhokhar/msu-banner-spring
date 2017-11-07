@@ -6,13 +6,11 @@
     <thead >
     <tr>
         <th>ID</th>
-        <th>Course Name</th>
+        <th>Course</th>
         <th>Section</th>
-        <th>Professor Name</th>
-        <th>Room Number</th>
-        <th>Class Size</th>
-        <th></th>
-        <th></th>
+        <th>Professor</th>
+        <th>Building</th>
+        <th>Room</th>
     </tr>
     </thead>
     <tbody>
@@ -20,9 +18,10 @@
     <tr>
         <th scope="row">{{id}}</th>
         <td>{{course.courseName}}</td>
+        <td>{{sectionNumber}}</td>
         <td>{{professor.firstName}} {{professor.lastName}}</td>
-        <td>Room Number</td>
-        <td>{{numberOfSeats}}</td>
+        <td>{{building.buildingName}}</td>
+        <td>{{roomNumber}}</td>
         <td><a href="/sections/{{id}}">Show</a></td>
         <td><a href="/sections/{{id}}/edit">Edit</a></td>
         <td><a href="/sections/{{id}}/delete">Delete</a></td>

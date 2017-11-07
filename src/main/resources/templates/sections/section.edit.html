@@ -3,17 +3,6 @@
     <h4 class="card-header">Please fill in your section information</h4>
     <div class="card-block">
         <form action="/sections/{{section.id}}" method="post">
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="professor">Professor</label>
-                <div class="col-sm-5">
-                    <select name="professor" class="custom-select" id="professor" required>
-                        {{#professors}}
-                        <option value="{{id}}">{{this.firstName}} {{this.lastName}}</option>
-                        {{/professors}}
-                    </select>
-                </div>
-            </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="course">Course</label>
                 <div class="col-sm-5">
@@ -22,14 +11,46 @@
                         <option value="{{courseId}}">{{courseName}}</option>
                         {{/courses}}
                     </select>
-                </div>
+                    </div>
             </div>
+            
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="numberOfSeats">Class Size</label>
+                <label class="col-sm-2 col-form-label text-right" for="sectionNumber">Section Number</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="numberOfSeats" type="number" name="numberOfSeats" value="{{section.numberOfSeats}}" required="required" placeholder="35">
+                    <input class="form-control" id="sectionNumber" type="number" name="sectionNumber" required="required" placeholder="001">
+                </div>
+
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="professor">Professor</label>
+                <div class="col-sm-5">
+                    <select name="professor" class="custom-select" id="professor" required>
+                        {{#professors}}
+                        <option value="{{id}}">{{firstName}} {{lastName}}</option>
+                        {{/professors}}
+                    </select>
                 </div>
             </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
+                <div class="col-sm-5">
+                    <select name="building" class="custom-select" id="building" required>
+                        {{#building}}
+                        <option value="{{id}}">{{buildingName}}</option>
+                        {{/building}}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="room">Room</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="roomNumber" type="number" name="roomNumber" required="required" placeholder="1010">
+                </div>
+            </div>
+
             <div class="form-group row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-5">

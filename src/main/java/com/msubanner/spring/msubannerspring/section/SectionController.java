@@ -3,7 +3,9 @@ package com.msubanner.spring.msubannerspring.section;
 import com.msubanner.spring.msubannerspring.course.CourseRepository;
 import com.msubanner.spring.msubannerspring.professor.Professor;
 import com.msubanner.spring.msubannerspring.professor.ProfessorRepository;
+import com.msubanner.spring.msubannerspring.room.RoomRepository;
 import com.msubanner.spring.msubannerspring.section.Section;
+import com.msubanner.spring.msubannerspring.building.BuildingRepository;
 import com.msubanner.spring.msubannerspring.course.Course;
 
 import com.msubanner.spring.msubannerspring.student.StudentRepository;
@@ -34,6 +36,9 @@ public class SectionController {
     @Autowired
     private CourseRepository courseRepository;
 
+    @Autowired
+    private BuildingRepository buildingRepository;
+    
     /**
      * Finds all Sections stored in the section repo data table
      * @return ModelAndView
@@ -71,6 +76,7 @@ public class SectionController {
         modelMap.put("professors", professorRepository.findAll());
         modelMap.put("courses", courseRepository.findAll());
         modelMap.put("section", sectionRepository.findOne(id));
+        modelMap.put("building", buildingRepository.findOne(id));
         return new ModelAndView("sections/section.edit", modelMap);
     }
 
@@ -86,6 +92,7 @@ public class SectionController {
         modelMap.put("professors", professorRepository.findAll());
         modelMap.put("courses", courseRepository.findAll());
         modelMap.put("section", new Section());
+        modelMap.put("building", buildingRepository.findAll());
         return new ModelAndView("sections/section.create", modelMap);
     }
 
