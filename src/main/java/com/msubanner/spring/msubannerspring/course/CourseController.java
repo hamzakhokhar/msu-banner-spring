@@ -27,6 +27,7 @@ public class CourseController {
     // GET courses View
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public ModelAndView getCourseView() {
+
         // CRUD(read) - courseRepository.findAll(id)
         return new ModelAndView("courses/index", "courses", courseRepository.findAll());
     }
@@ -34,6 +35,7 @@ public class CourseController {
     // GET course Info view
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
     public ModelAndView getCourseInfoView(@PathVariable("id") long id){
+
         // CRUD(read) - courseRepository.findOne(id)
         return new ModelAndView("courses/course.show", "course", courseRepository.findOne(id));
     }
@@ -41,6 +43,7 @@ public class CourseController {
     // GET Course Edit view
     @RequestMapping(value = "/courses/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getCourseEditView(@PathVariable("id") long id){
+
         // CRUD(read) - courseRepository.findOne(id)
         return new ModelAndView("courses/course.edit", "course", courseRepository.findOne(id));
     }
@@ -49,6 +52,7 @@ public class CourseController {
     // GET New course view
     @RequestMapping(value = "/courses/create", method = RequestMethod.GET)
     public ModelAndView getNewCourseView(){
+
         return new ModelAndView("courses/course.create", "course", new Course());
     }
 
@@ -56,7 +60,9 @@ public class CourseController {
     @RequestMapping(value = "/courses", method = RequestMethod.POST)
     public String submitCourse(@Valid @ModelAttribute("course")Course course,
                          BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) {
+
             return "error";
         }
         //CRUD (create) - save course
@@ -67,8 +73,11 @@ public class CourseController {
     // POST edit course view
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.POST)
     public String editCourse(@Valid @ModelAttribute("course")Course course,
-                                BindingResult result, ModelMap model, @PathVariable("id") long id) {
+                                BindingResult result, ModelMap model,
+                             @PathVariable("id") long id) {
+
         if (result.hasErrors()) {
+
             return "error";
         }
         // Explicitly set the id of the course from the path.
@@ -83,6 +92,7 @@ public class CourseController {
     // GET delete course resource
     @RequestMapping(value = "/courses/{id}/delete", method = RequestMethod.GET)
     public String deleteCourse(@PathVariable("id") long id) {
+
         // CRUD(delete) - delete course
         courseRepository.delete(id);
         return "redirect:/courses";

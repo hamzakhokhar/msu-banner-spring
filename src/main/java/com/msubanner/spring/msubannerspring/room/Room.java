@@ -12,10 +12,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     private int roomNumber = 1011;
     private int seatsInRoom;
-
 
     public Room(int roomNumber, int seatsInRoom, long roomId) {
 
@@ -32,6 +30,7 @@ public class Room {
     }
 
     Room(int roomNumber, int seatsInRoom) {
+
         setRoomNumber(roomNumber);
         setSeatsInRoom(seatsInRoom);
     }

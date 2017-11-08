@@ -38,6 +38,7 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester", method = RequestMethod.GET)
     public ModelAndView getSemesterView() {
+
         return new ModelAndView("semester/index", "semester", semesterRepository.findAll());
     }
 
@@ -47,6 +48,7 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester/{id}", method = RequestMethod.GET)
     public ModelAndView getSemesterInfoView(@PathVariable("id") long id){
+
         return new ModelAndView("semester/semester.show", "semester", semesterRepository.findOne(id));
     }
 
@@ -56,6 +58,7 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getSemesterEditView(@PathVariable("id") long id){
+
     	Map modelMap = new HashMap();
         modelMap.put("section", sectionRepository.findAll());
         modelMap.put("semester", semesterRepository.findOne(id));
@@ -67,6 +70,7 @@ public class SemesterController {
      */
     @RequestMapping(value = "/semester/create", method = RequestMethod.GET)
     public ModelAndView getNewSemesterView(){
+
     	Map modelMap = new HashMap();
         modelMap.put("section", sectionRepository.findAll());
         modelMap.put("semester", new Semester());
@@ -80,6 +84,7 @@ public class SemesterController {
     @RequestMapping(value = "/semester", method = RequestMethod.POST)
     public String submitSemester(@Valid @ModelAttribute("semester")Semester semester,
                                   BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) return "error";
         semesterRepository.save(semester);
         return "redirect:/semester";
@@ -94,6 +99,7 @@ public class SemesterController {
     @RequestMapping(value = "/semester/{id}", method = RequestMethod.POST)
     public String editSemester(@Valid @ModelAttribute("semester")Semester semester,
                                 BindingResult result, ModelMap model, @PathVariable("id") long id) {
+
         if (result.hasErrors()) return "error";
         semester.setId(id);
         semesterRepository.save(semester);
@@ -106,6 +112,7 @@ public class SemesterController {
      */    
     @RequestMapping(value = "/semester/{id}/delete", method = RequestMethod.GET)
     public String deleteSemester(@PathVariable("id") long id) {
+
     	semesterRepository.delete(id);
         return "redirect:/semester";
     }

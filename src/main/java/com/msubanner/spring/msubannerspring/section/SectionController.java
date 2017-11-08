@@ -46,6 +46,7 @@ public class SectionController {
     // GET Section View
     @RequestMapping(value = "/sections", method = RequestMethod.GET)
     public ModelAndView getSectionView() {
+
         // CRUD(read) - sectionRepository.findAll(id)
         return new ModelAndView("sections/index", "sections", sectionRepository.findAll());
     }
@@ -58,6 +59,7 @@ public class SectionController {
     // GET Section Info view
     @RequestMapping(value = "/sections/{id}", method = RequestMethod.GET)
     public ModelAndView getSectionInfoView(@PathVariable("id") long id){
+
         // CRUD(read) - sectionRepository.findOne(id)
         return new ModelAndView("sections/section.show", "section", sectionRepository.findOne(id));
 
@@ -71,6 +73,7 @@ public class SectionController {
     // GET Section Edit view
     @RequestMapping(value = "/sections/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getSectionEditView(@PathVariable("id") long id){
+
         // CRUD(read) - sectionRepository.findOne(id)
         Map modelMap = new HashMap();
         modelMap.put("professors", professorRepository.findAll());
@@ -88,6 +91,7 @@ public class SectionController {
     // GET New Section view
     @RequestMapping(value = "/sections/create", method = RequestMethod.GET)
     public ModelAndView getNewSectionView(){
+
         Map modelMap = new HashMap();
         modelMap.put("professors", professorRepository.findAll());
         modelMap.put("courses", courseRepository.findAll());
@@ -107,7 +111,9 @@ public class SectionController {
     @RequestMapping(value = "/sections", method = RequestMethod.POST)
     public String submitSection(@Valid @ModelAttribute("section")Section section,
                                 BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) {
+
             return "error";
         }
         //CRUD (create) - save section
@@ -126,7 +132,9 @@ public class SectionController {
     @RequestMapping(value = "/sections/{id}", method = RequestMethod.POST)
     public String editSection(@Valid @ModelAttribute("section")Section section,
                               BindingResult result, ModelMap model, @PathVariable("id") long id) {
+
         if (result.hasErrors()) {
+
             return "error";
         }
         // Explicitly set the id of the section from the path.
@@ -146,6 +154,7 @@ public class SectionController {
     // GET delete section resource
     @RequestMapping(value = "/sections/{id}/delete", method = RequestMethod.GET)
     public String deleteSection(@PathVariable("id") long id) {
+
         // CRUD(delete) - delete section
         sectionRepository.delete(id);
         return "redirect:/sections";

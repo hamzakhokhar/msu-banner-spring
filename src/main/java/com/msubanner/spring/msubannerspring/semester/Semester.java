@@ -27,6 +27,7 @@ public class Semester {
      * Default constructor for semester object
      */
     public Semester() {
+
     	this.section = null;
     	this.id = Long.valueOf(0);
     	this.semesterName = "TBD";
@@ -39,6 +40,7 @@ public class Semester {
      * @param section the section to be added to the semester
      */
     public Semester(Section section) {
+
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = "TBD";
@@ -54,6 +56,7 @@ public class Semester {
      * @param endDate the date ending the semester
      */
     public Semester(Section section, String semesterName, String startDate, String endDate) {
+
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = semesterName;
@@ -70,6 +73,7 @@ public class Semester {
      * @param endDate the date ending the semester
      */
     public Semester(Section section, Long id, String semesterName, String startDate, String endDate) {
+
     	this.section = section;
     	this.id = Long.valueOf(0);
         this.semesterName = semesterName;
@@ -82,6 +86,7 @@ public class Semester {
      * @return id of the current semester
      */
     public Long getId() {
+
     	return id;
     }
     
@@ -90,6 +95,7 @@ public class Semester {
      * @param id the long id for the current semester id
      */
     public void setId(Long id) {
+
     	this.id = id;
     }
     
@@ -98,6 +104,7 @@ public class Semester {
      * @return the current semester
      */
     public String getSemesterName() {
+
         return semesterName;
     }
 
@@ -106,6 +113,7 @@ public class Semester {
      * @param semesterName current semester object
      */
     public void setSemesterName(String semesterName) {
+
         this.semesterName = semesterName;
     }
     
@@ -114,6 +122,7 @@ public class Semester {
      * @return start date of the semester
      */
     public String getStartDate() {
+
         return startDate;
     }
 
@@ -122,6 +131,7 @@ public class Semester {
      * @param startDate of the semester
      */
     public void setStartDate(String startDate) {
+
         this.startDate = startDate;
     }
     
@@ -130,6 +140,7 @@ public class Semester {
      * @return end day of the semester
      */
     public String getEndDate() {
+
         return endDate;
     }
 
@@ -138,6 +149,7 @@ public class Semester {
      * @param endDate of the semester
      */
     public void setEndDate(String endDate) {
+
         this.endDate = endDate;
     }
 }

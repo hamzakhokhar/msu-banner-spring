@@ -28,6 +28,7 @@ public class StudentsController {
      */    
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ModelAndView getStudentsView() {
+
         return new ModelAndView("students/index", "students", studentRepository.findAll());
     }
 
@@ -37,6 +38,7 @@ public class StudentsController {
      */
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ModelAndView getStudentInfoView(@PathVariable("id") long id){
+
         return new ModelAndView("students/student.show", "student", studentRepository.findOne(id));
     }
 
@@ -46,6 +48,7 @@ public class StudentsController {
      */
     @RequestMapping(value = "/students/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getStudentEditView(@PathVariable("id") long id){
+
         return new ModelAndView("students/student.edit", "student", studentRepository.findOne(id));
     }
 
@@ -55,6 +58,7 @@ public class StudentsController {
      */
     @RequestMapping(value = "/students/create", method = RequestMethod.GET)
     public ModelAndView getNewStudentView(){
+
         return new ModelAndView("students/student.create", "student", new Student());
     }
 
@@ -65,6 +69,7 @@ public class StudentsController {
     @RequestMapping(value = "/students", method = RequestMethod.POST)
     public String submitStudent(@Valid @ModelAttribute("student")Student student,
                                 BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) return "error";
         studentRepository.save(student);
         return "redirect:/students";
@@ -79,6 +84,7 @@ public class StudentsController {
     @RequestMapping(value = "/students/{id}", method = RequestMethod.POST)
     public String editStudent(@Valid @ModelAttribute("student")Student student,
                               BindingResult result, ModelMap model, @PathVariable("id") long id) {
+
         if (result.hasErrors()) return "error";
         student.setId(id);
         studentRepository.save(student);
@@ -91,6 +97,7 @@ public class StudentsController {
      */ 
     @RequestMapping(value = "/students/{id}/delete", method = RequestMethod.GET)
     public String deleteStudent(@PathVariable("id") long id) {
+
         studentRepository.delete(id);
         return "redirect:/students";
     }

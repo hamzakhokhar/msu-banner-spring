@@ -74,6 +74,7 @@ public class Section {
      * @return the building that the course is taught
      */
     public Building getBuilding() {
+
         return building;
     }
 
@@ -82,6 +83,7 @@ public class Section {
      * @param building a string listing the new building name
      */
     public void setBuilding(Building building) {
+
         this.building = building;
     }
 
@@ -90,6 +92,7 @@ public class Section {
      * @return room a string of the room number that the course is taught
      */
     public int getRoomNumber() {
+
         return roomNumber;
     }
 
@@ -98,6 +101,7 @@ public class Section {
      * @param room a string listing the room number
      */
     public void setRoomNumber(int roomNumber) {
+
         this.roomNumber = roomNumber;
     }
 
@@ -106,6 +110,7 @@ public class Section {
      * @return the time that the course is taught
      */
     public String getTime() {
+
         return time;
     }
 
@@ -114,6 +119,7 @@ public class Section {
      * @param time as a string of the time the course is taught
      */
     public void setTime(String time) {
+
         this.time = time;
     }
 
@@ -122,6 +128,7 @@ public class Section {
      * @return the weekday that the course is taught
      */
     public String getWeekday() {
+
         return weekday;
     }
 
@@ -130,6 +137,7 @@ public class Section {
      * @param weekday as a string of the week days the course is taught
      */
     public void setWeekday(String weekday) {
+
         this.weekday = weekday;
     }
     
@@ -138,6 +146,7 @@ public class Section {
      * @return Course course
      */
     public Course getCourse() {
+
         return course;
     }
     
@@ -146,6 +155,7 @@ public class Section {
      * @param course
      */
     public void setCourse(Course course) {
+
         this.course = course;
     }
 
@@ -154,6 +164,7 @@ public class Section {
      * @return Professor professor
      */
     public Professor getProfessor() {
+
         return professor;
     }
     
@@ -162,6 +173,7 @@ public class Section {
      * @param professor
      */
     public void setProfessor(Professor professor) {
+
         this.professor = professor;
     }
 
@@ -170,6 +182,7 @@ public class Section {
      * @return long id
      */
     public Long getId() {
+
         return id;
     }
     
@@ -178,6 +191,7 @@ public class Section {
      * @param id
      */
     public void setId(Long id) {
+
         this.id = id;
     }
 
@@ -186,6 +200,7 @@ public class Section {
      * @return section number
      */
     public int getSectionNumber() {
+
         return sectionNumber;
     }
     
@@ -194,6 +209,7 @@ public class Section {
      * @param sectionNumber
      */
     public void setSectionNumber(int sectionNumber) {
+
         this.sectionNumber = sectionNumber;
     }
 }
