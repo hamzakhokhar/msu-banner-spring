@@ -24,7 +24,7 @@ public class Section {
     private int sectionNumber = 0;
     private int roomNumber;
     private String time;
-    private String weekday;
+    private String weekday = "TBD";
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -119,7 +119,6 @@ public class Section {
      * @param time as a string of the time the course is taught
      */
     public void setTime(String time) {
-
         this.time = time;
     }
 
@@ -128,7 +127,6 @@ public class Section {
      * @return the weekday that the course is taught
      */
     public String getWeekday() {
-
         return weekday;
     }
 
@@ -137,7 +135,6 @@ public class Section {
      * @param weekday as a string of the week days the course is taught
      */
     public void setWeekday(String weekday) {
-
         this.weekday = weekday;
     }
     
@@ -146,7 +143,6 @@ public class Section {
      * @return Course course
      */
     public Course getCourse() {
-
         return course;
     }
     

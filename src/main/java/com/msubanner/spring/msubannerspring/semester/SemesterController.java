@@ -32,6 +32,9 @@ public class SemesterController {
     @Autowired
     private SectionRepository sectionRepository;
     
+    @Autowired
+    private CourseRepository courseRepository;
+    
     /**
      * This method will display all of the semesters in the database
      * CRUD(read) - semesterRepository.findAll(id)
@@ -60,6 +63,7 @@ public class SemesterController {
     public ModelAndView getSemesterEditView(@PathVariable("id") long id){
 
     	Map modelMap = new HashMap();
+    	modelMap.put("courses", courseRepository.findAll());
         modelMap.put("section", sectionRepository.findAll());
         modelMap.put("semester", semesterRepository.findOne(id));
         return new ModelAndView("semester/semester.edit", modelMap);
@@ -72,7 +76,8 @@ public class SemesterController {
     public ModelAndView getNewSemesterView(){
 
     	Map modelMap = new HashMap();
-        modelMap.put("section", sectionRepository.findAll());
+        modelMap.put("courses", courseRepository.findAll());
+    	modelMap.put("section", sectionRepository.findAll());
         modelMap.put("semester", new Semester());
         return new ModelAndView("semester/semester.create", modelMap);
     }
