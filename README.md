@@ -33,7 +33,8 @@ Sprint #3 (Septmeber 19 - October 3) Product owner: Tarin Horne, Scrum Master: C
 
 Sprint #4 (October 5 - October 17) Product owner: Christian Kendall, Scrum Master: Matthew Kline 
 
-Sprint #5 (October 24 - November 5) Product owner: Hamza Khokhar, Scrum Master: ThienNgo Le
+Sprint #5 (October 24 - November 7) Product owner: Hamza Khokhar, Scrum Master: ThienNgo Le
 
+Sprint #6 (November 7 - November 28) Product owner: Matthew Kline, Scrum Master: Eric Kearney
 
-T E S T
+Sprint #7 (November 28 - December 14) Product owner: ThieNgo Le, Scrum Master: Hamza Kohokar
