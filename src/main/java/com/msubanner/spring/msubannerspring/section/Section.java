@@ -67,7 +67,7 @@ public class Section {
         this.weekday = weekday;
     }
     
-    protected Section() {}
+    public Section() {}
     
     /**
      * getBuilding will return the building that the course is taught in
