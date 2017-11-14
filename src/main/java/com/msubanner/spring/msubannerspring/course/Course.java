@@ -29,7 +29,6 @@ public class Course {
      * take no inputed values and create a course.
      */
     public Course() {
-
         this.courseId = Long.valueOf(0);
         this.courseDept = "TBD";
         this.courseName = "TBD";

@@ -1,3 +1,4 @@
+//Section test written in part by Eric Kearney
 package com.msubanner.spring.msubannerspring;
 
 import com.msubanner.spring.msubannerspring.room.Room;

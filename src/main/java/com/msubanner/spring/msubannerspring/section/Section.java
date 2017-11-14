@@ -48,7 +48,7 @@ public class Section {
      * @param sectionNumber is the unique address of the new section
      * @param professor is the professor assigned to the course
      * @param building is the building that the course is being taught
-     * @param room is the room that the course is being taught
+     * @param roomNumber is the room that the course is being taught
      * @param time is the time that the course is being taught
      * @param weekday is the days of the week the course is being taught
      */

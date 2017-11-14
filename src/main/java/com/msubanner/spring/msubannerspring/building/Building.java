@@ -127,6 +127,7 @@ public class Building {
         this.id = id;
     }
 
+    /*These methods don't do anything yet, commented out for now.
     public Room getRoom() {
 
         return room;
@@ -135,4 +136,5 @@ public class Building {
     public void setRoom(int roomNumber, int numberOfSeats) {
 
     }
+    */
 }
