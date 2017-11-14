@@ -3,7 +3,7 @@
     Sections
 </h2>
 <table class="table">
-    <thead >
+    <thead>
     <tr>
         <th>ID</th>
         <th>Course</th>
@@ -11,6 +11,7 @@
         <th>Professor</th>
         <th>Building</th>
         <th>Room</th>
+        <th>Weekday</th>
         <th>Time</th>
     </tr>
     </thead>
@@ -23,6 +24,7 @@
         <td>{{professor.firstName}} {{professor.lastName}}</td>
         <td>{{building.buildingName}}</td>
         <td>{{roomNumber}}</td>
+        <td>{{weekday}}</td>
         <td>{{time}}</td>
         <td><a href="/sections/{{id}}">Show</a></td>
         <td><a href="/sections/{{id}}/edit">Edit</a></td>

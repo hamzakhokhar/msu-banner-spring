@@ -34,6 +34,7 @@ public class Professor {
      * @param lastName the last name of the professor
      */
     public Professor(String firstName, String lastName) {
+
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -47,6 +48,7 @@ public class Professor {
      * @param Id the professor's unique ID number
      */
     public Professor(String firstName, String lastName, long Id) {
+
         setFirstName(firstName);
         setLastName(lastName);
         setId(Id);
@@ -57,6 +59,7 @@ public class Professor {
      * @return the first name of the professor
      */
     public String getFirstName() {
+
         return firstName;
     }
 
@@ -65,6 +68,7 @@ public class Professor {
      * @param firstName set the firstName of the professor
      */
     public void setFirstName(String firstName) {
+
         this.firstName = firstName;
     }
 
@@ -73,6 +77,7 @@ public class Professor {
      * @return the last name of the professor
      */
     public String getLastName() {
+
         return lastName;
     }
 
@@ -81,6 +86,7 @@ public class Professor {
      * @param lastName the last name of the professor
      */
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
 
@@ -89,6 +95,7 @@ public class Professor {
      * @return the id number of the professor
      */
     public Long getId() {
+
         return id;
     }
 
@@ -97,6 +104,7 @@ public class Professor {
      * @param id the new id of the professor
      */
     public void setId(Long id) {
+
         this.id = id;
     }
 }

@@ -28,7 +28,8 @@ public class SectionTest {
                 testProfessor,
                 testBuilding,
                 1010,
-                "9:00 am");
+                "9:00 am",
+                "Tuesday Thursday");
 
     @Test
     public void Section() throws Exception {

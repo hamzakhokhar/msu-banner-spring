@@ -23,6 +23,7 @@ public class Student {
      * @param lastName the last name of the professor
      */
     public Student(String firstName, String lastName) {
+
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -32,6 +33,7 @@ public class Student {
      * @return the first name of the student
      */
     public String getFirstName() {
+
         return firstName;
     }
 
@@ -67,6 +69,7 @@ public class Student {
      * @return the id number of the student
      */
     public Long getId() {
+
         return id;
     }
 
@@ -75,6 +78,7 @@ public class Student {
      * @param id the new id of the student
      */
     public void setId(Long id) {
+
         this.id = id;
     }
 }
