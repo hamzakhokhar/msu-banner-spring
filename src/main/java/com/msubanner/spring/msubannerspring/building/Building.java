@@ -27,7 +27,7 @@ public class Building {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    protected Building() {
+    public Building() {
 
     }
 

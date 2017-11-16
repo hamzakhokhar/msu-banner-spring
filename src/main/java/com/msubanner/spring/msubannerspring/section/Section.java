@@ -64,11 +64,14 @@ public class Section {
         this.professor = professor;
         this.building = building;
         this.roomNumber = roomNumber;
+        setTime(time);
         this.weekday = weekday;
     }
     
-    public Section() {}
-    
+    public Section() {
+
+    }
+
     /**
      * getBuilding will return the building that the course is taught in
      * @return the building that the course is taught
@@ -98,7 +101,7 @@ public class Section {
 
     /**
      * setRoom will change the room location of the course
-     * @param room a string listing the room number
+     * @param roomNumber a string listing the room number
      */
     public void setRoomNumber(int roomNumber) {
 
