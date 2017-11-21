@@ -20,6 +20,8 @@ public class Semester {
     @OneToOne
     @JoinColumn(name = "section_id")
     private Section section;
+
+
     
     //protected Semester(){};
 
