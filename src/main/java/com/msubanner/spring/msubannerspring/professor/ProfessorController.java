@@ -28,6 +28,7 @@ public class ProfessorController {
      */
     @RequestMapping(value = "/professor", method = RequestMethod.GET)
     public ModelAndView getProfessorView() {
+
         return new ModelAndView("professor/index", "professor", professorRepository.findAll());
     }
 
@@ -37,6 +38,7 @@ public class ProfessorController {
      */
     @RequestMapping(value = "/professor/{id}", method = RequestMethod.GET)
     public ModelAndView getProfessorInfoView(@PathVariable("id") long id){
+
         return new ModelAndView("professor/professor.show", "professor", professorRepository.findOne(id));
     }
 
@@ -46,6 +48,7 @@ public class ProfessorController {
      */
     @RequestMapping(value = "/professor/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getProfessorEditView(@PathVariable("id") long id){
+
         return new ModelAndView("professor/professor.edit", "professor", professorRepository.findOne(id));
     }
 
@@ -54,6 +57,7 @@ public class ProfessorController {
      */
     @RequestMapping(value = "/professor/create", method = RequestMethod.GET)
     public ModelAndView getNewProfessorView(){
+
         return new ModelAndView("professor/professor.create", "professor", new Professor());
     }
 
@@ -64,6 +68,7 @@ public class ProfessorController {
     @RequestMapping(value = "/professor", method = RequestMethod.POST)
     public String submitProfessor(@Valid @ModelAttribute("professor")Professor professor,
                                   BindingResult result, ModelMap model) {
+
         if (result.hasErrors()) return "error";
         professorRepository.save(professor);
         return "redirect:/professor";
@@ -78,6 +83,7 @@ public class ProfessorController {
     @RequestMapping(value = "/professor/{id}", method = RequestMethod.POST)
     public String editProfessor(@Valid @ModelAttribute("professor")Professor professor,
                                 BindingResult result, ModelMap model, @PathVariable("id") long id) {
+
         if (result.hasErrors()) return "error";
         professor.setId(id);
         professorRepository.save(professor);
@@ -90,6 +96,7 @@ public class ProfessorController {
      */    
     @RequestMapping(value = "/professor/{id}/delete", method = RequestMethod.GET)
     public String deleteProfessor(@PathVariable("id") long id) {
+
     	professorRepository.delete(id);
         return "redirect:/professor";
     }

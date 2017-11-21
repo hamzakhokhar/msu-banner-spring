@@ -24,7 +24,7 @@ public class Section {
     private int sectionNumber = 0;
     private int roomNumber;
     private String time;
-    private String weekday;
+    private String weekday = "TBD";
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -48,7 +48,7 @@ public class Section {
      * @param sectionNumber is the unique address of the new section
      * @param professor is the professor assigned to the course
      * @param building is the building that the course is being taught
-     * @param room is the room that the course is being taught
+     * @param roomNumber is the room that the course is being taught
      * @param time is the time that the course is being taught
      * @param weekday is the days of the week the course is being taught
      */
@@ -64,16 +64,20 @@ public class Section {
         this.professor = professor;
         this.building = building;
         this.roomNumber = roomNumber;
+        setTime(time);
         this.weekday = weekday;
     }
     
-    protected Section() {}
-    
+    public Section() {
+
+    }
+
     /**
      * getBuilding will return the building that the course is taught in
      * @return the building that the course is taught
      */
     public Building getBuilding() {
+
         return building;
     }
 
@@ -82,6 +86,7 @@ public class Section {
      * @param building a string listing the new building name
      */
     public void setBuilding(Building building) {
+
         this.building = building;
     }
 
@@ -90,14 +95,16 @@ public class Section {
      * @return room a string of the room number that the course is taught
      */
     public int getRoomNumber() {
+
         return roomNumber;
     }
 
     /**
      * setRoom will change the room location of the course
-     * @param room a string listing the room number
+     * @param roomNumber a string listing the room number
      */
     public void setRoomNumber(int roomNumber) {
+
         this.roomNumber = roomNumber;
     }
 
@@ -106,6 +113,7 @@ public class Section {
      * @return the time that the course is taught
      */
     public String getTime() {
+
         return time;
     }
 
@@ -146,6 +154,7 @@ public class Section {
      * @param course
      */
     public void setCourse(Course course) {
+
         this.course = course;
     }
 
@@ -154,6 +163,7 @@ public class Section {
      * @return Professor professor
      */
     public Professor getProfessor() {
+
         return professor;
     }
     
@@ -162,6 +172,7 @@ public class Section {
      * @param professor
      */
     public void setProfessor(Professor professor) {
+
         this.professor = professor;
     }
 
@@ -170,6 +181,7 @@ public class Section {
      * @return long id
      */
     public Long getId() {
+
         return id;
     }
     
@@ -178,6 +190,7 @@ public class Section {
      * @param id
      */
     public void setId(Long id) {
+
         this.id = id;
     }
 
@@ -186,6 +199,7 @@ public class Section {
      * @return section number
      */
     public int getSectionNumber() {
+
         return sectionNumber;
     }
     
@@ -194,6 +208,7 @@ public class Section {
      * @param sectionNumber
      */
     public void setSectionNumber(int sectionNumber) {
+
         this.sectionNumber = sectionNumber;
     }
 }
