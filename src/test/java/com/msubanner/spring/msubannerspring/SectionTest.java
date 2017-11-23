@@ -36,13 +36,23 @@ public class SectionTest{
     }
 
     /**
-     * Tests the section's ability to get and set the time field
+     * Tests the section's ability to get and set the startTime field
      */
     @Test
-    public void testSectionGetAndSetTime(){
+    public void testSectionGetAndSetStartTime(){
         String testTime = "5:00pm";
-        testSection.setTime(testTime);
-        Assert.assertEquals("5:00pm", testSection.getTime());
+        testSection.setStartTime(testTime);
+        Assert.assertEquals("5:00pm", testSection.getStartTime());
+    }
+
+    /**
+     * Tests the section's ability to get and set the endTime field
+     */
+    @Test
+    public void testSectionGetAndSetEndTime(){
+        String testTime = "5:00pm";
+        testSection.setEndTime(testTime);
+        Assert.assertEquals("5:00pm", testSection.getEndTime());
     }
 
     /**
@@ -108,7 +118,8 @@ public class SectionTest{
         Professor testProfessor = new Professor();
         Building testBuilding = new Building();
         int testRoomNumber = 13;
-        String testTime = "10:00am";
+        String testStartTime = "10:00am";
+        String testEndTime = "10:00am";
         String testWeekday = "T/Thu";
 
         Section testSectionConstructor = new Section(testCourse,
@@ -116,7 +127,8 @@ public class SectionTest{
                                                     testProfessor,
                                                     testBuilding,
                                                     testRoomNumber,
-                                                    testTime,
+                                                    testStartTime,
+                                                    testEndTime,
                                                     testWeekday);
 
         Assert.assertEquals(testCourse, testSectionConstructor.getCourse());
@@ -124,7 +136,8 @@ public class SectionTest{
         Assert.assertEquals(testProfessor, testSectionConstructor.getProfessor());
         Assert.assertEquals(testBuilding, testSectionConstructor.getBuilding());
         Assert.assertEquals(13, testSectionConstructor.getRoomNumber());
-        Assert.assertEquals("10:00am", testSectionConstructor.getTime());
+        Assert.assertEquals("10:00am", testSectionConstructor.getStartTime());
+        Assert.assertEquals("10:00am", testSectionConstructor.getStartTime());
         Assert.assertEquals("T/Thu", testSectionConstructor.getWeekday());
     }
 }
