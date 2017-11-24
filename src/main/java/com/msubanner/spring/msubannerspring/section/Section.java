@@ -9,6 +9,7 @@ import com.msubanner.spring.msubannerspring.room.*;
 import com.msubanner.spring.msubannerspring.student.Student;
 import org.springframework.data.rest.core.annotation.RestResource;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Section Persistence Class
@@ -26,6 +27,8 @@ public class Section {
     private String startTime;
     private String endTime;
     private String weekday = "TBD";
+    // private int studentID;
+    // private int[] currentEnrolledStudents = new int[30];
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -230,4 +233,61 @@ public class Section {
 
         this.sectionNumber = sectionNumber;
     }
+
+
+    /*
+
+    public boolean getEnrolledStudentID (int studentID) {
+
+        for (int i= 0; i < currentEnrolledStudents.length; i++) { // run through array and check for student
+
+            int currentIndexValue = currentEnrolledStudents[i];
+
+            if (studentID == currentIndexValue) {
+                return false; // if found - student can't enroll
+            }
+        }
+        return true; // If not found - student can enroll
+    }
+
+    public void setEnrolledStudentID (int studentID, boolean bCanEnroll) {
+
+        this.studentID = studentID;
+        bCanEnroll = getEnrolledStudentID(studentID);
+
+        if (bCanEnroll) {
+            int i = currentEnrolledStudents.length-1;
+            currentEnrolledStudents[i] = studentID;
+        }
+    }
+
+
+    public void disEnrollStudent (int studentID) {
+
+    for (int i= 0; i < currentEnrolledStudents.length; i++) { // run through array and check for student
+
+            int currentIndexValue = currentEnrolledStudents[i];
+
+            if (studentID == currentIndexValue) {
+                currentEnrolledStudents[i] = null; //Set array element to null
+            }
+    }
+
+
+
+
+    public int getStudentID(int studentID) {
+        return studentID;
+    }
+
+    public void setStudentID() {
+        this.studentID = studentID;
+    }
+
+
+
+    public boolean isOverlapping(Date startTime1, Date endTime1, Date startTime2, Date endTime2) {
+    return startTime1.before(endTime2) && startTime2.before(endTime1);
+}
+    */
 }
