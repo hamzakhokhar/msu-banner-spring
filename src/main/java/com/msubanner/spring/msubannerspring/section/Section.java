@@ -24,13 +24,13 @@ public class Section {
     private Long id;
     private int sectionNumber = 0;
     private int roomNumber;
-    private int currentClassSize = 0;
+    // private int currentClassSize = 0;
     private String startTime;
     private String endTime;
     private String weekday = "TBD";
     private Long studentID;
     // private int[] currentEnrolledStudents = new int[30];
-    private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
+    // private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -237,7 +237,7 @@ public class Section {
     }
 
 
-
+/*
 
     public boolean getEnrolledStudentID (Long studentID) {
 
@@ -249,7 +249,7 @@ public class Section {
             currentIndexValue = currentEnrolledStudents.get(i);
 
             if (studentID == currentIndexValue) {
-            return false;
+                return false;
             }
         return true;
     }
@@ -299,7 +299,7 @@ public class Section {
     }
 
 
-    /*
+
     public boolean isOverlapping(Date startTime1, Date endTime1, Date startTime2, Date endTime2) {
     return startTime1.before(endTime2) && startTime2.before(endTime1);
 }
