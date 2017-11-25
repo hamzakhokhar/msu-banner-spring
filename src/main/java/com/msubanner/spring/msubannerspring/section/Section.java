@@ -24,11 +24,13 @@ public class Section {
     private Long id;
     private int sectionNumber = 0;
     private int roomNumber;
+    private int currentClassSize = 0;
     private String startTime;
     private String endTime;
     private String weekday = "TBD";
     // private int studentID;
     // private int[] currentEnrolledStudents = new int[30];
+    // private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -248,7 +250,21 @@ public class Section {
             }
         }
         return true; // If not found - student can enroll
+
+        // For ArrayList
+        for (int i= 0; i < currentEnrolledStudents.size(); i++)
+
+            int currentIndexValue = currentEnrolledStudents.get(i);
+
+            if (studentID == currentIndexValue) {
+                return false;
+            }
+        }
+        return true;
+
     }
+
+
 
     public void setEnrolledStudentID (int studentID, boolean bCanEnroll) {
 
@@ -258,6 +274,14 @@ public class Section {
         if (bCanEnroll) {
             int i = currentEnrolledStudents.length-1;
             currentEnrolledStudents[i] = studentID;
+            currentClassSize += 1;
+        }
+
+        // FOr ArrayList
+        if (bCanEnroll) {
+            int i = currentEnrolledStudents.size()-1;
+            currentEnrolledStudents(i) = studentID;
+            currentClassSize += 1;
         }
     }
 
@@ -270,6 +294,19 @@ public class Section {
 
             if (studentID == currentIndexValue) {
                 currentEnrolledStudents[i] = null; //Set array element to null
+                currentClassSize -= 1;
+            }
+
+
+    // For ArrayList
+    for (int i= 0; i < currentEnrolledStudents.size(); i++) { // run through array and check for student
+
+            int currentIndexValue = currentEnrolledStudents.get(i);
+
+            if (studentID == currentIndexValue) {
+                currentEnrolledStudents.remove(i); //Delete Index
+                currentClassSize -= 1;
+                break;
             }
     }
 
