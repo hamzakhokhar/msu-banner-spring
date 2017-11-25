@@ -28,9 +28,9 @@ public class Section {
     private String startTime;
     private String endTime;
     private String weekday = "TBD";
-    // private int studentID;
+    private Long studentID;
     // private int[] currentEnrolledStudents = new int[30];
-    // private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
+    private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -237,50 +237,34 @@ public class Section {
     }
 
 
-    /*
 
-    public boolean getEnrolledStudentID (int studentID) {
 
-        for (int i= 0; i < currentEnrolledStudents.length; i++) { // run through array and check for student
+    public boolean getEnrolledStudentID (Long studentID) {
 
-            int currentIndexValue = currentEnrolledStudents[i];
-
-            if (studentID == currentIndexValue) {
-                return false; // if found - student can't enroll
-            }
-        }
-        return true; // If not found - student can enroll
+        Long currentIndexValue = Long.valueOf(0);
 
         // For ArrayList
-        for (int i= 0; i < currentEnrolledStudents.size(); i++)
+        for (int i = 0; i < currentEnrolledStudents.size(); i++)
 
-            int currentIndexValue = currentEnrolledStudents.get(i);
+            currentIndexValue = currentEnrolledStudents.get(i);
 
             if (studentID == currentIndexValue) {
-                return false;
+            return false;
             }
-        }
         return true;
-
     }
 
 
 
-    public void setEnrolledStudentID (int studentID, boolean bCanEnroll) {
+    public void setEnrolledStudentID (Long studentID, boolean bCanEnroll) {
 
         this.studentID = studentID;
         bCanEnroll = getEnrolledStudentID(studentID);
 
-        if (bCanEnroll) {
-            int i = currentEnrolledStudents.length-1;
-            currentEnrolledStudents[i] = studentID;
-            currentClassSize += 1;
-        }
-
         // FOr ArrayList
         if (bCanEnroll) {
             int i = currentEnrolledStudents.size()-1;
-            currentEnrolledStudents(i) = studentID;
+            currentEnrolledStudents.set(i, studentID);
             currentClassSize += 1;
         }
     }
@@ -288,26 +272,19 @@ public class Section {
 
     public void disEnrollStudent (int studentID) {
 
-    for (int i= 0; i < currentEnrolledStudents.length; i++) { // run through array and check for student
+        Long currentIndexValue;
 
-            int currentIndexValue = currentEnrolledStudents[i];
+        // For ArrayList
+        for (int i = 0; i < currentEnrolledStudents.size(); i++) { // run through array and check for student
 
-            if (studentID == currentIndexValue) {
-                currentEnrolledStudents[i] = null; //Set array element to null
-                currentClassSize -= 1;
-            }
-
-
-    // For ArrayList
-    for (int i= 0; i < currentEnrolledStudents.size(); i++) { // run through array and check for student
-
-            int currentIndexValue = currentEnrolledStudents.get(i);
+            currentIndexValue = currentEnrolledStudents.get(i);
 
             if (studentID == currentIndexValue) {
                 currentEnrolledStudents.remove(i); //Delete Index
                 currentClassSize -= 1;
                 break;
             }
+        }
     }
 
 
@@ -322,7 +299,7 @@ public class Section {
     }
 
 
-
+    /*
     public boolean isOverlapping(Date startTime1, Date endTime1, Date startTime2, Date endTime2) {
     return startTime1.before(endTime2) && startTime2.before(endTime1);
 }
