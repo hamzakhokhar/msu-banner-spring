@@ -9,7 +9,7 @@
         <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th></th>
+        <th>Section Number</th>
         <th></th>
         <th></th>
     </tr>
@@ -17,9 +17,12 @@
     <tbody>
     {{#enroll}}
     <tr>
-        <th scope="row">{{id}}</th>
+        <th scope="row">{{studentId}}</th>
         <td>{{firstName}}</td>
         <td>{{lastName}}</td>
+        {{#section}}
+        <td>{{sectionNumber}}</td>
+        {{/section}}
         <td><a href="/enroll/{{id}}">Show</a></td>
         <td><a href="/enroll/{{id}}/edit">Edit</a></td>
         <td><a href="/enroll/{{id}}/delete">Delete</a></td>
@@ -29,4 +32,4 @@
 </table>
 <br>
 <a class="btn btn-primary" href="/enroll/create">Enroll Student</a>
-{{>common/fo
+{{>common/footer}}

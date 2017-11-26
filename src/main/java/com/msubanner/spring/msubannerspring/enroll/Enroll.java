@@ -1,11 +1,12 @@
 package com.msubanner.spring.msubannerspring.enroll;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.msubanner.spring.msubannerspring.course.Course;
+import com.msubanner.spring.msubannerspring.section.Section;
+import com.msubanner.spring.msubannerspring.student.Student;
 
-    /**
+import javax.persistence.*;
+
+/**
      * This is the Enroll class.
      * @author Team 3
      */
@@ -15,19 +16,38 @@ import javax.persistence.Id;
         @Id
         @GeneratedValue(strategy= GenerationType.AUTO)
         private Long id;
+        private Long studentId;
         private String firstName;
         private String lastName;
 
-        //protected Enroll() {};
 
-        /**
+        @OneToOne
+        @JoinColumn(name = "section_id")
+        private Section section;
+
+        @OneToOne
+        @JoinColumn(name = "course_courseId")
+        private Course course;
+
+        @OneToOne
+        @JoinColumn(name = "student_studentID")
+        private Student student;
+
+
+    /**
          * Default constructor for creating the enroll object
          */
-        public Enroll(){
+        public Enroll(Section section, Course course, Student student) {
+
+            this.section = section;
+            this.course = course;
+            this.student = student;
+            this.studentId = student.getId();
             this.firstName = "DEFAULT";
             this.lastName = "DEFAULT";
             this.id = Long.valueOf(0);
         }
+
 
         /**
          * Default constructor for creating the enroll object
@@ -39,6 +59,8 @@ import javax.persistence.Id;
             this.firstName = firstName;
             this.lastName = lastName;
         }
+
+        public Enroll() {}
 
         /**
          * Default constructor for creating the enroll with all three parameters,
@@ -107,5 +129,78 @@ import javax.persistence.Id;
         public void setId(Long id) {
 
             this.id = id;
+        }
+
+        /**
+         * returns class variable course
+         * @return Course course
+         */
+        public Course getCourse() {
+
+            return course;
+        }
+
+        /**
+         * Assigns class variable course to parameter
+         * @param course
+         */
+        public void setCourse(Course course) {
+
+            this.course = course;
+        }
+
+        /**
+         * returns class variable section
+         * @return section section
+         */
+        public Section getSection() {
+
+            return section;
+        }
+
+        /**
+         * Assigns class variable section to parameter
+         * @param section
+         */
+        public void setSection(Section section) {
+
+            this.section = section;
+        }
+
+        /**
+         * returns class variable student
+         * @return student student
+         */
+        public Student getStudent() {
+
+            return student;
+        }
+
+        /**
+         * Assigns class variable student to parameter
+         * @param student
+         */
+        public void setStudent(Student student) {
+
+            this.student = student;
+        }
+
+        /**
+         * returns Long variable studentId
+         * @return student studentId
+         */
+        public Long getStudentId() {
+
+            return studentId;
+        }
+
+
+        /**
+         * Assigns Long variable studentId to parameter
+         * @param studentId
+         */
+        public void setStudentId(Long studentId) {
+
+            this.studentId = studentId;
         }
     }

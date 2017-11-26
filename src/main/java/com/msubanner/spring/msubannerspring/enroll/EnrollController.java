@@ -1,6 +1,11 @@
 package com.msubanner.spring.msubannerspring.enroll;
 
+import com.msubanner.spring.msubannerspring.course.CourseRepository;
+import com.msubanner.spring.msubannerspring.section.SectionRepository;
+import com.msubanner.spring.msubannerspring.semester.Semester;
+import com.msubanner.spring.msubannerspring.student.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,12 +15,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
+@Controller
 public class EnrollController {
 
 
     @Autowired
     private EnrollRepository enrollRepository;
+
+    @Autowired
+    private SectionRepository sectionRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @Autowired
+    private StudentRepository studentRepository;
 
     /**
      * This method will display all of the enrolls in the database
@@ -53,7 +70,13 @@ public class EnrollController {
     @RequestMapping(value = "/enroll/create", method = RequestMethod.GET)
     public ModelAndView getNewEnrollView(){
 
-        return new ModelAndView("enroll/enroll.create", "enroll", new Enroll());
+        Map modelMap = new HashMap();
+        modelMap.put("courses", courseRepository.findAll());
+        modelMap.put("section", sectionRepository.findAll());
+        modelMap.put("student", studentRepository.findAll());
+        // modelMap.put("semester", new Enroll());
+        return new ModelAndView("enroll/enroll.create", modelMap);
+        // return new ModelAndView("enroll/enroll.create", "enroll", new Enroll());
     }
 
     /**
