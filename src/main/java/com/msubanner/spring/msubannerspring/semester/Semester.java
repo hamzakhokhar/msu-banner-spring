@@ -21,6 +21,8 @@ public class Semester {
     @OneToOne
     @JoinColumn(name = "section_id")
     private Section section;
+
+
     
     @OneToOne
     @JoinColumn(name = "course_courseId")
@@ -42,7 +44,7 @@ public class Semester {
     }
     
     /**
-     * Default constructor for creating the semester object
+     * Constructor for creating the semester object with two parameters
      * @param section the section to be added to the semester
      * @param course the course that the section is of
      */
@@ -87,7 +89,7 @@ public class Semester {
 
     	this.section = section;
     	this.course = course;
-    	this.id = Long.valueOf(0);
+    	this.id = id;
         this.semesterName = semesterName;
     	this.startDate = startDate;
     	this.endDate = endDate;
