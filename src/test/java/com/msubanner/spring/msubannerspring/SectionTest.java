@@ -1,9 +1,7 @@
-//Section test originally written by Tarin Horne, re-written by Eric Kearney
 package com.msubanner.spring.msubannerspring;
 
 import com.msubanner.spring.msubannerspring.room.Room;
 import com.msubanner.spring.msubannerspring.student.Student;
-import org.junit.Assert;
 import org.junit.Test;
 import com.msubanner.spring.msubannerspring.section.Section;
 import com.msubanner.spring.msubannerspring.professor.Professor;
@@ -11,138 +9,6 @@ import com.msubanner.spring.msubannerspring.building.Building;
 import com.msubanner.spring.msubannerspring.course.Course;
 import static org.junit.Assert.*;
 
-
-public class SectionTest{
-    Section testSection = new Section();
-
-    /**
-     * Tests the section's ability to get and set the building field
-     */
-    @Test
-    public void testSectionGetAndSetBuilding(){
-        Building testBuilding = new Building();
-        testSection.setBuilding(testBuilding);
-        Assert.assertEquals(testBuilding, testSection.getBuilding());
-    }
-
-    /**
-     * Tests the section's ability to get and set the room number field
-     */
-    @Test
-    public void testSectionGetAndSetRoomNumber(){
-        int testRoomNumber = 42;
-        testSection.setRoomNumber(testRoomNumber);
-        Assert.assertEquals(42, testSection.getRoomNumber());
-    }
-
-    /**
-     * Tests the section's ability to get and set the startTime field
-     */
-    @Test
-    public void testSectionGetAndSetStartTime(){
-        String testTime = "5:00pm";
-        testSection.setStartTime(testTime);
-        Assert.assertEquals("5:00pm", testSection.getStartTime());
-    }
-
-    /**
-     * Tests the section's ability to get and set the endTime field
-     */
-    @Test
-    public void testSectionGetAndSetEndTime(){
-        String testTime = "5:00pm";
-        testSection.setEndTime(testTime);
-        Assert.assertEquals("5:00pm", testSection.getEndTime());
-    }
-
-    /**
-     * Tests the section's ability to get and set the weekday field
-     */
-    @Test
-    public void testSectionGetAndSetWeekday(){
-        String testWeekday = "Monday";
-        testSection.setWeekday(testWeekday);
-        Assert.assertEquals("Monday", testSection.getWeekday());
-    }
-
-    /**
-     * Tests the section's ability to get and set the course field
-     */
-    @Test
-    public void testSectionGetAndSetCourse(){
-        Course testCourse = new Course();
-        testSection.setCourse(testCourse);
-        Assert.assertEquals(testCourse, testSection.getCourse());
-    }
-
-    /**
-     * Tests the section's ability to get and set the professor field
-     */
-    @Test
-    public void testSectionGetAndSetProfessor(){
-        Professor testProfessor = new Professor();
-        testSection.setProfessor(testProfessor);
-        Assert.assertEquals(testProfessor, testSection.getProfessor());
-    }
-
-    /**
-     * Tests the section's ability to get and set the id field
-     */
-    @Test
-    public void testSectionGetAndSetId(){
-        Long testId = Long.valueOf(0452);
-        testSection.setId(testId);
-        Assert.assertEquals(Long.valueOf(0452), testSection.getId());
-    }
-
-    /**
-     * Tests the section's ability to get and set the section number field
-     */
-    @Test
-    public void testSectionGetAndSetSectionNumber(){
-        int testSectionNumber = 15;
-        testSection.setSectionNumber(testSectionNumber);
-    }
-
-    /**
-     * Tests the ability to construct a new section, when all the parameters are filled.
-     * Those parameters, in order, are: the course being taught, the section's number,
-     * the professor teaching the course, the building the section is being taught in,
-     * the number of the room the section is being taught in, the time the section
-     * is being taught, and the days of the week the section is being taught
-     */
-    @Test
-    public void testSectionConstructorAllParams(){
-        Course testCourse = new Course();
-        int testSectionNumber = 6;
-        Professor testProfessor = new Professor();
-        Building testBuilding = new Building();
-        int testRoomNumber = 13;
-        String testStartTime = "10:00am";
-        String testEndTime = "10:00am";
-        String testWeekday = "T/Thu";
-
-        Section testSectionConstructor = new Section(testCourse,
-                                                    testSectionNumber,
-                                                    testProfessor,
-                                                    testBuilding,
-                                                    testRoomNumber,
-                                                    testStartTime,
-                                                    testEndTime,
-                                                    testWeekday);
-
-        Assert.assertEquals(testCourse, testSectionConstructor.getCourse());
-        Assert.assertEquals(6, testSectionConstructor.getSectionNumber());
-        Assert.assertEquals(testProfessor, testSectionConstructor.getProfessor());
-        Assert.assertEquals(testBuilding, testSectionConstructor.getBuilding());
-        Assert.assertEquals(13, testSectionConstructor.getRoomNumber());
-        Assert.assertEquals("10:00am", testSectionConstructor.getStartTime());
-        Assert.assertEquals("10:00am", testSectionConstructor.getStartTime());
-        Assert.assertEquals("T/Thu", testSectionConstructor.getWeekday());
-    }
-}
-
-/*
 public class SectionTest {
     Professor testProfessor = new Professor("FirstName","LastName");
     Building testBuilding = new Building("Sample", 20);
@@ -232,4 +98,3 @@ public class SectionTest {
 
 
 }
-*/

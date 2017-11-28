@@ -1,4 +1,3 @@
-//Tests written by Eric Kearney
 package com.msubanner.spring.msubannerspring.course;
 
 import com.msubanner.spring.msubannerspring.course.Course;
@@ -49,16 +48,6 @@ public class CourseTest {
     }
 
     /**
-     * Tests the ability to set and get the course number value
-     */
-    @Test
-    public void testCourseNumber(){
-        String testCourseNumber = "49AE";
-        course.setCourseNumber(testCourseNumber);
-        Assert.assertEquals("49AE", course.getCourseNumber());
-    }
-
-    /**
      * Tests the ability to set and get the course credit value
      */
     @Test
@@ -99,27 +88,10 @@ public class CourseTest {
     }
 
     /**
-     * Tests the ability to construct a new course when no parameters are passed
-     */
-    @Test
-    public void testCourseConstructorNoParams(){
-        Course testCourse = new Course();
-
-        Assert.assertEquals(Long.valueOf(0), testCourse.getCourseId());
-        Assert.assertEquals("TBD", testCourse.getCourseDept());
-        Assert.assertEquals("TBD", testCourse.getCourseName());
-        Assert.assertEquals("TBD", testCourse.getCourseNumber());
-        Assert.assertEquals(0, testCourse.getCreditValue());
-        Assert.assertEquals("Freshman", testCourse.getLevel());
-        Assert.assertEquals("TBD", testCourse.getDescription());
-        Assert.assertEquals("TBD", testCourse.getLearningObjectives());
-    }
-
-    /**
      * Tests the ability to create a new course from scratch, ensuring all the paramters are working correctly
      */
     @Test
-    public void testCourseConstructorAllParams() {
+    public void testCourse() {
         Long courseId = Long.valueOf(2400);
         String courseDept = "MTH";
         String courseName = "Calculus II";

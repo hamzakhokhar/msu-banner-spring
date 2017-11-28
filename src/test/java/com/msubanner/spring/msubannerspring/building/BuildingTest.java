@@ -37,15 +37,6 @@ public class BuildingTest {
         Assert.assertEquals(9000000, testBuilding.getId());
     }
 
-    /*The room method of the building class isn't done,
-    //the method doesn't do anything.
-    @Test
-    public void testBuildingRoom(){
-        int testRoomNumber = 7;
-        int testRoomNumberOfRooms = 42;
-        testBuilding.setRoom(testRoomNumber, testRoomNumberOfRooms);
-    }
-    */
     /**
      * Tests the building class constructor when passed only one variable, which will be the
      * building name
