@@ -9,6 +9,7 @@ import com.msubanner.spring.msubannerspring.room.*;
 import com.msubanner.spring.msubannerspring.student.Student;
 import org.springframework.data.rest.core.annotation.RestResource;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Section Persistence Class
@@ -23,8 +24,13 @@ public class Section {
     private Long id;
     private int sectionNumber = 0;
     private int roomNumber;
-    private String time;
+    // private int currentClassSize = 0;
+    private String startTime;
+    private String endTime;
     private String weekday = "TBD";
+    private Long studentID;
+    // private int[] currentEnrolledStudents = new int[30];
+    // private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -48,8 +54,8 @@ public class Section {
      * @param sectionNumber is the unique address of the new section
      * @param professor is the professor assigned to the course
      * @param building is the building that the course is being taught
-     * @param room is the room that the course is being taught
-     * @param time is the time that the course is being taught
+     * @param roomNumber is the room that the course is being taught
+     * @param startTime is the startTime that the course is being taught
      * @param weekday is the days of the week the course is being taught
      */
     public Section(Course course,
@@ -57,18 +63,22 @@ public class Section {
     		       Professor professor,
     		       Building building,
                    int roomNumber,
-                   String time,
+                   String startTime,
+                   String endTime,
                    String weekday) {
         this.course = course;
         this.sectionNumber = sectionNumber;
         this.professor = professor;
         this.building = building;
         this.roomNumber = roomNumber;
+        setStartTime(startTime);
         this.weekday = weekday;
     }
     
-    public Section() {}
-    
+    public Section() {
+
+    }
+
     /**
      * getBuilding will return the building that the course is taught in
      * @return the building that the course is taught
@@ -98,7 +108,7 @@ public class Section {
 
     /**
      * setRoom will change the room location of the course
-     * @param room a string listing the room number
+     * @param roomNumber a string listing the room number
      */
     public void setRoomNumber(int roomNumber) {
 
@@ -106,24 +116,41 @@ public class Section {
     }
 
     /**
-     * getTime will return the time that the course is taught at
-     * @return the time that the course is taught
+     * getStartTime will return the startTime that the course is taught at
+     * @return the startTime that the course is taught
      */
-    public String getTime() {
+    public String getStartTime() {
 
-        return time;
+        return startTime;
     }
 
     /**
-     * setTime will change the time that the course is taught
-     * @param time as a string of the time the course is taught
+     * setStartTime will change the startTime that the course is taught
+     * @param startTime as a string of the startTime the course is taught
      */
-    public void setTime(String time) {
-        this.time = time;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     /**
-     * getWeekday will return the time that the course is taught at
+     * getEndTime will return the startTime that the course is taught at
+     * @return the endTime that the course is taught
+     */
+    public String getEndTime() {
+
+        return endTime;
+    }
+
+    /**
+     * setEndTime will change the endTime that the course is taught
+     * @param endTime as a string of the endTime the course is taught
+     */
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * getWeekday will return the startTime that the course is taught at
      * @return the weekday that the course is taught
      */
     public String getWeekday() {
@@ -131,7 +158,7 @@ public class Section {
     }
 
     /**
-     * setWeekday will change the time that the course is taught
+     * setWeekday will change the startTime that the course is taught
      * @param weekday as a string of the week days the course is taught
      */
     public void setWeekday(String weekday) {
@@ -208,4 +235,73 @@ public class Section {
 
         this.sectionNumber = sectionNumber;
     }
+
+
+/*
+
+    public boolean getEnrolledStudentID (Long studentID) {
+
+        Long currentIndexValue = Long.valueOf(0);
+
+        // For ArrayList
+        for (int i = 0; i < currentEnrolledStudents.size(); i++)
+
+            currentIndexValue = currentEnrolledStudents.get(i);
+
+            if (studentID == currentIndexValue) {
+                return false;
+            }
+        return true;
+    }
+
+
+
+    public void setEnrolledStudentID (Long studentID, boolean bCanEnroll) {
+
+        this.studentID = studentID;
+        bCanEnroll = getEnrolledStudentID(studentID);
+
+        // FOr ArrayList
+        if (bCanEnroll) {
+            int i = currentEnrolledStudents.size()-1;
+            currentEnrolledStudents.set(i, studentID);
+            currentClassSize += 1;
+        }
+    }
+
+
+    public void disEnrollStudent (int studentID) {
+
+        Long currentIndexValue;
+
+        // For ArrayList
+        for (int i = 0; i < currentEnrolledStudents.size(); i++) { // run through array and check for student
+
+            currentIndexValue = currentEnrolledStudents.get(i);
+
+            if (studentID == currentIndexValue) {
+                currentEnrolledStudents.remove(i); //Delete Index
+                currentClassSize -= 1;
+                break;
+            }
+        }
+    }
+
+
+
+
+    public int getStudentID(int studentID) {
+        return studentID;
+    }
+
+    public void setStudentID() {
+        this.studentID = studentID;
+    }
+
+
+
+    public boolean isOverlapping(Date startTime1, Date endTime1, Date startTime2, Date endTime2) {
+    return startTime1.before(endTime2) && startTime2.before(endTime1);
+}
+    */
 }

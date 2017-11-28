@@ -1,0 +1,12 @@
+{{>common/header}}
+<div class="card">
+    <h3 class="card-header">Enroll Information</h3>
+    <div class="card-block">
+        <p class="card-text">Enroll Id: {{enroll.id}}</p>
+        <p class="card-text">First Name: {{enroll.firstName}}</p>
+        <p class="card-text">Last Name: {{enroll.lastName}}</p>
+        <a href="/enroll/{{enroll.id}}/edit" class="btn btn-primary">Edit</a>
+        <a href="/enroll" class="btn btn-link">Back</a>
+    </div>
+</div>
+{{>common/footer}}

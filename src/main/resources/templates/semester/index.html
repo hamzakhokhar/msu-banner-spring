@@ -19,8 +19,12 @@
     <tr>
         <th scope="row">{{id}}</th>
         <td>{{semesterName}}</td>
-        <td>{{course.courseName}}</td>
-        <td>{{section.sectionNumber}}</td>
+        {{#course}}
+        <td>{{courseName}}</td>
+        {{/course}}
+        {{#section}}
+        <td>{{sectionNumber}}</td>
+        {{/section}}
         <td>{{startDate}}</td>
         <td>{{endDate}}</td>
         <td><a href="/semester/{{id}}">Show</a></td>
