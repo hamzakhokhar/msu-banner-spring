@@ -10,15 +10,25 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="firstName">First Name</label>
+                <label class="col-sm-2 col-form-label text-right" for="section">Section</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="firstName" type="text" name="firstName" value="{{enroll.firstName}}" required="required" placeholder="John">
+                    <select name="section" class="custom-select" id="section" required>
+                        {{#section}}
+                        <option value="{{id}}">{{course.courseName}} {{sectionNumber}}</option>
+                        {{/section}}
+                    </select>
                 </div>
             </div>
+
+
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="lastName">Last Name</label>
+                <label class="col-sm-2 col-form-label text-right" for="student">Student</label>
                 <div class="col-sm-5">
-                    <input class="form-control" id="lastName" type="text" name="lastName" value="{{enroll.lastName}}" required="required" placeholder="Smith">
+                    <select name="student" class="custom-select" id="student" required>
+                        {{#student}}
+                        <option value="{{id}}">{{firstName}} {{lastName}}</option>
+                        {{/student}}
+                    </select>
                 </div>
             </div>
             <div class="form-group row">

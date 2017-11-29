@@ -6,10 +6,9 @@
 <table class="table">
     <thead >
     <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Section Number</th>
+        <th>Student name</th>
+        <th>Course Name</th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -17,12 +16,8 @@
     <tbody>
     {{#enroll}}
     <tr>
-        <th scope="row">{{studentId}}</th>
-        <td>{{firstName}}</td>
-        <td>{{lastName}}</td>
-        {{#section}}
-        <td>{{sectionNumber}}</td>
-        {{/section}}
+        <td>{{student.firstName}} {{student.lastName}}</td>
+        <td>{{section.course.courseName}}</td>
         <td><a href="/enroll/{{id}}">Show</a></td>
         <td><a href="/enroll/{{id}}/edit">Edit</a></td>
         <td><a href="/enroll/{{id}}/delete">Delete</a></td>
