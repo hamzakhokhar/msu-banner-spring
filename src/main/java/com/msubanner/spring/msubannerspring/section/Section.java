@@ -24,13 +24,9 @@ public class Section {
     private Long id;
     private int sectionNumber = 0;
     private int roomNumber;
-    // private int currentClassSize = 0;
     private String startTime;
     private String endTime;
     private String weekday = "TBD";
-    private Long studentID;
-    // private int[] currentEnrolledStudents = new int[30];
-    // private ArrayList<Long> currentEnrolledStudents = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "professor_id")
@@ -236,72 +232,4 @@ public class Section {
         this.sectionNumber = sectionNumber;
     }
 
-
-/*
-
-    public boolean getEnrolledStudentID (Long studentID) {
-
-        Long currentIndexValue = Long.valueOf(0);
-
-        // For ArrayList
-        for (int i = 0; i < currentEnrolledStudents.size(); i++)
-
-            currentIndexValue = currentEnrolledStudents.get(i);
-
-            if (studentID == currentIndexValue) {
-                return false;
-            }
-        return true;
-    }
-
-
-
-    public void setEnrolledStudentID (Long studentID, boolean bCanEnroll) {
-
-        this.studentID = studentID;
-        bCanEnroll = getEnrolledStudentID(studentID);
-
-        // FOr ArrayList
-        if (bCanEnroll) {
-            int i = currentEnrolledStudents.size()-1;
-            currentEnrolledStudents.set(i, studentID);
-            currentClassSize += 1;
-        }
-    }
-
-
-    public void disEnrollStudent (int studentID) {
-
-        Long currentIndexValue;
-
-        // For ArrayList
-        for (int i = 0; i < currentEnrolledStudents.size(); i++) { // run through array and check for student
-
-            currentIndexValue = currentEnrolledStudents.get(i);
-
-            if (studentID == currentIndexValue) {
-                currentEnrolledStudents.remove(i); //Delete Index
-                currentClassSize -= 1;
-                break;
-            }
-        }
-    }
-
-
-
-
-    public int getStudentID(int studentID) {
-        return studentID;
-    }
-
-    public void setStudentID() {
-        this.studentID = studentID;
-    }
-
-
-
-    public boolean isOverlapping(Date startTime1, Date endTime1, Date startTime2, Date endTime2) {
-    return startTime1.before(endTime2) && startTime2.before(endTime1);
-}
-    */
 }
