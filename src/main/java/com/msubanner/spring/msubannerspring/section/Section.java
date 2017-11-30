@@ -33,7 +33,7 @@ public class Section {
     @OneToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
-    LocalTime startLocalTime = new LocalTime(startTime);
+    //LocalTime startLocalTime = new LocalTime(startTime);
 
     @OneToOne
     @JoinColumn(name = "course_courseId")

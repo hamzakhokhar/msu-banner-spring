@@ -1,5 +1,6 @@
 package com.msubanner.spring.msubannerspring.student;
 
+import com.msubanner.spring.msubannerspring.section.Section;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+
 
 import javax.validation.Valid;
 
@@ -102,4 +105,13 @@ public class StudentsController {
         return "redirect:/students";
     }
     /*Create entroll*/
+    @GetMapping(path="/register/{id}")
+    public String registerStudent(@PathVariable Long id, ModelMap model) {
+        Iterable<Section> sections = sectionRepository.findAll();
+        model.addAttribute("sections", sections);
+        model.addAttribute("studentid", id);
+        return "pick-student";
+    }
+
+
 }
