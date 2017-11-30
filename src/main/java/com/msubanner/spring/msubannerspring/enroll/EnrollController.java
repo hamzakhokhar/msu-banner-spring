@@ -61,7 +61,11 @@ public class EnrollController {
     @RequestMapping(value = "/enroll/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getEnrollEditView(@PathVariable("id") long id){
 
-        return new ModelAndView("enroll/enroll.edit", "enroll", enrollRepository.findOne(id));
+        Map modelMap = new HashMap();
+        modelMap.put("enroll", enrollRepository.findOne(id));
+        modelMap.put("section", sectionRepository.findAll());
+        modelMap.put("student", studentRepository.findAll());
+        return new ModelAndView("enroll/enroll.edit", modelMap);
     }
 
     /**
@@ -71,7 +75,7 @@ public class EnrollController {
     public ModelAndView getNewEnrollView(){
 
         Map modelMap = new HashMap();
-        modelMap.put("courses", courseRepository.findAll());
+        modelMap.put("enroll", new Enroll());
         modelMap.put("section", sectionRepository.findAll());
         modelMap.put("student", studentRepository.findAll());
         // modelMap.put("semester", new Enroll());

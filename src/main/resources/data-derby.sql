@@ -14,16 +14,16 @@ insert into building (id, building_name, number_of_rooms) values (default, 'King
 insert into building (id, building_name, number_of_rooms) values (default, 'Student Success', 40)
 
 -- Fixtures for Courses
-insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Calculus', 'MTH-1410', 'Mathematica', '4', 'Freshman', 'description', 'learning_objectives'))
-insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Software Engineering', 'CS-3250', 'Computer Science', '4', 'Junior', 'description', 'learning_objectives'))
-insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Computer Science 1', 'CS-1010', 'Computer Science', '4', 'Freshman', 'description', 'learning_objectives'))
+-- insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Calculus', 'MTH-1410', 'Mathematica', '4', 'Freshman', 'description', 'learning_objectives'))
+-- insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Software Engineering', 'CS-3250', 'Computer Science', '4', 'Junior', 'description', 'learning_objectives'))
+-- insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives) values ((default, 'Computer Science 1', 'CS-1010', 'Computer Science', '4', 'Freshman', 'description', 'learning_objectives'))
 
 -- Fixtures for Sections
-insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Calculus', '001', 'Einstein', 'Science', '1010')
-insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Software Engineering', '001', 'Newton', 'Aviation', '240')
-insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Computer Science', '001', 'Edison', 'King Center', '3200')
+-- insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Calculus', '001', 'Einstein', 'Science', '1010')
+-- insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Software Engineering', '001', 'Newton', 'Aviation', '240')
+-- insert into sections (ID, course_name, section_number, professor, building_name, room) values (default, 'Computer Science', '001', 'Edison', 'King Center', '3200')
 
 -- Fixtures for Semesters
-insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 12, 'December', default, 'Fall', 12, 'August')
-insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 25, 'May', default, 'Spring', 25, 'January')
-insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 1, 'May', default, 'Spring', 18, 'January')
+-- insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 12, 'December', default, 'Fall', 12, 'August')
+-- insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 25, 'May', default, 'Spring', 25, 'January')
+-- insert into semester (id, end_day, end_month, section_id, semester_name, start_day, start_month) values (default, 1, 'May', default, 'Spring', 18, 'January')

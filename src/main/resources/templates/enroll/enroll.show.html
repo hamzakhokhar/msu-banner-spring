@@ -3,8 +3,9 @@
     <h3 class="card-header">Enroll Information</h3>
     <div class="card-block">
         <p class="card-text">Enroll Id: {{enroll.id}}</p>
-        <p class="card-text">First Name: {{enroll.firstName}}</p>
-        <p class="card-text">Last Name: {{enroll.lastName}}</p>
+        <p class="card-text">Student Name: {{enroll.student.firstName}} {{enroll.student.lastName}}</p>
+        <p class="card-text">Course Name: {{enroll.section.course.courseName}}</p>
+        <p class="card-text">Section Number: {{enroll.section.sectionNumber}}</p>
         <a href="/enroll/{{enroll.id}}/edit" class="btn btn-primary">Edit</a>
         <a href="/enroll" class="btn btn-link">Back</a>
     </div>
