@@ -12,7 +12,6 @@ import com.msubanner.spring.msubannerspring.student.Student;
     List of enrolled sections
     Check for overlapping times
  */
-@Entity
 public class Schedule {
 
 }

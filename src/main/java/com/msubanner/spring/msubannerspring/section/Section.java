@@ -8,6 +8,8 @@ import com.msubanner.spring.msubannerspring.course.*;
 import com.msubanner.spring.msubannerspring.room.*;
 import com.msubanner.spring.msubannerspring.student.Student;
 import org.springframework.data.rest.core.annotation.RestResource;
+
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class Section {
     @OneToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
+    LocalTime startLocalTime = new LocalTime(startTime);
 
     @OneToOne
     @JoinColumn(name = "course_courseId")
@@ -121,7 +124,7 @@ public class Section {
      */
     public String getStartTime() {
 
-        return startTime;
+        return startTime; // convert to local time
     }
 
     /**
