@@ -104,14 +104,8 @@ public class StudentsController {
         studentRepository.delete(id);
         return "redirect:/students";
     }
-    /*Create entroll*/
-    @GetMapping(path="/register/{id}")
-    public String registerStudent(@PathVariable Long id, ModelMap model) {
-        Iterable<Section> sections = sectionRepository.findAll();
-        model.addAttribute("sections", sections);
-        model.addAttribute("studentid", id);
-        return "pick-student";
-    }
+    /*Create enroll*/
+
 
 
 }
