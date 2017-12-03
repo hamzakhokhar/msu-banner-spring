@@ -1,0 +1,7 @@
+<root>
+    <item name='org.springframework.boot.test.mock.mockito.MockReset org.springframework.boot.test.mock.mockito.MockReset get(java.lang.Object)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true"/>
+        </annotation>
+    </item>
+</root>

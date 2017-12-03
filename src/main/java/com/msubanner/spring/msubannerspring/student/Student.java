@@ -15,7 +15,7 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    protected Student(){};
+    public Student(){};
 
     /**
      * Default constructor for creating the student object

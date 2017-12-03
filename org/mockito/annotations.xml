@@ -1,0 +1,5 @@
+<root>
+    <item name='org.mockito.Mock'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

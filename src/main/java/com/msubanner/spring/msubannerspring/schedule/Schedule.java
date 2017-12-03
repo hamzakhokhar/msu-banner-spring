@@ -26,6 +26,14 @@ public class Schedule {
     @JoinColumn(name = "student_id")
     private Student student;
 
+    /**
+     * Default constructor for creating the schedule object with no parameters passed
+     * Id will default to -9999
+     */
+    public Schedule() {
+        //Default Id value
+        setId(-9999l);
+    }
 
     /**
      * Default constructor for creating the schedule object
@@ -34,11 +42,19 @@ public class Schedule {
 
         this.section = section;
         this.student = student;
-        this.id = Long.valueOf(0);
+        this.id = -9999l;
     }
 
-
-    public Schedule() {
+    /**
+     * Default constructor for the creating the schedule object with all three parameets passed
+     * @param section The Section on the Schedule
+     * @param student The Student enrolled in the section
+     * @param Id The schedule's unique Id number
+     */
+    public Schedule(Section section, Student student, Long Id){
+        setSection(section);
+        setStudent(student);
+        setId(Id);
     }
 
     /**
