@@ -39,6 +39,8 @@ public class Enroll {
 
 
     public Enroll() {
+        //default Id to -9998l
+        setId(-9998l);
     }
 
     /**

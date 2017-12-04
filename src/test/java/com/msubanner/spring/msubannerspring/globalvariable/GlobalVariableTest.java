@@ -24,7 +24,9 @@ public class GlobalVariableTest {
      */
     @Test
     public void testFRESHMAN(){
-        //Credit max for freshman currently set to 29
+        //Credit max for freshman currently set to 29, and cannot be changed
+        int testCredits = 6;
+        testGlobalVariables.setFRESHMAN(testCredits);
         Assert.assertEquals(29, testGlobalVariables.getFRESHMAN());
     }
 
@@ -33,7 +35,9 @@ public class GlobalVariableTest {
      */
     @Test
     public void testSOPHOMORE(){
-        //Credit max for sophomore currently set to 59
+        //Credit max for sophomore currently set to 59, and cannot be changed
+        int testCredits = 49;
+        testGlobalVariables.setSOPHOMORE(testCredits);
         Assert.assertEquals(59, testGlobalVariables.getSOPHOMORE());
     }
 
@@ -42,7 +46,9 @@ public class GlobalVariableTest {
      */
     @Test
     public void testJUNIOR(){
-        //Credit max for junior currently set to 89
+        //Credit max for junior currently set to 89, and cannot be changed
+        int testCredits = 106;
+        testGlobalVariables.setJUNIOR(testCredits);
         Assert.assertEquals(89, testGlobalVariables.getJUNIOR());
     }
 
@@ -51,7 +57,9 @@ public class GlobalVariableTest {
      */
     @Test
     public void testSENIOR(){
-        //Credit max for senior currently set to 120
+        //Credit max for senior currently set to 120, and cannot be changed
+        int testCredits = 121;
+        testGlobalVariables.setSENIOR(testCredits);
         Assert.assertEquals(120, testGlobalVariables.getSENIOR());
     }
 
