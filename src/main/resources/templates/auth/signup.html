@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<body>
+<h1>Register</h1>
+<form action="/signup" method="post">
+    <label for="username">Username:</label>
+    <input id="username" type="text" name="username" />
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" />
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
