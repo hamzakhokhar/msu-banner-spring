@@ -23,7 +23,7 @@ developers.
 We will be using Scrum on Trello as our management system to assign tasks and to stay on schedule with what our customer
 is requiring.
 
-We will be using Slack as our primary form of communication, but we also have Discord and email available as needed. 
+We will be using Slack as our primary form of communication, but we also have Discord and username available as needed. 
 
 Sprint #1 (August 21 - September 3) Product owner: Eric Kearney, Scrum Master: Jesus Guzman
 
