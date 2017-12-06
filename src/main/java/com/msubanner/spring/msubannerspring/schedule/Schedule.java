@@ -31,18 +31,15 @@ public class Schedule {
      * Id will default to -9999
      */
     public Schedule() {
-        //Default Id value
-        setId(-9999l);
+        
     }
 
     /**
      * Default constructor for creating the schedule object
      */
     public Schedule(Section section, Student student) {
-
         this.section = section;
         this.student = student;
-        this.id = -9999l;
     }
 
     /**

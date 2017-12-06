@@ -1,0 +1,22 @@
+{{>common/header}}
+<h2>
+    Schedule
+</h2>
+
+<table class="table">
+    <thead >
+    <tr>
+        <th>Student Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#schedule}}
+    <tr>
+        <td>{{firstName}}{{lastName}}</td>
+        <td><a href="/schedule/{{id}}">Show</a></td>
+    </tr>
+    {{/schedule}}
+    </tbody>
+</table>
+<br>
+{{>common/footer}}

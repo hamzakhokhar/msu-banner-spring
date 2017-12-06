@@ -1,0 +1,11 @@
+{{>common/header}}
+<div class="card">
+    <h3 class="card-header">{{student.firstName}} {{student.lastName}}</h3>
+    <div class="card-block">
+        <p class="card-text">Course Name: {{section.course.courseName}}</p>
+        <p class="card-text">Section Number: {{section.sectionNumber}}</p>
+        <p class="card-text">Professor Name: {{professor.firstName}} {{professor.lastName}}</p>
+        <a href="/schedule" class="btn btn-link">Back</a>
+    </div>
+</div>
+{{>common/footer}}
