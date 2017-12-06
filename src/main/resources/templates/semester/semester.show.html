@@ -11,5 +11,6 @@
         <a href="/semester/{{semester.id}}/edit" class="btn btn-primary">Edit</a>
         <a href="/semester" class="btn btn-link">Back</a>
     </div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
 </div>
 {{>common/footer}}
