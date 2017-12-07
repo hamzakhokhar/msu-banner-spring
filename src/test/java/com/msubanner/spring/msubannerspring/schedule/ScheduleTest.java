@@ -47,10 +47,6 @@ public class ScheduleTest {
      */
     public void testConstructorNoParams(){
         Schedule testScheduleNoParams = new Schedule();
-<<<<<<< HEAD
-=======
-        //Assert.assertEquals(Long.valueOf(0L), testScheduleNoParams.getId());
->>>>>>> cb1f49b061c396c96e9c2116c0d3a5a056869e52
     }
 
     @Test
@@ -78,10 +74,6 @@ public class ScheduleTest {
         Schedule testScheduleTwoParams = new Schedule(testSection, testStudent);
         Assert.assertEquals(testSection, testScheduleTwoParams.getSection());
         Assert.assertEquals(testStudent, testScheduleTwoParams.getStudent());
-<<<<<<< HEAD
-=======
-        //Assert.assertEquals(Long.valueOf(0L), testScheduleTwoParams.getId());
->>>>>>> cb1f49b061c396c96e9c2116c0d3a5a056869e52
     }
 
     @Test
