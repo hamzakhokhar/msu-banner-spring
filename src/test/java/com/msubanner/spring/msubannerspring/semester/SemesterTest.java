@@ -63,8 +63,6 @@ public class SemesterTest {
         Assert.assertEquals("December 16", testSemesterFiveConstructors.getEndDate());
     }
 
-
-<<<<<<< HEAD
     @Test
     public void testSemesterConstructorSixParams() {
         String testSemesterName = "Fall 2017";
@@ -76,7 +74,5 @@ public class SemesterTest {
         Assert.assertEquals("I dunno' August?", testSemesterSixConstructors.getStartDate());
         Assert.assertEquals("December 16", testSemesterSixConstructors.getEndDate());
     }
-
-=======
->>>>>>> 843f4d81b10c3ec15d0f1375d02a136a1d15f9c4
 }
+
