@@ -95,14 +95,7 @@ public class SectionTest{
         Assert.assertEquals(Long.valueOf(0452), testSection.getId());
     }
 
-    /**
-     * Tests the section's ability to get and set the section number field
-     */
-    @Test
-    public void testSectionGetAndSetSectionNumber(){
-        int testSectionNumber = 15;
-        testSection.setSectionNumber(testSectionNumber);
-    }
+
 
     /**
      * Tests the ability to construct a new section, when all the parameters are filled.
@@ -123,7 +116,6 @@ public class SectionTest{
         String testWeekday = "T/Thu";
 
         Section testSectionConstructor = new Section(testCourse,
-                                                    testSectionNumber,
                                                     testProfessor,
                                                     testBuilding,
                                                     testRoomNumber,
@@ -132,7 +124,6 @@ public class SectionTest{
                                                     testWeekday);
 
         Assert.assertEquals(testCourse, testSectionConstructor.getCourse());
-        Assert.assertEquals(6, testSectionConstructor.getSectionNumber());
         Assert.assertEquals(testProfessor, testSectionConstructor.getProfessor());
         Assert.assertEquals(testBuilding, testSectionConstructor.getBuilding());
         Assert.assertEquals(13, testSectionConstructor.getRoomNumber());

@@ -10,29 +10,18 @@
                     <input class="form-control" id="semesterName" type="text" name="semesterName" required="required" placeholder="Spring">
                 </div>
             </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="section">Section</label>
-                <div class="col-sm-5">
-                    <select name="sections" class="custom-select" id="sections" required>
-                        {{#section}}
-                        <option value="{{id}}">{{course.courseName}} {{sectionNumber}}</option>
-                        {{/section}}
-                    </select>
-                </div>
-            </div>
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="startDate">Start Date</label>
                 <div class="col-sm-5">
-                    <input class="meeting" id="startDate" type="date" name="startDate" required="required" value="2018-01-18">
+                    <input class="form-control" id="startDate" type="date" name="startDate" required="required">
                 </div>
             </div>
             
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="endDate">End Date</label>
                 <div class="col-sm-5">
-                    <input class="meeting" id="endDate" type="date" name="endDate" required="required" value="2018-06-08">
+                    <input class="form-control" id="endDate" type="date" name="endDate" required="required">
                 </div>
             </div>
             
