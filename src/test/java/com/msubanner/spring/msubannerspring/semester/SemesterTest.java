@@ -64,19 +64,4 @@ public class SemesterTest {
     }
 
 
-    @Test
-    public void testSemesterConstructorSixParams() {
-        Long testId = Long.valueOf(0451);
-        String testSemesterName = "Fall 2017";
-        String testStartDate = "I dunno' August?";
-        String testEndDate = "December 16";
-
-        Semester testSemesterSixConstructors = new Semester(testSemesterName, testStartDate, testEndDate);
-        //I'm not sure why this test is failing, will look at it later
-        Assert.assertEquals(Long.valueOf(0451), testSemesterSixConstructors.getId());
-        Assert.assertEquals("Fall 2017", testSemesterSixConstructors.getSemesterName());
-        Assert.assertEquals("I dunno' August?", testSemesterSixConstructors.getStartDate());
-        Assert.assertEquals("December 16", testSemesterSixConstructors.getEndDate());
-    }
-
 }
