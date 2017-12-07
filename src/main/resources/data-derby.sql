@@ -19,9 +19,9 @@ insert into course (course_id, course_name, course_number, course_dept, credit_v
 insert into course (course_id, course_name, course_number, course_dept, credit_value, level, description, learning_objectives)values (3, 'Computer Science 1', 'CS-1010', 'CS', 4, 'Freshman', 'description', 'learning_objectives')
 
 -- Fixtures for Semesters
-insert into semester (id, semester_name, start_date, end_date) values (default, 'Fall', '12-12-2017', '12-12-2017')
-insert into semester (id, semester_name, start_date, end_date) values (default, 'Spring', '12-12-2017', '12-12-2017')
-insert into semester (id, semester_name, start_date, end_date) values (default, 'Spring', '12-12-2017', '12-12-2017')
+insert into semester (id, semester_name, start_date, end_date) values (default, 'Fall', '2017-12-20', '2017-12-30')
+insert into semester (id, semester_name, start_date, end_date) values (default, 'Spring', '2017-12-20', '2017-12-30')
+insert into semester (id, semester_name, start_date, end_date) values (default, 'Spring', '2017-12-20', '2017-12-30')
 
 
 -- Fixtures for Sections
