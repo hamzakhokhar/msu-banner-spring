@@ -28,7 +28,6 @@ public class Schedule {
 
     /**
      * Default constructor for creating the schedule object with no parameters passed
-     * Id will default to -9999
      */
     public Schedule() {
         
