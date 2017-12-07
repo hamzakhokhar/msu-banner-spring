@@ -12,7 +12,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long courseId;
-    private String courseDept = "TBD";
+    private String courseDept;
     private String courseName;
     private String courseNumber;
     private int creditValue;
