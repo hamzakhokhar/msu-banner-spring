@@ -59,6 +59,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // Very big security risk not suppose to be in Production need to
+        auth
+                .inMemoryAuthentication()
+                .withUser("admin").password("password").roles("ANONYMOUS");
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
 }
