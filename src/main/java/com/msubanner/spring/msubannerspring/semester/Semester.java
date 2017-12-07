@@ -18,15 +18,6 @@ public class Semester {
     private String startDate;
     private String endDate;
 
-    @OneToOne
-    @JoinColumn(name = "section_id")
-    private Section section;
-
-
-    
-    @OneToOne
-    @JoinColumn(name = "course_courseId")
-    private Course course;
     
     //protected Semester(){};
 
@@ -34,66 +25,26 @@ public class Semester {
      * Default constructor for semester object
      */
     public Semester() {
-
-    	this.section = null;
-    	this.course = null;
     	this.id = Long.valueOf(0);
     	this.semesterName = "TBD";
     	this.startDate = "TBD";
     	this.endDate = "TBD";
     }
-    
-    /**
-     * Constructor for creating the semester object with two parameters
-     * @param section the section to be added to the semester
-     * @param course the course that the section is of
-     */
-    public Semester(Section section, Course course) {
 
-    	this.section = section;
-    	this.course = course;
-    	this.id = Long.valueOf(0);
-        this.semesterName = "TBD";
-    	this.startDate = "TBD";
-    	this.endDate = "TBD";
-    }
     
     /**
      * Default constructor for creating the semester object
-     * @param section the section to be added to the semester
-     * @param course the course that the section is of
      * @param semesterName the name of the semester
      * @param startDate the date starting the semester
      * @param endDate the date ending the semester
      */
-    public Semester(Section section, Course course, String semesterName, String startDate, String endDate) {
-
-    	this.section = section;
-    	this.course = course;
+    public Semester(String semesterName, String startDate, String endDate) {
     	this.id = Long.valueOf(0);
         this.semesterName = semesterName;
     	this.startDate = startDate;
     	this.endDate = endDate;
     }
 
-    /**
-     * Default constructor for creating the semester object
-     * @param section the section number of the new semester
-     * @param course the course that the section is of
-     * @param id the id of the semester
-     * @param semesterName the name of the semester
-     * @param startDate the date starting the semester
-     * @param endDate the date ending the semester
-     */
-    public Semester(Section section, Course course, Long id, String semesterName, String startDate, String endDate) {
-
-    	this.section = section;
-    	this.course = course;
-    	this.id = id;
-        this.semesterName = semesterName;
-    	this.startDate = startDate;
-    	this.endDate = endDate;
-    }
     
     /**
      * Get command for the semester id
@@ -165,43 +116,6 @@ public class Semester {
     public void setEndDate(String endDate) {
 
         this.endDate = endDate;
-    }
-    
-    
-    /**
-     * returns class variable course
-     * @return Course course
-     */
-    public Course getCourse() {
-    	
-        return course;
-    }
-    
-    /**
-     * Assigns class variable course to parameter
-     * @param course
-     */
-    public void setCourse(Course course) {
-
-        this.course = course;
-    }
-    
-    /**
-     * returns class variable section
-     * @return section section
-     */
-    public Section getSection() {
-    	
-        return section;
-    }
-    
-    /**
-     * Assigns class variable section to parameter
-     * @param section
-     */
-    public void setSection(Section section) {
-
-        this.section = section;
     }
 }
 

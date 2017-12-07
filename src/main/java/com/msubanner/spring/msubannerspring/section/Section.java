@@ -6,6 +6,7 @@ import com.msubanner.spring.msubannerspring.professor.*;
 import com.msubanner.spring.msubannerspring.building.Building;
 import com.msubanner.spring.msubannerspring.course.*;
 import com.msubanner.spring.msubannerspring.room.*;
+import com.msubanner.spring.msubannerspring.semester.Semester;
 import com.msubanner.spring.msubannerspring.student.Student;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -24,7 +25,6 @@ public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int sectionNumber = 0;
     private int roomNumber;
     private String startTime;
     private String endTime;
@@ -42,6 +42,10 @@ public class Section {
     @OneToOne
     @JoinColumn(name = "building_id")
     private Building building;
+
+    @OneToOne
+    @JoinColumn(name = "semester_id")
+    private Semester semester;
     
     //@OneToMany(fetch = FetchType.EAGER)
     //@JoinColumn(name = "student_id")
@@ -50,7 +54,6 @@ public class Section {
     /**
      * Default constructor for the section class
      * @param course is an existing course that the user is creating a section of
-     * @param sectionNumber is the unique address of the new section
      * @param professor is the professor assigned to the course
      * @param building is the building that the course is being taught
      * @param roomNumber is the room that the course is being taught
@@ -58,7 +61,6 @@ public class Section {
      * @param weekday is the days of the week the course is being taught
      */
     public Section(Course course,
-    		       int sectionNumber,
     		       Professor professor,
     		       Building building,
                    int roomNumber,
@@ -66,7 +68,6 @@ public class Section {
                    String endTime,
                    String weekday) {
         this.course = course;
-        this.sectionNumber = sectionNumber;
         this.professor = professor;
         this.building = building;
         this.roomNumber = roomNumber;
@@ -217,22 +218,12 @@ public class Section {
         this.id = id;
     }
 
-    /**
-     * returns section number
-     * @return section number
-     */
-    public int getSectionNumber() {
 
-        return sectionNumber;
-    }
-    
-    /**
-     * Assigns class variable section number to parameter
-     * @param sectionNumber
-     */
-    public void setSectionNumber(int sectionNumber) {
-
-        this.sectionNumber = sectionNumber;
+    public Semester getSemester() {
+        return semester;
     }
 
+    public void setSemester(Semester semester) {
+        this.semester = semester;
+    }
 }
