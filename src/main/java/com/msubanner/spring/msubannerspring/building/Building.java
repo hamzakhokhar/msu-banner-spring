@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  * This is the Building class.
@@ -16,125 +15,121 @@ import javax.persistence.OneToMany;
 @Entity
 public class Building {
 
+    /**
+     * Define building ID.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id = 123456789;
+    private long id;
 
+    /**
+     * Building name variable.
+     */
     private String buildingName = "DEFAULT";
+
+    /**
+     * Number of rooms variable.
+     */
     private int numberOfRooms = 1;
 
+    /**
+     * Many to one with room object.
+     */
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
 
+    /**
+     * Default constructor.
+     */
     public Building() {
 
     }
 
     /**
-     * Constructor for building passing only one variable, the building name
+     * Constructor for building passing only one variable, the building name.
      *
-     * @param buildingName The name of the building
+     * @param name name of the building
      */
-    public Building(String buildingName) {
-
-        setBuildingName(buildingName);
+    public Building(String name) {
+        this.buildingName = name;
     }
 
     /**
-     * Default constructor for creating the building object
+     * Default constructor for creating the building object.
      *
-     * @param buildingName  the name of the building
-     * @param numberOfRooms the number of rooms in the building
+     * @param name name of the building
+     * @param numRooms the number of rooms in the building
      */
-    public Building(String buildingName, int numberOfRooms) {
-
-        this.buildingName = buildingName;
-        this.numberOfRooms = numberOfRooms;
+    public Building(String name, int numRooms) {
+        this.buildingName = name;
+        this.numberOfRooms = numRooms;
     }
 
     /**
-     * Default constructor for the building passing all three variables
+     * Default constructor for the building passing all three variables.
      *
-     * @param buildingName  The name of the building
-     * @param numberOfRooms The number of rooms in the building
+     * @param name  The name of the building
+     * @param numRooms The number of rooms in the building
      * @param buildingId    The building's unique ID number
      */
-    public Building(String buildingName, int numberOfRooms, long buildingId) {
-
-        setBuildingName(buildingName);
-        setNumberOfRooms(numberOfRooms);
-        setId(buildingId);
+    public Building(String name, int numRooms, long buildingId) {
+        this.buildingName = name;
+        this.numberOfRooms = numRooms;
+        this.id = buildingId;
     }
 
     /**
-     * Will return the first name listed in the building object
+     * Will return the first name listed in the building object.
      *
      * @return the name of the building
      */
     public String getBuildingName() {
-
         return buildingName;
     }
 
     /**
-     * Will set the name in the building object
+     * Will set the name in the building object.
      *
-     * @param buildingName set the firstName of the building
+     * @param name set the firstName of the building
      */
-    public void setBuildingName(String buildingName) {
-
-        this.buildingName = buildingName;
+    public void setBuildingName(String name) {
+        this.buildingName = name;
     }
 
     /**
-     * Will return the number of rooms listed in the building object
+     * Will return the number of rooms listed in the building object.
      *
      * @return the last name of the building
      */
     public int getNumberOfRooms() {
-
         return numberOfRooms;
     }
 
     /**
-     * Will set the number of rooms in the building object
+     * Will set the number of rooms in the building object.
      *
-     * @param numberOfRooms is the number of rooms
+     * @param numRooms is the number of rooms
      */
-    public void setNumberOfRooms(int numberOfRooms) {
-
-        this.numberOfRooms = numberOfRooms;
+    public void setNumberOfRooms(int numRooms) {
+        this.numberOfRooms = numRooms;
     }
 
     /**
-     * Will return the building number listed in the building object
+     * Will return the building number listed in the building object.
      *
      * @return the building number of the building
      */
     public long getId() {
-
         return id;
     }
 
     /**
-     * Will set the building number in the building object
+     * Will set the building number in the building object.
      *
-     * @paramid is the building number
+     * @param buildingId is the building number
      */
-    public void setId(long id) {
-
-        this.id = id;
+    public void setId(long buildingId) {
+        this.id = buildingId;
     }
-
-    /*These methods don't do anything yet, commented out for now.
-    public Room getRoom() {
-
-        return room;
-    }
-
-    public void setRoom(int roomNumber, int numberOfSeats) {
-
-    }
-    */
 }
