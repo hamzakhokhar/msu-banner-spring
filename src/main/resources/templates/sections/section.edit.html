@@ -15,14 +15,6 @@
             </div>
             
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="sectionNumber">Section Number</label>
-                <div class="col-sm-5">
-                    <input class="form-control" id="sectionNumber" type="number" name="sectionNumber" required="required" value="{{section.sectionNumber}}" placeholder="001">
-                </div>
-
-            </div>
-            
-            <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-right" for="professor">Professor</label>
                 <div class="col-sm-5">
                     <select name="professor" class="custom-select" id="professor" required>
@@ -37,9 +29,9 @@
                 <label class="col-sm-2 col-form-label text-right" for="building">Building</label>
                 <div class="col-sm-5">
                     <select name="building" class="custom-select" id="building" required>
-                        {{#building}}
+                        {{#buildings}}
                         <option value="{{id}}">{{buildingName}}</option>
-                        {{/building}}
+                        {{/buildings}}
                     </select>
                 </div>
             </div>
@@ -66,21 +58,22 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label text-right" for="weekday">Meeting Days</label>
+                <label class="col-sm-2 col-form-label text-right" >Meeting Days</label>
+                <div>{{section.weekday}}</div>
                 <div class="col-sm-5">
-                    <label for="weekday">Sun</label>
+                    <label for="Sunday">Sun</label>
                     <input type="checkbox" id="Sunday" class="weekday">
-                    <label for="weekday">Mon</label>
+                    <label for="monday">Mon</label>
                     <input type="checkbox" id="Monday" class="weekday">
-                    <label for="weekday">Tue</label>
+                    <label for="Tuesday">Tue</label>
                     <input type="checkbox" id="Tuesday" class="weekday">
-                    <label for="weekday">Wed</label>
+                    <label for="Wednesday">Wed</label>
                     <input type="checkbox" id="Wednesday" class="weekday">
-                    <label for="weekday">Thu</label>
+                    <label for="Thursday">Thu</label>
                     <input type="checkbox" id="Thursday" class="weekday">
-                    <label for="weekday">Fri</label>
+                    <label for="Friday">Fri</label>
                     <input type="checkbox" id="Friday" class="weekday">
-                    <label for="weekday">Sat</label>
+                    <label for="Saturday">Sat</label>
                     <input type="checkbox" id="Saturday" class="weekday">
                 </div>
             </div>

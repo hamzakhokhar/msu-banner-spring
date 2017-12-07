@@ -18,82 +18,107 @@ import javax.validation.Valid;
 @Controller
 public class CourseController {
 
+	/**
+	 * import course repo
+	 */
     @Autowired
     private CourseRepository courseRepository;
 
+    /**
+     * import building repo
+     */
     @Autowired
     private BuildingRepository buildingRepository;
-    
-    // GET courses View
+
+    /**
+     * This method will display all of the courses in the database.
+     * CRUD(read) - courseRepository.findAll(id)
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public ModelAndView getCourseView() {
-
-        // CRUD(read) - courseRepository.findAll(id)
         return new ModelAndView("courses/index", "courses", courseRepository.findAll());
     }
 
-    // GET course Info view
+    /**
+     * This method will display the course info.
+     * CRUD(read) - courseRepository.findOne(id)
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
     public ModelAndView getCourseInfoView(@PathVariable("id") long id){
-
-        // CRUD(read) - courseRepository.findOne(id)
         return new ModelAndView("courses/course.show", "course", courseRepository.findOne(id));
     }
 
-    // GET Course Edit view
+    /**
+     * This method will edit the course info.
+     * CRUD(read) - courseepository.findOne(id)
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getCourseEditView(@PathVariable("id") long id){
-
-        // CRUD(read) - courseRepository.findOne(id)
         return new ModelAndView("courses/course.edit", "course", courseRepository.findOne(id));
     }
 
-
-    // GET New course view
+    /**
+     * This method will create the course
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses/create", method = RequestMethod.GET)
     public ModelAndView getNewCourseView(){
-
         return new ModelAndView("courses/course.create", "course", new Course());
     }
 
-    // POST new course view
+    /**
+     * This method will save the course info and post it to the database.
+     * CRUD (create) - save course
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses", method = RequestMethod.POST)
     public String submitCourse(@Valid @ModelAttribute("course")Course course,
                          BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
-
             return "error";
         }
-        //CRUD (create) - save course
         courseRepository.save(course);
         return "redirect:/courses";
     }
 
-    // POST edit course view
+    /**
+     * This method will save the selected course info and post it to the database.
+     * CRUD (create) - save course
+     * Explicitly set the course id of the course from the path.
+     * The roomNumber does not get bounded to the HTML form view and returned.
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses/{id}", method = RequestMethod.POST)
     public String editCourse(@Valid @ModelAttribute("course")Course course,
                                 BindingResult result, ModelMap model,
                              @PathVariable("id") long id) {
 
         if (result.hasErrors()) {
-
             return "error";
         }
-        // Explicitly set the id of the course from the path.
-        // The id dose not get bounded to the html form view and returned.
         course.setCourseId(id);
-        // CRUD(create) - save course
         courseRepository.save(course);
-
         return "redirect:/courses";
     }
 
-    // GET delete course resource
+    /**
+     * This method will delete the selected course from the database.
+     * CRUD(delete) - delete course
+     *
+     * @return link redirect
+     */
     @RequestMapping(value = "/courses/{id}/delete", method = RequestMethod.GET)
     public String deleteCourse(@PathVariable("id") long id) {
-
-        // CRUD(delete) - delete course
         courseRepository.delete(id);
         return "redirect:/courses";
     }
