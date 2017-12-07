@@ -20,22 +20,29 @@ import javax.validation.Valid;
 @Controller
 public class BuildingController {
 
+	/**
+	 * Import building repo.
+	 */
     @Autowired
     private BuildingRepository buildingRepository;
 
     /**
-     * This method will display all of the buildings in the database
+     * This method will display all of the buildings in the database.
      * CRUD(read) - buildingRepository.findAll(id)
+     *
+     * @return link redirect
      */
     @RequestMapping(value = "/building", method = RequestMethod.GET)
     public ModelAndView getBuildingView() {
-
         return new ModelAndView("building/index", "building", buildingRepository.findAll());
     }
 
     /**
-     * This method will display the buildings info
+     * This method will display the buildings info.
      * CRUD(read) - buildingRepository.findOne(id)
+     *
+     * @param roomNumber buildingNumber
+     * @return link redirect
      */
     @RequestMapping(value = "/building/{id}", method = RequestMethod.GET)
     public ModelAndView getBuildingInfoView(@PathVariable("id") long roomNumber) {
@@ -43,56 +50,77 @@ public class BuildingController {
     }
 
     /**
-     * This method will edit the buildings info
+     * This method will edit the buildings info.
      * CRUD(read) - buildingRepository.findOne(id)
+     *
+     * @param roomNumber buildingNumber
+     * @return link redirect
      */
     @RequestMapping(value = "/building/{id}/edit", method = RequestMethod.GET)
     public ModelAndView getBuildingEditView(@PathVariable("id") long roomNumber) {
-
         return new ModelAndView("building/building.edit", "building", buildingRepository.findOne(roomNumber));
     }
 
     /**
      * This method will create the building
+     *
+     * @return link redirect
      */
     @RequestMapping(value = "/building/create", method = RequestMethod.GET)
     public ModelAndView getNewBuildingView() {
-
         return new ModelAndView("building/building.create", "building", new Building());
     }
 
     /**
-     * This method will save the buildings info and post it to the database
+     * This method will save the buildings info and post it to the database.
      * CRUD (create) - save building
+     *
+     * @param building building
+     * @param result result
+     * @param model model
+     * @return link redirect
      */
     @RequestMapping(value = "/building", method = RequestMethod.POST)
     public String submitBuilding(@Valid @ModelAttribute("building") Building building,
                                  BindingResult result, ModelMap model) {
 
-        if (result.hasErrors()) return "error";
+        if (result.hasErrors()) {
+            return "error";
+        }
         buildingRepository.save(building);
         return "redirect:/building";
     }
 
     /**
-     * This method will save the selected building info and post it to the database
+     * This method will save the selected building info and post it to the database.
      * CRUD (create) - save building
      * Explicitly set the roomNumber of the building from the path.
      * The roomNumber does not get bounded to the HTML form view and returned.
+     *
+     * @param building building
+     * @param result result
+     * @param model model
+     * @param id id
+     * @return link redirect
      */
     @RequestMapping(value = "/building/{id}", method = RequestMethod.POST)
     public String editBuilding(@Valid @ModelAttribute("building") Building building,
                                BindingResult result, ModelMap model, @PathVariable("id") long id) {
 
-        if (result.hasErrors()) return "error";
+        if (result.hasErrors()) {
+            return "error";
+        }
         building.setId(id);
         buildingRepository.save(building);
         return "redirect:/building";
     }
 
     /**
-     * This method will delete the selected building from the database
+     * This method will delete the selected building from the database.
      * CRUD(delete) - delete building
+     *
+     * @param id id
+     * @return link redirect
      */
     @RequestMapping(value = "/building/{id}/delete", method = RequestMethod.GET)
     public String deleteBuilding(@PathVariable("id") long id) {
