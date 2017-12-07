@@ -1,8 +1,8 @@
 -- Fixtures for Students
-INSERT INTO student (id, first_name, last_name) VALUES (DEFAULT, 'John', 'Doe');
+INSERT INTO student (id, first_name, last_name) VALUES (1, 'John', 'Doe');
 -- insert into student (id, first_name, last_name) values (default, 'Jim', 'Johnson');
 -- insert into student (id, first_name, last_name) values (default, 'Lewis', 'Smith');
--- 
+--
 -- -- Fixtures for Professors
 -- insert into professor (id, first_name, last_name) values (default, 'Albert', 'Einstein');
 -- insert into professor (id, first_name, last_name) values (default, 'Isacc', 'Newton');
